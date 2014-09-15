@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
 using System.Threading.Tasks;
 using com.strava.api.Activities;
 using com.strava.api.Api;
@@ -218,29 +216,36 @@ namespace com.strava.api.Client
         /// <returns>A time filtered leaderboard.</returns>
         public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, TimeFilter filter, int page, int perPage)
         {
-            String fltr = String.Empty;
-
-            // ‘this_year’, ‘this_month’, ‘this_week’, ‘today’
-            switch (filter)
-            {
-                case TimeFilter.ThisMonth:
-                    fltr = "this_month";
-                    break;
-                case TimeFilter.ThisWeek:
-                    fltr = "this_week";
-                    break;
-                case TimeFilter.ThisYear:
-                    fltr = "this_year";
-                    break;
-                case TimeFilter.Today:
-                    fltr = "today";
-                    break;
-            }
-
             String getUrl = String.Format("{0}/{1}/leaderboard?date_range={2}&page={3}&per_page={4}&access_token={5}",
                 Endpoints.Leaderboard,
                 segmentId,
-                fltr,
+                UrlHelper.TimeFilterToString(filter),
+                page,
+                perPage,
+                Authentication.AccessToken
+                );
+
+            String json = await WebRequest.SendGetAsync(new Uri(getUrl));
+
+            return Unmarshaller<Leaderboard>.Unmarshal(json);
+        }
+
+        /// <summary>
+        /// Gets the leaderboard filtered by time and gender
+        /// </summary>
+        /// <param name="segmentId">The Strava segment id.</param>
+        /// <param name="filter">The time filter.</param>
+        /// <param name="gender">The gender used to filter the leaderboard.</param>
+        /// <param name="page">The result page.</param>
+        /// <param name="perPage">Entries per page.</param>
+        /// <returns>A time filtered leaderboard.</returns>
+        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, TimeFilter filter, Gender gender, int page, int perPage)
+        {
+            String getUrl = String.Format("{0}/{1}/leaderboard?date_range={2}&gender={3}&page={4}&per_page={5}&access_token={6}",
+                Endpoints.Leaderboard,
+                segmentId,
+                UrlHelper.TimeFilterToString(filter),
+                gender.ToString().Substring(0, 1),
                 page,
                 perPage,
                 Authentication.AccessToken
@@ -261,35 +266,11 @@ namespace com.strava.api.Client
         /// <returns>The leaderboard filtered by gender and age.</returns>
         public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, Gender gender, AgeGroup age)
         {
-            String ageFilter = String.Empty;
-
-            switch (age)
-            {
-                case AgeGroup.One:
-                    ageFilter = "0_24";
-                    break;
-                case AgeGroup.Two:
-                    ageFilter = "25_34";
-                    break;
-                case AgeGroup.Three:
-                    ageFilter = "35_44";
-                    break;
-                case AgeGroup.Four:
-                    ageFilter = "45_54";
-                    break;
-                case AgeGroup.Five:
-                    ageFilter = "55_64";
-                    break;
-                case AgeGroup.Six:
-                    ageFilter = "65_plus";
-                    break;
-            }
-
             String getUrl = String.Format("{0}/{1}/leaderboard?gender={2}&age_group={3}&filter=age_group&access_token={4}",
                 Endpoints.Leaderboard,
                 segmentId,
                 gender.ToString().Substring(0, 1),
-                ageFilter,
+                UrlHelper.AgeGroupToString(age),
                 Authentication.AccessToken
                 );
 
@@ -308,35 +289,11 @@ namespace com.strava.api.Client
         /// <returns>The leaderboard filtered by gender and weight class.</returns>
         public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, Gender gender, WeightClass weight)
         {
-            String weightClass = String.Empty;
-
-            switch (weight)
-            {
-                case WeightClass.One:
-                    weightClass = "0_54";
-                    break;
-                case WeightClass.Two:
-                    weightClass = "55_64";
-                    break;
-                case WeightClass.Three:
-                    weightClass = "65_74";
-                    break;
-                case WeightClass.Four:
-                    weightClass = "75_84";
-                    break;
-                case WeightClass.Five:
-                    weightClass = "85_94";
-                    break;
-                case WeightClass.Six:
-                    weightClass = "95_plus";
-                    break;
-            }
-
             String getUrl = String.Format("{0}/{1}/leaderboard?gender={2}&weight_class={3}&filter=weight_class&access_token={4}",
                 Endpoints.Leaderboard,
                 segmentId,
                 gender.ToString().Substring(0, 1),
-                weightClass,
+                UrlHelper.WeightClassToString(weight),
                 Authentication.AccessToken
                 );
 
@@ -382,16 +339,9 @@ namespace com.strava.api.Client
         /// popular ones will be returned.</returns>
         public async Task<ExplorerResult> ExploreSegmentsAsync(Coordinate southWest, Coordinate northEast)
         {
-            String bnds = String.Format("{0},{1},{2},{3}",
-                southWest.Latitude.ToString(CultureInfo.InvariantCulture),
-                southWest.Longitude.ToString(CultureInfo.InvariantCulture),
-                northEast.Latitude.ToString(CultureInfo.InvariantCulture),
-                northEast.Longitude.ToString(CultureInfo.InvariantCulture)
-                );
-            
             String getUrl = String.Format("{0}/explore?bounds={1}&access_token={2}",
                 Endpoints.Leaderboard,
-                bnds,
+                UrlHelper.BoundariesToString(southWest,northEast),
                 Authentication.AccessToken);
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
@@ -410,16 +360,9 @@ namespace com.strava.api.Client
         /// popular ones will be returned.</returns>
         public async Task<ExplorerResult> ExploreSegmentsAsync(Coordinate southWest, Coordinate northEast, int minCat, int maxCat)
         {
-            String bnds = String.Format("{0},{1},{2},{3}",
-                southWest.Latitude.ToString(CultureInfo.InvariantCulture),
-                southWest.Longitude.ToString(CultureInfo.InvariantCulture),
-                northEast.Latitude.ToString(CultureInfo.InvariantCulture),
-                northEast.Longitude.ToString(CultureInfo.InvariantCulture)
-                );
-
             String getUrl = String.Format("{0}/explore?bounds={1}&min_cat={2}&max_cat={3}&access_token={4}",
                 Endpoints.Leaderboard,
-                bnds,
+                UrlHelper.BoundariesToString(southWest,northEast),
                 minCat,
                 maxCat,
                 Authentication.AccessToken);
@@ -534,8 +477,8 @@ namespace com.strava.api.Client
                 page,
                 perPage,
                 Authentication.AccessToken);
-            String json = WebRequest.SendGet(new Uri(getUrl));
 
+            String json = WebRequest.SendGet(new Uri(getUrl));
             return Unmarshaller<Leaderboard>.Unmarshal(json);
         }
 
@@ -594,9 +537,36 @@ namespace com.strava.api.Client
                 );
 
             String json = WebRequest.SendGet(new Uri(getUrl));
-
             return Unmarshaller<Leaderboard>.Unmarshal(json);
         }
+
+        /// <summary>
+        /// Gets the leaderboard filtered by time and gender
+        /// </summary>
+        /// <param name="segmentId">The Strava segment id.</param>
+        /// <param name="filter">The time filter.</param>
+        /// <param name="gender">The gender used to filter the leaderboard.</param>
+        /// <param name="page">The result page.</param>
+        /// <param name="perPage">Entries per page.</param>
+        /// <returns>A time filtered leaderboard.</returns>
+        public Leaderboard GetSegmentLeaderboard(String segmentId, TimeFilter filter, Gender gender, int page,
+            int perPage)
+        {
+            String getUrl =
+                String.Format("{0}/{1}/leaderboard?date_range={2}&gender={3}&page={4}&per_page={5}&access_token={6}",
+                    Endpoints.Leaderboard,
+                    segmentId,
+                    UrlHelper.TimeFilterToString(filter),
+                    gender.ToString().Substring(0, 1),
+                    page,
+                    perPage,
+                    Authentication.AccessToken
+                    );
+
+            String json = WebRequest.SendGet(new Uri(getUrl));
+            return Unmarshaller<Leaderboard>.Unmarshal(json);
+        }
+
 
         /// <summary>
         /// Gets the gender-filtered and age-filtered leaderboard of a segment. This method requires the currently authenticated 
@@ -608,40 +578,15 @@ namespace com.strava.api.Client
         /// <returns>The leaderboard filtered by gender and age.</returns>
         public Leaderboard GetSegmentLeaderboard(String segmentId, Gender gender, AgeGroup age)
         {
-            String ageFilter = String.Empty;
-
-            switch (age)
-            {
-                case AgeGroup.One:
-                    ageFilter = "0_24";
-                    break;
-                case AgeGroup.Two:
-                    ageFilter = "25_34";
-                    break;
-                case AgeGroup.Three:
-                    ageFilter = "35_44";
-                    break;
-                case AgeGroup.Four:
-                    ageFilter = "45_54";
-                    break;
-                case AgeGroup.Five:
-                    ageFilter = "55_64";
-                    break;
-                case AgeGroup.Six:
-                    ageFilter = "65_plus";
-                    break;
-            }
-
             String getUrl = String.Format("{0}/{1}/leaderboard?gender={2}&age_group={3}&filter=age_group&access_token={4}",
                 Endpoints.Leaderboard,
                 segmentId,
                 gender.ToString().Substring(0, 1),
-                ageFilter,
+                UrlHelper.AgeGroupToString(age),
                 Authentication.AccessToken
                 );
 
             String json = WebRequest.SendGet(new Uri(getUrl));
-
             return Unmarshaller<Leaderboard>.Unmarshal(json);
         }
 
@@ -655,40 +600,15 @@ namespace com.strava.api.Client
         /// <returns>The leaderboard filtered by gender and weight class.</returns>
         public Leaderboard GetSegmentLeaderboard(String segmentId, Gender gender, WeightClass weight)
         {
-            String weightClass = String.Empty;
-
-            switch (weight)
-            {
-                case WeightClass.One:
-                    weightClass = "0_54";
-                    break;
-                case WeightClass.Two:
-                    weightClass = "55_64";
-                    break;
-                case WeightClass.Three:
-                    weightClass = "65_74";
-                    break;
-                case WeightClass.Four:
-                    weightClass = "75_84";
-                    break;
-                case WeightClass.Five:
-                    weightClass = "85_94";
-                    break;
-                case WeightClass.Six:
-                    weightClass = "95_plus";
-                    break;
-            }
-
             String getUrl = String.Format("{0}/{1}/leaderboard?gender={2}&weight_class={3}&filter=weight_class&access_token={4}",
                 Endpoints.Leaderboard,
                 segmentId,
                 gender.ToString().Substring(0, 1),
-                weightClass,
+                UrlHelper.WeightClassToString(weight),
                 Authentication.AccessToken
                 );
 
             String json = WebRequest.SendGet(new Uri(getUrl));
-
             return Unmarshaller<Leaderboard>.Unmarshal(json);
         }
 
@@ -728,34 +648,14 @@ namespace com.strava.api.Client
         /// <returns>A time filtered leaderboard.</returns>
         public Leaderboard GetSegmentLeaderboard(String segmentId, TimeFilter filter)
         {
-            String fltr = String.Empty;
-
-            // ‘this_year’, ‘this_month’, ‘this_week’, ‘today’
-            switch (filter)
-            {
-                case TimeFilter.ThisMonth:
-                    fltr = "this_month";
-                    break;
-                case TimeFilter.ThisWeek:
-                    fltr = "this_week";
-                    break;
-                case TimeFilter.ThisYear:
-                    fltr = "this_year";
-                    break;
-                case TimeFilter.Today:
-                    fltr = "today";
-                    break;
-            }
-
             String getUrl = String.Format("{0}/{1}/leaderboard?filter={2}&access_token={3}",
                 Endpoints.Leaderboard,
                 segmentId,
-                fltr,
+                UrlHelper.TimeFilterToString(filter),
                 Authentication.AccessToken
                 );
 
             String json = WebRequest.SendGet(new Uri(getUrl));
-
             return Unmarshaller<Leaderboard>.Unmarshal(json);
         }
 
@@ -768,20 +668,12 @@ namespace com.strava.api.Client
         /// popular ones will be returned.</returns>
         public ExplorerResult ExploreSegments(Coordinate southWest, Coordinate northEast)
         {
-            String bnds = String.Format("{0},{1},{2},{3}",
-                southWest.Latitude.ToString(CultureInfo.InvariantCulture),
-                southWest.Longitude.ToString(CultureInfo.InvariantCulture),
-                northEast.Latitude.ToString(CultureInfo.InvariantCulture),
-                northEast.Longitude.ToString(CultureInfo.InvariantCulture)
-                );
-
             String getUrl = String.Format("{0}/explore?bounds={1}&access_token={2}",
                 Endpoints.Leaderboard,
-                bnds,
+                UrlHelper.BoundariesToString(southWest,northEast),
                 Authentication.AccessToken);
 
             String json = WebRequest.SendGet(new Uri(getUrl));
-
             return Unmarshaller<ExplorerResult>.Unmarshal(json);
         }
 
@@ -796,22 +688,14 @@ namespace com.strava.api.Client
         /// popular ones will be returned.</returns>
         public ExplorerResult ExploreSegments(Coordinate southWest, Coordinate northEast, int minCat, int maxCat)
         {
-            String bnds = String.Format("{0},{1},{2},{3}",
-                southWest.Latitude.ToString(CultureInfo.InvariantCulture),
-                southWest.Longitude.ToString(CultureInfo.InvariantCulture),
-                northEast.Latitude.ToString(CultureInfo.InvariantCulture),
-                northEast.Longitude.ToString(CultureInfo.InvariantCulture)
-                );
-
             String getUrl = String.Format("{0}/explore?bounds={1}&min_cat={2}&max_cat={3}&access_token={4}",
                 Endpoints.Leaderboard,
-                bnds,
+                UrlHelper.BoundariesToString(southWest,northEast),
                 minCat,
                 maxCat,
                 Authentication.AccessToken);
 
             String json = WebRequest.SendGet(new Uri(getUrl));
-
             return Unmarshaller<ExplorerResult>.Unmarshal(json);
         }
 
@@ -828,7 +712,6 @@ namespace com.strava.api.Client
                 Authentication.AccessToken);
 
             String json = WebRequest.SendGet(new Uri(getUrl));
-
             return Unmarshaller<Segment>.Unmarshal(json);
         }
         
