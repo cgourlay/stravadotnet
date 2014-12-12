@@ -45,10 +45,6 @@ namespace com.strava.api.Segments
         /// </summary>
         Walk,
         /// <summary>
-        /// Nordic Ski
-        /// </summary>
-        NordicSki,
-        /// <summary>
         /// Alpine Ski
         /// </summary>
         AlpineSki,
@@ -56,6 +52,22 @@ namespace com.strava.api.Segments
         /// Backcountry Ski
         /// </summary>
         BackcountrySki,
+        /// <summary>
+        /// Canoeing
+        /// </summary>
+        Canoeing,
+        /// <summary>
+        /// Cross Country Skiing
+        /// </summary>
+        CrossCountrySkiing,
+        /// <summary>
+        /// Crossfit
+        /// </summary>
+        Crossfit,
+        /// <summary>
+        /// Elliptical
+        /// </summary>
+        Elliptical,
         /// <summary>
         /// Ice Skate
         /// </summary>
@@ -65,13 +77,53 @@ namespace com.strava.api.Segments
         /// </summary>
         InlineSkate,
         /// <summary>
+        /// Kayaking
+        /// </summary>
+        Kayaking,
+        /// <summary>
         /// Kite Surf
         /// </summary>
         Kitesurf,
         /// <summary>
+        /// Nordic Ski
+        /// </summary>
+        NordicSki,
+        /// <summary>
+        /// Rock Climbing
+        /// </summary>
+        RockClimbing,
+        /// <summary>
         /// Roller Ski
         /// </summary>
         RollerSki,
+        /// <summary>
+        /// Rowing
+        /// </summary>
+        Rowing,
+        /// <summary>
+        /// Snowboard
+        /// </summary>
+        Snowboard,
+        /// <summary>
+        /// Snowshoe
+        /// </summary>
+        Snowshoe,
+        /// <summary>
+        /// Stair Stepper
+        /// </summary>
+        StairStepper,
+        /// <summary>
+        /// Stand Up Paddling
+        /// </summary>
+        StandUpPaddling,
+        /// <summary>
+        /// Surfing
+        /// </summary>
+        Surfing,
+        /// <summary>
+        /// Weight Training
+        /// </summary>
+        WeightTraining,
         /// <summary>
         /// Windsurf
         /// </summary>
@@ -81,12 +133,8 @@ namespace com.strava.api.Segments
         /// </summary>
         Workout,
         /// <summary>
-        /// Snowboard
+        /// Yoga
         /// </summary>
-        Snowboard,
-        /// <summary>
-        /// Snowshoe
-        /// </summary>
-        Snowshoe
+        Yoga
     }
 }
