@@ -53,6 +53,7 @@
     <Compile Include="Activities\ActivitySummary.cs" />
     <Compile Include="Activities\ActivityType.cs" />
     <Compile Include="Activities\ActivityZone.cs" />
+    <Compile Include="Clients\IStravaClient.cs" />
     <Compile Include="Clients\StatsClient.cs" />
     <Compile Include="Filters\AgeFilter.cs" />
     <Compile Include="Activities\Comment.cs" />

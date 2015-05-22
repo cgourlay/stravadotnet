@@ -56,7 +56,7 @@ namespace com.strava.api.Clients
     /// </item>
     /// </list>
     /// </summary>
-    public class StravaClient
+    public class StravaClient : IStravaClient
     {
         private readonly IAuthentication _authenticator;
 
