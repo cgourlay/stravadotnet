@@ -95,7 +95,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         #endregion
@@ -321,7 +321,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         /// <summary>
@@ -375,7 +375,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
         
         /// <summary>
@@ -435,7 +435,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         /// <summary>
@@ -486,7 +486,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         #endregion

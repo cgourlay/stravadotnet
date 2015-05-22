@@ -53,7 +53,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Club, clubId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Club>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Club>(json);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}?access_token={1}", Endpoints.Clubs, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<ClubSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<ClubSummary>>(json);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/members?access_token={2}", Endpoints.Club, clubId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/activities?access_token={2}", Endpoints.Club, clubId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<ActivitySummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<ActivitySummary>>(json);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace com.strava.api.Clients
                 Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<ActivitySummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<ActivitySummary>>(json);
         }
 
         #endregion
@@ -128,7 +128,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Club, clubId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<Club>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Club>(json);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}?access_token={1}", Endpoints.Clubs, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<ClubSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<ClubSummary>>(json);
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/members?access_token={2}", Endpoints.Club, clubId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/activities?access_token={2}", Endpoints.Club, clubId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<ActivitySummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<ActivitySummary>>(json);
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace com.strava.api.Clients
                 Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<ActivitySummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<ActivitySummary>>(json);
         }
 
         #endregion

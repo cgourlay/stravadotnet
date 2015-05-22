@@ -129,7 +129,7 @@ namespace com.strava.api.Authentication
             String url = String.Format("https://www.strava.com/oauth/token?client_id={0}&client_secret={1}&code={2}", ClientId, ClientSecret, code);
             String json = await Http.WebRequest.SendPostAsync(new Uri(url));
 
-            AccessToken auth = Unmarshaller<AccessToken>.Unmarshal(json);
+            AccessToken auth = Unmarshaller.Unmarshal<AccessToken>(json);
 
             if (!String.IsNullOrEmpty(auth.Token))
             {

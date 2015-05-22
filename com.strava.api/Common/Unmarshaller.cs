@@ -25,15 +25,15 @@ namespace com.strava.api.Common
     /// <summary>
     /// COnverts a Json string to an object.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public class Unmarshaller<T>
+    internal static class Unmarshaller
     {
         /// <summary>
         /// Converts a Json string to an object.
         /// </summary>
         /// <param name="json">The json string.</param>
         /// <returns>The converted object of type T.</returns>
-        public static T Unmarshal(String json)
+        /// /// <typeparam name="T"></typeparam>
+        public static T Unmarshal<T>(String json)
         {
             if (String.IsNullOrEmpty(json))
             {

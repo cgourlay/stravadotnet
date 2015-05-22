@@ -49,7 +49,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("https://www.strava.com/api/v3/athletes/{0}/stats?access_token={1}", id, Authentication.AccessToken);
             String json = await Http.WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Stats>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Stats>(json);
         }
 
         /// <summary>

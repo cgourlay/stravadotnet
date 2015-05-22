@@ -94,7 +94,7 @@ namespace com.strava.api.Clients
 
             String json = await result.Content.ReadAsStringAsync();
 
-            return Unmarshaller<UploadStatus>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<UploadStatus>(json);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace com.strava.api.Clients
             String checkUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Uploads, uploadId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(checkUrl));
 
-            return Unmarshaller<UploadStatus>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<UploadStatus>(json);
         }
 
         #endregion
@@ -124,7 +124,7 @@ namespace com.strava.api.Clients
             String checkUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Uploads, uploadId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(checkUrl));
 
-            return Unmarshaller<UploadStatus>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<UploadStatus>(json);
         }
 
         #endregion
