@@ -21,7 +21,8 @@ namespace com.strava.api.Model.Segments
         public float AverageGrade { get; set; }
 
         [JsonProperty("climb_category")]
-        public int ClimbCategory { get; set; } // TODO: CG to complete... This is a number in the range 0 to 5 where 0 is lower and 5 is harder - do we really want to use an int?
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ClimbType ClimbType { get; set; } 
 
         [JsonProperty("city")]
         public string City { get; set; }

@@ -58,6 +58,7 @@
     <Compile Include="Filters\AgeFilter.cs" />
     <Compile Include="Activities\Comment.cs" />
     <Compile Include="Activities\DistributionBucket.cs" />
+    <Compile Include="Model\Segments\ClimbType.cs" />
     <Compile Include="Model\Activities\ActivityType.cs" />
     <Compile Include="Model\Converters\GeoCoordinateConverter.cs" />
     <Compile Include="Model\Converters\JsonArrayConverter.cs" />
@@ -120,7 +121,6 @@
     <Compile Include="Http\AsyncResponseReceivedEventArgs.cs" />
     <Compile Include="Http\ResponseReceivedEventArgs.cs" />
     <Compile Include="Http\WebRequest.cs" />
-    <Compile Include="Segments\ClimbCategory.cs" />
     <Compile Include="Segments\ExplorerResult.cs" />
     <Compile Include="Segments\ExplorerSegment.cs" />
     <Compile Include="Statistics\AllRideTotals.cs" />
