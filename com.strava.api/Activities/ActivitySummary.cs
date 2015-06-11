@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using com.strava.api.Athletes;
+using com.strava.api.Model.Activities;
 using Newtonsoft.Json;
 
 namespace com.strava.api.Activities

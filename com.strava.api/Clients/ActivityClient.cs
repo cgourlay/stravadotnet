@@ -25,6 +25,7 @@ using com.strava.api.Api;
 using com.strava.api.Athletes;
 using com.strava.api.Authentication;
 using com.strava.api.Common;
+using com.strava.api.Model.Activities;
 using com.strava.api.Utilities;
 using System.Globalization;
 

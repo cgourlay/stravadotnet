@@ -2,7 +2,9 @@
 
 using Newtonsoft.Json;
 
+using com.strava.api.Model.Activities;
 using com.strava.api.Model.Converters;
+using Newtonsoft.Json.Converters;
 
 namespace com.strava.api.Model.Segments
 {
@@ -12,7 +14,8 @@ namespace com.strava.api.Model.Segments
         public int Id { get; set; }
 
         [JsonProperty("activity_type")]
-        public string ActivityType { get; set; } // TODO: CG to complete... This can be ‘Ride’ or ‘Run’ - do we really want to use a string?
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ActivityType ActivityType { get; set; }
 
         [JsonProperty("average_grade")]
         public float AverageGrade { get; set; }

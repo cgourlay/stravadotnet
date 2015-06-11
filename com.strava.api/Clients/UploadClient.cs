@@ -26,6 +26,7 @@ using com.strava.api.Api;
 using com.strava.api.Authentication;
 using com.strava.api.Common;
 using com.strava.api.Http;
+using com.strava.api.Model.Activities;
 using com.strava.api.Upload;
 
 namespace com.strava.api.Clients
