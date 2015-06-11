@@ -1,5 +1,8 @@
 ﻿using System.Device.Location;
+
 using Newtonsoft.Json;
+
+using com.strava.api.Model.Converters;
 
 namespace com.strava.api.Model.Segments
 {
@@ -27,7 +30,8 @@ namespace com.strava.api.Model.Segments
         public float Distance { get; set; }
 
         [JsonProperty("end_latlng")]
-        public GeoCoordinate EndCoordinates { get; set; }
+        [JsonConverter(typeof(GeoCoordinateConverter))]
+        public GeoCoordinate EndCoordinates { get; set; } 
 
         [JsonProperty("private")]
         public bool IsPrivate { get; set; }
@@ -51,6 +55,7 @@ namespace com.strava.api.Model.Segments
         public bool IsStarred { get; set; }
 
         [JsonProperty("start_latlng")]
+        [JsonConverter(typeof(GeoCoordinateConverter))]
         public GeoCoordinate StartCoordinates { get; set; }
 
         [JsonProperty("state")]

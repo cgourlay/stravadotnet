@@ -58,6 +58,8 @@
     <Compile Include="Filters\AgeFilter.cs" />
     <Compile Include="Activities\Comment.cs" />
     <Compile Include="Activities\DistributionBucket.cs" />
+    <Compile Include="Model\Converters\GeoCoordinateConverter.cs" />
+    <Compile Include="Model\Converters\JsonCreationConverter.cs" />
     <Compile Include="Model\Segments\BaseSegment.cs" />
     <Compile Include="Model\Segments\Segment.cs" />
     <Compile Include="Segments\Leaderboard.cs" />
