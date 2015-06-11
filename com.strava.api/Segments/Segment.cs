@@ -19,6 +19,7 @@
 
 using System;
 using com.strava.api.Activities;
+using com.strava.api.Model.Segments;
 using Newtonsoft.Json;
 
 namespace com.strava.api.Segments
@@ -26,7 +27,7 @@ namespace com.strava.api.Segments
     /// <summary>
     /// Represents a Strava segment.
     /// </summary>
-    public class Segment : SegmentSummary
+    public class Segment : BaseSegment
     {
         /// <summary>
         /// The date when the segment was created.
