@@ -1015,20 +1015,8 @@ namespace com.strava.api.Clients
         }
 
        
-        
-
-
-
-
-        
-        
         #endregion
 
-
-        public ISegment GetSegment(string segmentId)
-        {
-            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken)));
-            return Unmarshaller<Segment>.Unmarshal(json);
-        }
+        
     }
 }
