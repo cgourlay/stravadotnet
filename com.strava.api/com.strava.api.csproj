@@ -64,6 +64,7 @@
     <Compile Include="Model\Converters\JsonArrayConverter.cs" />
     <Compile Include="Model\Segments\BaseSegment.cs" />
     <Compile Include="Model\Segments\IBaseSegment.cs" />
+    <Compile Include="Model\Segments\ISegment.cs" />
     <Compile Include="Model\Segments\Segment.cs" />
     <Compile Include="Segments\Leaderboard.cs" />
     <Compile Include="Segments\LeaderboardEntry.cs" />
@@ -137,7 +138,6 @@
     <Compile Include="Upload\DataFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Segments\SegmentEffort.cs" />
-    <Compile Include="Segments\Segment.cs" />
     <Compile Include="Streams\ActivityStream.cs" />
     <Compile Include="Streams\SegmentStream.cs" />
     <Compile Include="Streams\SegmentStreamType.cs" />

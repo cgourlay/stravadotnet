@@ -29,7 +29,7 @@ using com.strava.api.Filters;
 using com.strava.api.Http;
 using com.strava.api.Model.Segments;
 using com.strava.api.Segments;
-using Segment = com.strava.api.Segments.Segment;
+
 
 namespace com.strava.api.Clients
 {
@@ -1014,23 +1014,21 @@ namespace com.strava.api.Clients
             return Unmarshaller<ExplorerResult>.Unmarshal(json);
         }
 
-        /// <summary>
-        /// Gets a detailed representation of the specified segment id.
-        /// </summary>
-        /// <param name="segmentId">The Strava segment id.</param>
-        /// <returns>A detailed representation of the segment.</returns>
-        public Segment GetSegment(String segmentId)
-        {
-            String getUrl = String.Format("{0}/{1}?access_token={2}",
-                Endpoints.Leaderboard,
-                segmentId,
-                Authentication.AccessToken);
+       
+        
 
-            String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<Segment>.Unmarshal(json);
-        }
+
+
+        
         
         #endregion
+
+
+        public ISegment GetSegment(string segmentId)
+        {
+            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken)));
+            return Unmarshaller<Segment>.Unmarshal(json);
+        }
     }
 }

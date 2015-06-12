@@ -20,6 +20,7 @@
 using System;
 using com.strava.api.Activities;
 using com.strava.api.Athletes;
+using com.strava.api.Model.Segments;
 using Newtonsoft.Json;
 
 namespace com.strava.api.Segments
