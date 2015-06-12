@@ -1,14 +1,14 @@
 ﻿using System.Device.Location;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 using com.strava.api.Model.Activities;
 using com.strava.api.Model.Converters;
-using Newtonsoft.Json.Converters;
 
 namespace com.strava.api.Model.Segments
 {
-    public class BaseSegment
+    public class BaseSegment : IBaseSegment
     {
         [JsonProperty("id")]
         public int Id { get; set; }
@@ -28,7 +28,7 @@ namespace com.strava.api.Model.Segments
         public string City { get; set; }
 
         [JsonProperty("country")]
-        public string Country { get; set; } // TODO: CG to complete... Do we really want to use a string here?
+        public string Country { get; set; }
 
         [JsonProperty("distance")]
         public float Distance { get; set; }
@@ -39,6 +39,9 @@ namespace com.strava.api.Model.Segments
 
         [JsonProperty("private")]
         public bool IsPrivate { get; set; }
+
+        [JsonProperty("starred")]
+        public bool IsStarred { get; set; }
 
         [JsonProperty("elevation_high")]
         public float MaximumElevation { get; set; }
@@ -54,9 +57,6 @@ namespace com.strava.api.Model.Segments
 
         [JsonProperty("resource_state")]
         public int ResourceState { get; set; }
-
-        [JsonProperty("starred")]
-        public bool IsStarred { get; set; }
 
         [JsonProperty("start_latlng")]
         [JsonConverter(typeof(GeoCoordinateConverter))]
