@@ -1,6 +1,8 @@
 Strava.NET
 ============
 
+[![Join the chat at https://gitter.im/cgourlay/stravadotnet](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cgourlay/stravadotnet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 NOTE: Visit the new homepage at www.sascha-simon.com for more information and updates on the Strava Client using the framework.
 
 Current version: 3.0.4 (12/27/2014)
