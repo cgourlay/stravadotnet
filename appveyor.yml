@@ -4,6 +4,10 @@ configuration: Release
 before_build:
   - nuget restore
   
+# Build script
+build_script:
+  - cmd: powershell -NoProfile -ExecutionPolicy unrestricted -Command .\build.ps1
+
 # package WEb Appli
 build: 
   verbosity: minimal
