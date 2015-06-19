@@ -19,20 +19,19 @@ var releaseNotesVersion = ParseReleaseNotes("./ReleaseNotes.md").Version.ToStrin
 var assemblyVersion = BuildSystem.IsLocalBuild ? releaseNotesVersion : string.Format("{0}.{1}.{2}", releaseNotesVersion, AppVeyor.Environment.Build.Number, DateTime.ParseExact(AppVeyor.Environment.Repository.Commit.Timestamp, "M/d/yyyy h:mm:ss tt", new System.Globalization.CultureInfo("en-US")).Ticks.ToString());
 
 
+// ==============
+// SETUP/TEARDOWN
+// ==============
+
+Setup(() => {
+				Information("Building Strava.NET... Version {0} ({1})", assemblyVersion, configuration);
+			});
 
 
 
 
 
 
-///////////////////////////////////////////////////////////////////////////////
-// SETUP / TEARDOWN
-///////////////////////////////////////////////////////////////////////////////
-
-Setup(() =>
-{
-    Information("Building version {0} of Strava.NET", assemblyVersion);
-});
 
 
 // =====
