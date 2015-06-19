@@ -28,12 +28,6 @@ Setup(() => {
 			});
 
 
-
-
-
-
-
-
 // =====
 // TASKS
 // =====
@@ -42,6 +36,12 @@ Task("Clean").Does(() => {
 							CleanDirectories(new DirectoryPath[] { objDirectory, binDirectory });
 						 });
 
+Task("Build").Does(() => {
+							MSBuild("./com.strava.api.sln", settings => settings.SetConfiguration(configuration)
+																				.WithProperty("TreatWarningsAsErrors", "false")
+																				.UseToolVersion(MSBuildToolVersion.NET45)
+																				.SetNodeReuse(false));			
+						 });
 
 
 
@@ -49,16 +49,6 @@ Task("Clean").Does(() => {
 
 
 
-
-Task("Build")
-    .Does(() =>
-{
-    MSBuild("./com.strava.api.sln", settings =>
-        settings.SetConfiguration(configuration)
-            .WithProperty("TreatWarningsAsErrors", "false")
-            .UseToolVersion(MSBuildToolVersion.NET45)
-            .SetNodeReuse(false));
-});
 
 
 //////////////////////////////////////////////////////////////////////
