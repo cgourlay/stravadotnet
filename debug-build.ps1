@@ -20,6 +20,6 @@ if (!(Test-Path $CAKE_EXE)) {
 # Start Cake
 
 Invoke-Expression "$CAKE_EXE `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" "
-#Write-Host -NoNewLine 'Press any key to continue...';
-#$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+Write-Host -NoNewLine 'Press any key to continue...';
+$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
 exit $LASTEXITCODE
