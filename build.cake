@@ -1,24 +1,9 @@
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////
+// =========
 // ARGUMENTS
-//////////////////////////////////////////////////////////////////////
+// =========
 
 var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Release");
-
-
-
-
-
-
+var configuration = Argument("configuration", "Debug");
 
 // ===========
 // PREPARATION
@@ -30,7 +15,7 @@ var binDirectory = Directory(string.Format(@"./com.strava.api/bin/{0}", configur
 
 // Get assembly version.
 var version = ParseReleaseNotes("./ReleaseNotes.md").Version.ToString();
-var assemblyVersion = BuildSystem.IsLocalBuild ? version : string.Format("{0}.{1}.{2}", version, AppVeyor.Environment.Build.Number, "0");
+var assemblyVersion = BuildSystem.IsLocalBuild ? version : string.Format("{0}.{1}.{2}", version, AppVeyor.Environment.Build.Number, DateTime.ParseExact(AppVeyor.Environment.Repository.Commit.Timestamp, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).Ticks.ToString());
 
 
 
