@@ -30,6 +30,7 @@ var assemblyVersion = BuildSystem.IsLocalBuild ? version : string.Format("{0}.{1
 
 Setup(() =>
 {
+    Information("The commit timestamp is: {0}", AppVeyor.Environment.Repository.Commit.Timestamp);
     Information("Building version {0} of Strava.NET", assemblyVersion);
 });
 
