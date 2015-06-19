@@ -22,6 +22,7 @@ var assemblyVersion = BuildSystem.IsLocalBuild ? releaseNotesVersion : string.Fo
 var productName = "Strava.NET";
 var contributers = new string[] { "Colin Gourlay" };
 
+
 // ==============
 // SETUP/TEARDOWN
 // ==============
@@ -58,24 +59,17 @@ Task("Build").IsDependentOn("PatchAssemblyInfo")
 						 });
 
 
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////
+// ============
 // TASK TARGETS
-//////////////////////////////////////////////////////////////////////
+// ============
 
 Task("Default")
 	.IsDependentOn("Clean")
     .IsDependentOn("Build");
 
-//////////////////////////////////////////////////////////////////////
+
+// =========
 // EXECUTION
-//////////////////////////////////////////////////////////////////////
+// =========
 
 RunTarget(target);
