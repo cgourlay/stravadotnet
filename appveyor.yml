@@ -6,7 +6,7 @@ before_build:
   
 # Build script
 build_script:
-  - cmd: powershell -NoProfile -ExecutionPolicy unrestricted -Command .\build.ps1
+  - cmd: powershell -NoProfile -ExecutionPolicy unrestricted -Command .\debug-build.ps1
 
 # package WEb Appli
 build: 
