@@ -41,8 +41,8 @@ Task("Clean").Does(() => {
 Task("PatchAssemblyInfo").Does(() => {
 										CreateAssemblyInfo("./com.strava.api/Properties/AssemblyInfo.cs", new AssemblyInfoSettings  {
 																																		Product = productName,
-																																		Version = assemblyVersion,
-																																		FileVersion = assemblyVersion,
+																																		Version = releaseNotesVersion,
+																																		FileVersion = releaseNotesVersion,
 																																		InformationalVersion = assemblyVersion,
 																																		Copyright = "Copyright (c) Colin Gourlay and contributors"
 																																	});
