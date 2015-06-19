@@ -20,6 +20,7 @@ var assemblyVersion = BuildSystem.IsLocalBuild ? releaseNotesVersion : string.Fo
 
 // Miscellaneous
 var productName = "Strava.NET";
+var contributers = new string[] { "Colin Gourlay" };
 
 // ==============
 // SETUP/TEARDOWN
@@ -44,7 +45,7 @@ Task("PatchAssemblyInfo").Does(() => {
 																																		Version = releaseNotesVersion,
 																																		FileVersion = releaseNotesVersion,
 																																		InformationalVersion = assemblyVersion,
-																																		Copyright = "Copyright (c) Colin Gourlay and contributors"
+																																		Copyright = string.Format("Copyright (c) 2015 {0}", string.Join(" ", contributers))
 																																	});
 									 });
 

@@ -9,4 +9,4 @@ using System.Reflection;
 [assembly: AssemblyVersion("0.1")]
 [assembly: AssemblyFileVersion("0.1")]
 [assembly: AssemblyInformationalVersion("0.1")]
-[assembly: AssemblyCopyright("Copyright (c) Colin Gourlay and contributors")]
+[assembly: AssemblyCopyright("Copyright (c) 2015 Colin Gourlay")]
