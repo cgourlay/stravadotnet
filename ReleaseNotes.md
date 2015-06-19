@@ -1,2 +1,3 @@
-### New in 0.0.0.0 (Released YYYY-MMM-DD)
+### New in 0.1 (Released YYYY-MMM-DD)
+
 * First release.

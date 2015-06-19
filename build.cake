@@ -14,27 +14,25 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-//////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+// ===========
 // PREPARATION
-//////////////////////////////////////////////////////////////////////
+// ===========
 
-// Get whether or not this is a local build.
-var local = BuildSystem.IsLocalBuild;
-var isRunningOnAppVeyor = AppVeyor.IsRunningOnAppVeyor;
-var isPullRequest = AppVeyor.Environment.PullRequest.IsPullRequest;
+// Get working directories.
+var objDirectory = Directory(string.Format(@"./com.strava.api/obj/{0}", configuration));
+var binDirectory = Directory(string.Format(@"./com.strava.api/bin/{0}", configuration));
 
-// Parse release notes.
-var releaseNotes = ParseReleaseNotes("./ReleaseNotes.md");
-
-// Get version.
-var buildNumber = AppVeyor.Environment.Build.Number;
-var version = releaseNotes.Version.ToString();
-var semVersion = local ? version : (version + string.Concat("-build-", buildNumber));
+// Get assembly version.
+var version = ParseReleaseNotes("./ReleaseNotes.md").Version.ToString();
+var assemblyVersion = BuildSystem.IsLocalBuild ? version : string.Format("{0}.{1}.{2}", version, AppVeyor.Environment.Build.Number, "0");
 
 
-
-var objDirectory = Directory("./com.strava.api/obj/" + configuration);
-var binDirectory = Directory("./com.strava.api/bin/" + configuration);
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
@@ -42,7 +40,7 @@ var binDirectory = Directory("./com.strava.api/bin/" + configuration);
 
 Setup(() =>
 {
-    Information("Building version {0} of Strava.NET", semVersion);
+    Information("Building version {0} of Strava.NET", assemblyVersion);
 });
 
 
@@ -53,6 +51,10 @@ Setup(() =>
 Task("Clean").Does(() => {
 							CleanDirectories(new DirectoryPath[] { objDirectory, binDirectory });
 						 });
+
+
+
+
 
 
 
