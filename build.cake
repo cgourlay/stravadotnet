@@ -18,13 +18,15 @@ var binDirectory = Directory(string.Format(@"./com.strava.api/bin/{0}", configur
 var releaseNotesVersion = ParseReleaseNotes("./ReleaseNotes.md").Version.ToString();
 var assemblyVersion = BuildSystem.IsLocalBuild ? releaseNotesVersion : string.Format("{0}.{1}.{2}", releaseNotesVersion, AppVeyor.Environment.Build.Number, DateTime.ParseExact(AppVeyor.Environment.Repository.Commit.Timestamp, "M/d/yyyy h:mm:ss tt", new System.Globalization.CultureInfo("en-US")).Ticks.ToString());
 
+// Miscellaneous
+var productName = "Strava.NET";
 
 // ==============
 // SETUP/TEARDOWN
 // ==============
 
 Setup(() => {
-				Information("Building Strava.NET... Version {0} ({1})", assemblyVersion, configuration);
+				Information("Building {0}... Version {1} ({2})", productName, assemblyVersion, configuration);
 			});
 
 
@@ -36,12 +38,24 @@ Task("Clean").Does(() => {
 							CleanDirectories(new DirectoryPath[] { objDirectory, binDirectory });
 						 });
 
-Task("Build").Does(() => {
+Task("PatchAssemblyInfo").Does(() => {
+										CreateAssemblyInfo("./com.strava.api/Properties/AssemblyInfo.cs", new AssemblyInfoSettings  {
+																																		Product = productName,
+																																		Version = assemblyVersion,
+																																		FileVersion = assemblyVersion,
+																																		InformationalVersion = assemblyVersion,
+																																		Copyright = "Copyright (c) Colin Gourlay and contributors"
+																																	});
+									 });
+
+Task("Build").IsDependentOn("PatchAssemblyInfo")
+			 .Does(() => {
 							MSBuild("./com.strava.api.sln", settings => settings.SetConfiguration(configuration)
 																				.WithProperty("TreatWarningsAsErrors", "false")
 																				.UseToolVersion(MSBuildToolVersion.NET45)
 																				.SetNodeReuse(false));			
 						 });
+
 
 
 
