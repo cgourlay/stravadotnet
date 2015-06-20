@@ -13,6 +13,7 @@ var configuration = Argument("configuration", "Debug");
 // Get working directories.
 var objDirectory = Directory(string.Format(@"./com.strava.api/obj/{0}", configuration));
 var binDirectory = Directory(string.Format(@"./com.strava.api/bin/{0}", configuration));
+var testDirectory = Directory(string.Format(@"./com.strava.api/Model.Tests/ClassLibrary1/bin/{0}", configuration));
 
 // Get assembly version.
 var releaseNotesVersion = ParseReleaseNotes("./ReleaseNotes.md").Version.ToString();
@@ -40,7 +41,7 @@ Setup(() => {
 // =====
 
 Task("Clean").Does(() => {
-							CleanDirectories(new DirectoryPath[] { objDirectory, binDirectory });
+							CleanDirectories(new DirectoryPath[] { objDirectory, binDirectory, testDirectory });
 						 });
 
 Task("PatchAssemblyInfo").Does(() => {
