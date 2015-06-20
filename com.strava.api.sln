@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{11D33253
 		ReleaseNotes.md = ReleaseNotes.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.Tests", "com.strava.api\Model.Tests\ClassLibrary1\Model.Tests.csproj", "{B936D450-38B1-4BE3-8544-F4556528CB91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B936D450-38B1-4BE3-8544-F4556528CB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B936D450-38B1-4BE3-8544-F4556528CB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B936D450-38B1-4BE3-8544-F4556528CB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B936D450-38B1-4BE3-8544-F4556528CB91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
