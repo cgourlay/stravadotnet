@@ -1,6 +1,7 @@
 ﻿using com.strava.api.Activities;
 using com.strava.api.Model.Segments;
 using Moq;
+using Newtonsoft.Json;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,22 @@ namespace Model.Tests.Segments
         public class IsHazardous : SegmentTests
         {
             [Test]
+            public void CanDeserialiseJsonAndSetIsHazardousToFalse()
+            {
+                string json = "{ \"hazardous\": false }";
+                var segment = JsonConvert.DeserializeObject<Segment>(json);
+                Assert.That(segment.IsHazardous, Is.False);
+            }
+
+            [Test]
+            public void CanDeserialiseJsonAndSetIsHazardousToTrue()
+            {
+                string json = "{ \"hazardous\": true }";
+                var segment = JsonConvert.DeserializeObject<Segment>(json);
+                Assert.That(segment.IsHazardous, Is.True);
+            }
+
+            [Test]
             public void CanGetIsHazardous()
             {
                 var segment = new Segment();
@@ -49,6 +66,22 @@ namespace Model.Tests.Segments
 
                 segment.IsHazardous = true;
                 Assert.That(segment.IsHazardous, Is.True);
+            }
+
+            [Test]
+            public void CanSerialiseToJsonWhenIsHazardousIsFalse()
+            {
+                var segment = new Segment() { IsHazardous = false };
+                var output = JsonConvert.SerializeObject(segment);
+                Assert.That(output, Text.Contains("\"hazardous\":false"));
+            }
+
+            [Test]
+            public void CanSerialiseToJsonWhenIsHazardousIsTrue()
+            {
+                var segment = new Segment() { IsHazardous = true };
+                var output = JsonConvert.SerializeObject(segment);
+                Assert.That(output, Text.Contains("\"hazardous\":true"));
             }
         }
 

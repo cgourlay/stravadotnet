@@ -1,9 +1,9 @@
 ﻿using System;
 
-using com.strava.api.Activities;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+
+using com.strava.api.Activities;
 
 namespace com.strava.api.Model.Segments
 {
