@@ -17,7 +17,7 @@ namespace com.strava.api.Model.Segments
         public bool IsHazardous { get; set; }
 
         [JsonProperty("map")]
-        public Map Map { get; set; }
+        public IMap Map { get; set; }
 
         [JsonProperty("athlete_count")]
         public int NumberOfAthletes { get; set; }

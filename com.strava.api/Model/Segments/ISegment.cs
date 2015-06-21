@@ -7,7 +7,7 @@ namespace com.strava.api.Model.Segments
     {
         DateTime Created { get; set; }
         bool IsHazardous { get; set; }
-        Map Map { get; set; }
+        IMap Map { get; set; }
         int NumberOfAthletes { get; set; }
         int NumberOfEfforts { get; set; }
         int NumberOfStars { get; set; }

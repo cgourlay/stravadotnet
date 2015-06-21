@@ -22,10 +22,18 @@ using Newtonsoft.Json;
 
 namespace com.strava.api.Activities
 {
+    public interface IMap
+    {
+        string Id { get; set;}
+        string Polyline { get; set; }
+        string SummaryPolyline { get; set; }
+        int ResourceState { get; set; }
+    }
+
     /// <summary>
     /// This class contains information about the route of an activity.
     /// </summary>
-    public class Map
+    public class Map : IMap
     {
         /// <summary>
         /// The map id.
