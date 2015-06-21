@@ -90,5 +90,43 @@ namespace Model.Tests.Segments
                 Assert.That(segment.NumberOfAthletes, Is.EqualTo(100));
             }
         }
+
+        public class NumberOfEfforts : SegmentTests
+        {
+            [Test]
+            public void CanGetNumberOfEfforts()
+            {
+                var segment = new Segment();
+                Assert.That(segment.NumberOfEfforts, Is.EqualTo(0));
+            }
+
+            [Test]
+            public void CanSetNumberOfEfforts()
+            {
+                var segment = new Segment();
+
+                segment.NumberOfEfforts = 100;
+                Assert.That(segment.NumberOfEfforts, Is.EqualTo(100));
+            }
+        }
+
+        public class NumberOfStars : SegmentTests
+        {
+            [Test]
+            public void CanGetNumberOfStars()
+            {
+                var segment = new Segment();
+                Assert.That(segment.NumberOfStars, Is.EqualTo(0));
+            }
+
+            [Test]
+            public void CanSetNumberOfStars()
+            {
+                var segment = new Segment();
+
+                segment.NumberOfStars = 100;
+                Assert.That(segment.NumberOfStars, Is.EqualTo(100));
+            }
+        }
     }
 }
