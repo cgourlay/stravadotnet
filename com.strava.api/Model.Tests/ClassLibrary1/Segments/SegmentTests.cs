@@ -16,14 +16,14 @@ namespace Model.Tests.Segments
         public class Created : SegmentTests
         {
             [Test]
-            public void CanGetCreationDateTime()
+            public void CanGetDateTimeCreated()
             {
                 var segment = new Segment();
                 Assert.That(segment.Created, Is.EqualTo(DateTime.MinValue));
             }
 
             [Test]
-            public void CanSetCreationDate()
+            public void CanSetDateTimeCreated()
             {
                 var someDateTime = DateTime.Now;
                 var segment = new Segment();
@@ -126,6 +126,45 @@ namespace Model.Tests.Segments
 
                 segment.NumberOfStars = 100;
                 Assert.That(segment.NumberOfStars, Is.EqualTo(100));
+            }
+        }
+
+        public class TotalElevationGain : SegmentTests
+        {
+            [Test]
+            public void CanGetTotalElevationGain()
+            {
+                var segment = new Segment();
+                Assert.That(segment.TotalElevationGain, Is.EqualTo(0f));
+            }
+
+            [Test]
+            public void CanSetTotalElevationGain()
+            {
+                var segment = new Segment();
+
+                segment.TotalElevationGain = 94.58f;
+                Assert.That(segment.TotalElevationGain, Is.EqualTo(94.58f));
+            }
+        }
+
+        public class Updated : SegmentTests
+        {
+            [Test]
+            public void CanGetDateTimeUpdated()
+            {
+                var segment = new Segment();
+                Assert.That(segment.Updated, Is.EqualTo(DateTime.MinValue));
+            }
+
+            [Test]
+            public void CanSetDateTimeUpdated()
+            {
+                var someDateTime = DateTime.Now;
+                var segment = new Segment();
+
+                segment.Updated = someDateTime;
+                Assert.That(segment.Updated, Is.EqualTo(someDateTime));
             }
         }
     }
