@@ -18,10 +18,8 @@ namespace Model.Tests.Segments
             [Test]
             public void CanGetCreationDateTime()
             {
-                var someDateTime = DateTime.Now;
-                var segment = new Segment() { Created = someDateTime };
-
-                Assert.That(segment.Created, Is.EqualTo(someDateTime));
+                var segment = new Segment();
+                Assert.That(segment.Created, Is.EqualTo(DateTime.MinValue));
             }
 
             [Test]
@@ -30,7 +28,6 @@ namespace Model.Tests.Segments
                 var someDateTime = DateTime.Now;
                 var segment = new Segment();
 
-                Assert.That(segment.Created, Is.EqualTo(DateTime.MinValue));
                 segment.Created = someDateTime;
                 Assert.That(segment.Created, Is.EqualTo(someDateTime));
             }
@@ -50,7 +47,6 @@ namespace Model.Tests.Segments
             {
                 var segment = new Segment();
 
-                Assert.That(segment.IsHazardous, Is.False);
                 segment.IsHazardous = true;
                 Assert.That(segment.IsHazardous, Is.True);
             }
@@ -61,9 +57,8 @@ namespace Model.Tests.Segments
             [Test]
             public void CanGetMap()
             {
-                var mock = new Mock<IMap>().Object;
-                var segment = new Segment() { Map = mock };
-                Assert.That(segment.Map, Is.EqualTo(mock));
+                var segment = new Segment();
+                Assert.That(segment.Map, Is.Null);
             }
 
             [Test]
@@ -72,9 +67,27 @@ namespace Model.Tests.Segments
                 var segment = new Segment();
                 var mock = new Mock<IMap>().Object;
 
-                Assert.That(segment.Map, Is.Null);
                 segment.Map = mock; 
                 Assert.That(segment.Map, Is.EqualTo(mock));
+            }
+        }
+
+        public class NumberOfAthletes : SegmentTests
+        {
+            [Test]
+            public void CanGetNumberOfAthletes()
+            {
+                var segment = new Segment();
+                Assert.That(segment.NumberOfAthletes, Is.EqualTo(0));
+            }
+
+            [Test]
+            public void CanSetNumberOfAthletes()
+            {
+                var segment = new Segment();
+
+                segment.NumberOfAthletes = 100;
+                Assert.That(segment.NumberOfAthletes, Is.EqualTo(100));
             }
         }
     }
