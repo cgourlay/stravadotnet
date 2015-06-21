@@ -33,5 +33,25 @@ namespace Model.Tests.Segments
                 Assert.That(segment.Created, Is.EqualTo(someDateTime));
             }
         }
+
+        public class IsHazardous : SegmentTests
+        {
+            [Test]
+            public void CanGetIsHazardous()
+            {
+                var segment = new Segment();
+                Assert.That(segment.IsHazardous, Is.False);
+            }
+
+            [Test]
+            public void CanSetIsHazardous()
+            {
+                var segment = new Segment();
+
+                Assert.That(segment.IsHazardous, Is.False);
+                segment.IsHazardous = true;
+                Assert.That(segment.IsHazardous, Is.True);
+            }
+        }
     }
 }
