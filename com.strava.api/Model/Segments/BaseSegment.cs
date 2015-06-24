@@ -20,12 +20,12 @@ namespace com.strava.api.Model.Segments
         [JsonProperty("average_grade")]
         public float AverageGrade { get; set; }
 
-        [JsonProperty("climb_category")]
-        [JsonConverter(typeof(StringEnumConverter))]
-        public ClimbType ClimbType { get; set; } 
-
         [JsonProperty("city")]
         public string City { get; set; }
+
+        [JsonProperty("climb_category")]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ClimbType ClimbType { get; set; }
 
         [JsonProperty("country")]
         public string Country { get; set; }
@@ -35,13 +35,23 @@ namespace com.strava.api.Model.Segments
 
         [JsonProperty("end_latlng")]
         [JsonConverter(typeof(GeoCoordinateConverter))]
-        public GeoCoordinate EndCoordinates { get; set; } 
+        public GeoCoordinate EndCoordinates { get; set; }
 
         [JsonProperty("private")]
         public bool IsPrivate { get; set; }
 
         [JsonProperty("starred")]
         public bool IsStarred { get; set; }
+
+        [JsonProperty("state")]
+        public string State { get; set; }
+        
+
+        
+
+        
+
+        
 
         [JsonProperty("elevation_high")]
         public float MaximumElevation { get; set; }
@@ -61,8 +71,5 @@ namespace com.strava.api.Model.Segments
         [JsonProperty("start_latlng")]
         [JsonConverter(typeof(GeoCoordinateConverter))]
         public GeoCoordinate StartCoordinates { get; set; }
-
-        [JsonProperty("state")]
-        public string State { get; set; }
     }
 }
