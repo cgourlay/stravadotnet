@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.1.2.0\lib\net40\Nancy.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -56,9 +60,13 @@
     <Compile Include="Activities\ActivitySummary.cs" />
     <Compile Include="Activities\ActivityZone.cs" />
     <Compile Include="Clients\StatsClient.cs" />
+    <Compile Include="Dtos\BaseOperationResponse.cs" />
+    <Compile Include="Dtos\OperationResponse.cs" />
+    <Compile Include="Dtos\OperationStatus.cs" />
     <Compile Include="Filters\AgeFilter.cs" />
     <Compile Include="Activities\Comment.cs" />
     <Compile Include="Activities\DistributionBucket.cs" />
+    <Compile Include="Handlers\ISegmentHandler.cs" />
     <Compile Include="Model\Segments\ClimbType.cs" />
     <Compile Include="Model\Activities\ActivityType.cs" />
     <Compile Include="Model\Converters\GeoCoordinateConverter.cs" />
