@@ -67,6 +67,7 @@
     <Compile Include="Activities\Comment.cs" />
     <Compile Include="Activities\DistributionBucket.cs" />
     <Compile Include="Handlers\ISegmentHandler.cs" />
+    <Compile Include="Handlers\SegmentHandler.cs" />
     <Compile Include="Model\Segments\ClimbType.cs" />
     <Compile Include="Model\Activities\ActivityType.cs" />
     <Compile Include="Model\Converters\GeoCoordinateConverter.cs" />

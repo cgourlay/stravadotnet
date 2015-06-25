@@ -25,12 +25,6 @@ namespace com.strava.api.Modules
             Get["/{id:int}"] = GetSegment;
         }
 
-        public ISegment GetSegment(string segmentId, IAuthentication auth)
-        {
-            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId, auth.AccessToken)));
-            return Unmarshaller<Segment>.Unmarshal(json);
-        }
-
         private dynamic GetSegment(dynamic parameters)
         {
             OperationResponse<ISegment> operationResponse = _segmentHandler.GetById(parameters.Id);
