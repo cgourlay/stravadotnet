@@ -43,16 +43,6 @@ namespace com.strava.api.Model.Segments
         [JsonProperty("starred")]
         public bool IsStarred { get; set; }
 
-        [JsonProperty("state")]
-        public string State { get; set; }
-        
-
-        
-
-        
-
-        
-
         [JsonProperty("elevation_high")]
         public float MaximumElevation { get; set; }
 
@@ -71,5 +61,8 @@ namespace com.strava.api.Model.Segments
         [JsonProperty("start_latlng")]
         [JsonConverter(typeof(GeoCoordinateConverter))]
         public GeoCoordinate StartCoordinates { get; set; }
+
+        [JsonProperty("state")]
+        public string State { get; set; }
     }
 }

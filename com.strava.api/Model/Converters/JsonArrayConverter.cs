@@ -7,7 +7,10 @@ namespace com.strava.api.Model.Converters
 {
     public abstract class JsonArrayConverter<T> : JsonConverter
     {
-        public override bool CanConvert(Type @type) { return typeof(T).IsAssignableFrom(@type); }
+        public override bool CanConvert(Type @type)
+        {
+            return typeof(T).IsAssignableFrom(@type);
+        }
 
         protected abstract T Create(Type @type, JArray json);
 
@@ -18,7 +21,7 @@ namespace com.strava.api.Model.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            // TODO: CG to complete...
+            throw new NotImplementedException("TODO: Refer to issue #29");
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+
 using com.strava.api.Activities;
 
 namespace com.strava.api.Model.Segments

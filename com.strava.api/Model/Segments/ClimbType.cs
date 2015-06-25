@@ -7,6 +7,6 @@
         CategoryTwo = 2,
         CategoryThree = 3,
         CategoryFour = 4,
-        CategoryHc = 5
+        CategoryHillClimb = 5
     }
 }
