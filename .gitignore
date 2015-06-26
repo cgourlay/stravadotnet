@@ -117,6 +117,10 @@ ClientBin/
 *.[Pp]ublish.xml
 *.pfx
 *.publishsettings
+/NDependOut
+/CodeCoverage.xml
+/com.strava.api.ndproj
+/com.strava.api.sln.GhostDoc.xml
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -154,3 +158,6 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+
+
+

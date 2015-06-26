@@ -103,55 +103,29 @@ namespace Modules.Tests
             [Test]
             public void ReturnsModelWhenSegmentFound()
             {
-                //var handlerMock = new Mock<ISegmentHandler>();
-                //var responseMock = new Mock<OperationResponse<ISegment>>();
+                var handlerMock = new Mock<ISegmentHandler>();
+                var responseMock = new Mock<OperationResponse<ISegment>>();
 
-                //responseMock.SetupProperty(s => s.OperationSucceeded, true);
-                //responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
-
-                //ISegment data = Mock.Of<ISegment>(ctx => ctx.Id = &&
-                //                                         ctx.ActivityType = &&
-                //                                         ctx.AverageGrade = &&
-                //                                         ctx.ClimbType = &&
-                //                                         ctx.City = &&
-                //                                         ctx.Country = &&
-                //                                         ctx.Distance = &&
-                //                                         ctx.EndCoordinates = &&
-                //                                         ctx.IsPrivate = &&
-                //                                         ctx.MaximumElevation = &&
-                //                                         ctx.MaximumGrade = &&
-                //                                         ctx.MinimumElevation = &&
-                //                                         ctx.Name = &&
-                //                                         ctx.ResourceState = &&
-                //                                         ctx.IsStarred = &&
-                //                                         ctx.StartCoordinates = &&
-                //                                         ctx.State = &&
-                //                                         ctx.Created = &&
-                //                                         ctx.IsHazardous = &&
-                //                                         ctx.Map = &&
-                //                                         ctx.NumberOfAthletes = &&
-                //                                         ctx.NumberOfEfforts = &&
-                //                                         ctx.NumberOfStars = &&
-                //                                         ctx.TotalElevationGain = &&
-                //                                         ctx.Updated = &&);
-
-                //responseMock.SetupProperty(s => s.Data, data);
-                //handlerMock.Setup(m => m.GetById(229781)).Returns(responseMock.Object);
-
-                //var browser = new Browser(with =>
-                //{
-                //    with.Module<SegmentModule>();
-                //    with.Dependency<ISegmentHandler>(handlerMock.Object);
-                //});
-
-                //var response = browser.Get("/Segments/229781", with =>
-                //{
-                //    with.HttpRequest();
-                //    with.Header("Accept", "application/json");
-                //});
-
-                //Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
+                responseMock.SetupProperty(s => s.OperationSucceeded, true);
+                responseMock.SetupProperty(s => s.Data.Id, 229781);
+                responseMock.SetupProperty(s => s.Data.Name, "Hawk Hill");
+                responseMock.Setup(s => s.DataAsJson()).Returns("{ \"name\": \"Hawk Hill\" }");
+                handlerMock.Setup(m => m.GetById(229781)).Returns(responseMock.Object);
                 
+                var browser = new Browser(with =>
+                {
+                    with.Module<SegmentModule>();
+                    with.Dependency<ISegmentHandler>(handlerMock.Object);
+                });
+
+                var response = browser.Get("/Segments/229781", with =>
+                {
+                    with.HttpRequest();
+                    with.Header("Accept", "application/json");
+                });
+
+                Assert.That(response.Body.AsString(), Is.StringContaining("Hawk Hill"));
             }
 
             [Test]

@@ -10,6 +10,10 @@ namespace com.strava.api.Model.Segments
 {
     public class BaseSegment : IBaseSegment
     {
+        public BaseSegment()
+        {
+        }
+
         [JsonProperty("id")]
         public int Id { get; set; }
 

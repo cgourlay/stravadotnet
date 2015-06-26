@@ -1,14 +1,9 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
 using Nancy;
 
-using com.strava.api.Api;
-using com.strava.api.Authentication;
-using com.strava.api.Common;
 using com.strava.api.Dtos;
 using com.strava.api.Handlers;
-using com.strava.api.Http;
 using com.strava.api.Model.Segments;
 
 namespace com.strava.api.Modules
@@ -32,7 +27,7 @@ namespace com.strava.api.Modules
             return Negotiate.WithHeader("ETag", string.Format("\"{0}\"", operationResponse.Data.GetHashCode().ToString(CultureInfo.InvariantCulture)))
                             .WithHeader("Location", string.Format(@"{0}/{1}", BaseEndpoint, operationResponse.Data.Id))
                             .WithStatusCode((HttpStatusCode)operationResponse.Status)
-                            .WithModel(operationResponse.Data);
+                            .WithModel(operationResponse.DataAsJson());
         }
     }
 }
