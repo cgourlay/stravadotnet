@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-
+using com.strava.api.Workflows;
 using Moq;
 using Nancy;
 using Nancy.Testing;
 using NUnit.Framework;
 
 using com.strava.api.Dtos;
-using com.strava.api.Handlers;
 using com.strava.api.Model.Segments;
 using com.strava.api.Modules;
 
@@ -20,11 +19,11 @@ namespace Modules.Tests
             [Test]
             public void OnlyReturnsNotFoundStatusCodeWhenInvalidIdProvided()
             {
-                var handlerMock = new Mock<ISegmentHandler>();
+                var handlerMock = new Mock<ISegmentWorkflow>();
                 var browser = new Browser(with =>
                 {
                     with.Module<SegmentModule>();
-                    with.Dependency<ISegmentHandler>(handlerMock.Object);
+                    with.Dependency<ISegmentWorkflow>(handlerMock.Object);
                 });
 
                 var response = browser.Get("/Segments/qwerty", with =>
@@ -42,7 +41,7 @@ namespace Modules.Tests
             [Test]
             public void OnlyReturnsStatusCodeWhenOperationFails()
             {
-                var handlerMock = new Mock<ISegmentHandler>();
+                var handlerMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<OperationResponse<ISegment>>();
 
                 responseMock.SetupProperty(s => s.Status, OperationStatus.InternalServerError);
@@ -52,7 +51,7 @@ namespace Modules.Tests
                 var browser = new Browser(with =>
                 {
                     with.Module<SegmentModule>();
-                    with.Dependency<ISegmentHandler>(handlerMock.Object);
+                    with.Dependency<ISegmentWorkflow>(handlerMock.Object);
                 });
 
                 var response = browser.Get("/Segments/1234", with =>
@@ -76,7 +75,7 @@ namespace Modules.Tests
             [Test]
             public void ReturnsLocationHeaderWhenSegmentFound()
             {
-                var handlerMock = new Mock<ISegmentHandler>();
+                var handlerMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<OperationResponse<ISegment>>();
 
                 responseMock.SetupProperty(s => s.OperationSucceeded, true);
@@ -87,7 +86,7 @@ namespace Modules.Tests
                 var browser = new Browser(with =>
                 {
                     with.Module<SegmentModule>();
-                    with.Dependency<ISegmentHandler>(handlerMock.Object);
+                    with.Dependency<ISegmentWorkflow>(handlerMock.Object);
                 });
 
                 var response = browser.Get("/Segments/229781", with =>
@@ -103,7 +102,7 @@ namespace Modules.Tests
             [Test]
             public void ReturnsModelWhenSegmentFound()
             {
-                var handlerMock = new Mock<ISegmentHandler>();
+                var handlerMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<OperationResponse<ISegment>>();
 
                 responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
@@ -116,7 +115,7 @@ namespace Modules.Tests
                 var browser = new Browser(with =>
                 {
                     with.Module<SegmentModule>();
-                    with.Dependency<ISegmentHandler>(handlerMock.Object);
+                    with.Dependency<ISegmentWorkflow>(handlerMock.Object);
                 });
 
                 var response = browser.Get("/Segments/229781", with =>
@@ -131,7 +130,7 @@ namespace Modules.Tests
             [Test]
             public void ReturnsStatusCodeWhenSegmentFound()
             {
-                var handlerMock = new Mock<ISegmentHandler>();
+                var handlerMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<OperationResponse<ISegment>>();
 
                 responseMock.SetupProperty(s => s.OperationSucceeded, true);
@@ -142,7 +141,7 @@ namespace Modules.Tests
                 var browser = new Browser(with =>
                 {
                     with.Module<SegmentModule>();
-                    with.Dependency<ISegmentHandler>(handlerMock.Object);
+                    with.Dependency<ISegmentWorkflow>(handlerMock.Object);
                 });
 
                 var response = browser.Get("/Segments/229781", with =>

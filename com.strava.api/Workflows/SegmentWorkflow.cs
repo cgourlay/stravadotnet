@@ -1,17 +1,13 @@
-﻿using com.strava.api.Api;
+﻿using System;
+using com.strava.api.Api;
 using com.strava.api.Common;
 using com.strava.api.Dtos;
 using com.strava.api.Http;
 using com.strava.api.Model.Segments;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace com.strava.api.Handlers
+namespace com.strava.api.Workflows
 {
-    public class SegmentHandler : ISegmentHandler
+    public class SegmentWorkflow : ISegmentWorkflow
     {
         public OperationResponse<ISegment> GetById(int segmentId)
         {

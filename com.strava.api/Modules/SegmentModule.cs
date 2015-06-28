@@ -1,9 +1,8 @@
 ﻿using System.Globalization;
-
+using com.strava.api.Workflows;
 using Nancy;
 
 using com.strava.api.Dtos;
-using com.strava.api.Handlers;
 using com.strava.api.Model.Segments;
 
 namespace com.strava.api.Modules
@@ -11,18 +10,18 @@ namespace com.strava.api.Modules
     public class SegmentModule : NancyModule
     {
         private const string BaseEndpoint = @"/Segments";
-        private readonly ISegmentHandler _segmentHandler;
+        private readonly ISegmentWorkflow _segmentWorkflow;
 
-        public SegmentModule(ISegmentHandler segmentHandler) : base(BaseEndpoint)
+        public SegmentModule(ISegmentWorkflow segmentWorkflow) : base(BaseEndpoint)
         {
-            _segmentHandler = segmentHandler;
+            _segmentWorkflow = segmentWorkflow;
 
             Get["/{id:int}"] = GetSegment;
         }
 
         private dynamic GetSegment(dynamic parameters)
         {
-            OperationResponse<ISegment> operationResponse = _segmentHandler.GetById(parameters.Id);
+            OperationResponse<ISegment> operationResponse = _segmentWorkflow.GetById(parameters.Id);
             if (!operationResponse.OperationSucceeded) { return (HttpStatusCode) operationResponse.Status; }
             return Negotiate.WithHeader("ETag", string.Format("\"{0}\"", operationResponse.Data.GetHashCode().ToString(CultureInfo.InvariantCulture)))
                             .WithHeader("Location", string.Format(@"{0}/{1}", BaseEndpoint, operationResponse.Data.Id))
