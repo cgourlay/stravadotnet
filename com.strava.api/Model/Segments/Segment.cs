@@ -9,10 +9,6 @@ namespace com.strava.api.Model.Segments
 {
     public sealed class Segment : BaseSegment, ISegment
     {
-        public Segment()
-        {    
-        }
-
         [JsonProperty("created_at")]
         [JsonConverter(typeof(IsoDateTimeConverter))]
         public DateTime Created { get; set; }
