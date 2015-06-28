@@ -1,4 +1,4 @@
-﻿namespace com.strava.api.Dtos
+﻿namespace com.strava.api.Representations
 {
     public enum OperationStatus
     {

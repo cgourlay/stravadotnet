@@ -1,9 +1,10 @@
 ﻿using System.Globalization;
-using com.strava.api.Workflows;
+
 using Nancy;
 
-using com.strava.api.Dtos;
 using com.strava.api.Model.Segments;
+using com.strava.api.Representations;
+using com.strava.api.Workflows;
 
 namespace com.strava.api.Modules
 {

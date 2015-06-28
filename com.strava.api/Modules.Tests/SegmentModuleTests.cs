@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
-using com.strava.api.Workflows;
+
 using Moq;
 using Nancy;
 using Nancy.Testing;
 using NUnit.Framework;
 
-using com.strava.api.Dtos;
+using com.strava.api.Representations;
 using com.strava.api.Model.Segments;
 using com.strava.api.Modules;
+using com.strava.api.Workflows;
 
 namespace Modules.Tests
 {

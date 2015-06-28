@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace com.strava.api.Dtos
+namespace com.strava.api.Representations
 {
-    public abstract class BaseOperationResponse
+    public abstract class BaseRepresentation
     {
         public static Uri ApplicationNamespace = new Uri(@"http://schemas.tavla.api");
         public static string DomainApplicationProtocolNamespace = @"dap";

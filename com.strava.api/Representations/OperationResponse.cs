@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using com.strava.api.Common;
+
 using Newtonsoft.Json;
 
-namespace com.strava.api.Dtos
+namespace com.strava.api.Representations
 {
-    public class OperationResponse : BaseOperationResponse
+    public class OperationResponse : BaseRepresentation
     {
         public virtual bool OperationSucceeded 
         {

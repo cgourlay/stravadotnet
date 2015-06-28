@@ -1,7 +1,7 @@
 ﻿using System;
 using com.strava.api.Api;
 using com.strava.api.Common;
-using com.strava.api.Dtos;
+using com.strava.api.Representations;
 using com.strava.api.Http;
 using com.strava.api.Model.Segments;
 

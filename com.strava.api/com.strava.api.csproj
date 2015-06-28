@@ -60,9 +60,9 @@
     <Compile Include="Activities\ActivitySummary.cs" />
     <Compile Include="Activities\ActivityZone.cs" />
     <Compile Include="Clients\StatsClient.cs" />
-    <Compile Include="Dtos\BaseOperationResponse.cs" />
-    <Compile Include="Dtos\OperationResponse.cs" />
-    <Compile Include="Dtos\OperationStatus.cs" />
+    <Compile Include="Representations\BaseRepresentation.cs" />
+    <Compile Include="Representations\OperationResponse.cs" />
+    <Compile Include="Representations\OperationStatus.cs" />
     <Compile Include="Filters\AgeFilter.cs" />
     <Compile Include="Activities\Comment.cs" />
     <Compile Include="Activities\DistributionBucket.cs" />
