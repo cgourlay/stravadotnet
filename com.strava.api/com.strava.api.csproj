@@ -59,6 +59,7 @@
     <Compile Include="Activities\ActivityReceivedEventArgs.cs" />
     <Compile Include="Activities\ActivitySummary.cs" />
     <Compile Include="Activities\ActivityZone.cs" />
+    <Compile Include="Clients\IStravaClient.cs" />
     <Compile Include="Clients\StatsClient.cs" />
     <Compile Include="Representations\BaseRepresentation.cs" />
     <Compile Include="Representations\OperationResponse.cs" />

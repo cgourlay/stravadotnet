@@ -50,7 +50,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}?access_token={1}", Endpoints.Athlete, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Athlete>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Athlete>(json);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Athletes, athleteId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<AthleteSummary>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<AthleteSummary>(json);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/friends?access_token={1}", Endpoints.Athlete, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/friends?access_token={1}", Endpoints.Athlete, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}?access_token={1}", Endpoints.Follower, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/followers?access_token={2}", Endpoints.Followers, athleteId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/both-following?access_token={2}", Endpoints.Followers, athleteId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendPutAsync(new Uri(putUrl));
 
-            return Unmarshaller<Athlete>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Athlete>(json);
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace com.strava.api.Clients
             String putUrl = String.Format("{0}?sex={1}&access_token={2}", Endpoints.Athlete, gender.ToString().Substring(0, 1), Authentication.AccessToken);
             String json = await WebRequest.SendPutAsync(new Uri(putUrl));
 
-            return Unmarshaller<Athlete>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Athlete>(json);
         }
 
         #endregion
@@ -186,7 +186,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}?access_token={1}", Endpoints.Athlete, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<Athlete>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Athlete>(json);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Athletes, athleteId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<AthleteSummary>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<AthleteSummary>(json);
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace com.strava.api.Clients
         {
             String getUrl = String.Format("{0}/friends?access_token={1}", Endpoints.Athlete, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/friends?access_token={1}", Endpoints.Athlete, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace com.strava.api.Clients
         {
             String getUrl = String.Format("{0}?access_token={1}", Endpoints.Follower, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/followers?access_token={2}", Endpoints.Followers, athleteId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/both-following?access_token={2}", Endpoints.Followers, athleteId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<AthleteSummary>>(json);
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendPut(new Uri(putUrl));
 
-            return Unmarshaller<Athlete>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Athlete>(json);
         }
 
         #endregion

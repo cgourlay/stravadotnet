@@ -49,7 +49,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Gear, gearId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Gear.Bike>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Gear.Bike>(json);
         }
 
         #endregion
@@ -66,7 +66,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Gear, gearId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<Gear.Bike>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Gear.Bike>(json);
         }
 
         #endregion

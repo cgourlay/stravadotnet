@@ -142,7 +142,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Leaderboard>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Leaderboard>(json);
         }
         
         /// <summary>
@@ -243,7 +243,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Leaderboard>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Leaderboard>(json);
         }
 
         /// <summary>
@@ -344,7 +344,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Leaderboard>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Leaderboard>(json);
         }
 
         /// <summary>
@@ -357,7 +357,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/koms?access_token={2}", Endpoints.Athletes, athleteId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         /// <summary>
@@ -369,7 +369,11 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/?access_token={1}", Endpoints.Starred, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
+<<<<<<< HEAD
             return Unmarshaller<List<BaseSegment>>.Unmarshal(json);
+=======
+            return Unmarshaller.Unmarshal<List<SegmentSummary>>(json);
+>>>>>>> ml/master
         }
 
         /// <summary>
@@ -381,7 +385,11 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("https://www.strava.com/api/v3/athletes/{0}/segments/starred/?access_token={1}", athleteId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
+<<<<<<< HEAD
             return Unmarshaller<List<BaseSegment>>.Unmarshal(json);
+=======
+            return Unmarshaller.Unmarshal<List<SegmentSummary>>(json);
+>>>>>>> ml/master
         }
 
         /// <summary>
@@ -433,7 +441,7 @@ namespace com.strava.api.Clients
                 Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Leaderboard>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Leaderboard>(json);
         }
 
         /// <summary>
@@ -445,7 +453,7 @@ namespace com.strava.api.Clients
         {
             String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
-            Leaderboard leaderboard = Unmarshaller<Leaderboard>.Unmarshal(json);
+            Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
             return leaderboard.EntryCount;
         }
@@ -459,7 +467,7 @@ namespace com.strava.api.Clients
         {
             String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
-            Leaderboard leaderboard = Unmarshaller<Leaderboard>.Unmarshal(json);
+            Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
             return leaderboard.EffortCount;
         }
@@ -487,7 +495,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<ExplorerResult>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<ExplorerResult>(json);
         }
 
         /// <summary>
@@ -517,7 +525,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<ExplorerResult>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<ExplorerResult>(json);
         }
 
         /// <summary>
@@ -534,7 +542,7 @@ namespace com.strava.api.Clients
 
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller<Segment>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Segment>(json);
         }
 
         #endregion
@@ -636,7 +644,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<Leaderboard>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Leaderboard>(json);
         }
 
         /// <summary>
@@ -737,7 +745,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<Leaderboard>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Leaderboard>(json);
         }
 
         /// <summary>
@@ -838,7 +846,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<Leaderboard>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Leaderboard>(json);
         }
 
         /// <summary>
@@ -851,7 +859,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/{1}/koms?access_token={2}", Endpoints.Athletes, athleteId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<List<SegmentEffort>>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
         }
 
         /// <summary>
@@ -863,7 +871,11 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("https://www.strava.com/api/v3/athletes/{0}/segments/starred?access_token={1}", athleteId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
+<<<<<<< HEAD
             return Unmarshaller<List<BaseSegment>>.Unmarshal(json);
+=======
+            return Unmarshaller.Unmarshal<List<SegmentSummary>>(json);
+>>>>>>> ml/master
         }
 
         /// <summary>
@@ -875,7 +887,11 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}?access_token={1}", Endpoints.Starred, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
+<<<<<<< HEAD
             return Unmarshaller<List<BaseSegment>>.Unmarshal(json);
+=======
+            return Unmarshaller.Unmarshal<List<SegmentSummary>>(json);
+>>>>>>> ml/master
         }
 
         /// <summary>
@@ -927,7 +943,7 @@ namespace com.strava.api.Clients
                 Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<Leaderboard>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<Leaderboard>(json);
         }
 
         /// <summary>
@@ -939,7 +955,7 @@ namespace com.strava.api.Clients
         {
             String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
-            Leaderboard leaderboard = Unmarshaller<Leaderboard>.Unmarshal(json);
+            Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
             return leaderboard.EntryCount;
         }
@@ -953,7 +969,7 @@ namespace com.strava.api.Clients
         {
             String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
-            Leaderboard leaderboard = Unmarshaller<Leaderboard>.Unmarshal(json);
+            Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
             return leaderboard.EffortCount;
         }
@@ -981,7 +997,7 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<ExplorerResult>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<ExplorerResult>(json);
         }
 
         /// <summary>
@@ -1011,12 +1027,17 @@ namespace com.strava.api.Clients
 
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller<ExplorerResult>.Unmarshal(json);
+            return Unmarshaller.Unmarshal<ExplorerResult>(json);
         }
 
        
         #endregion
 
+<<<<<<< HEAD
+=======
+            return Unmarshaller.Unmarshal<Segment>(json);
+        }
+>>>>>>> ml/master
         
     }
 }
