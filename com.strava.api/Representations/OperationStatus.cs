@@ -2,6 +2,7 @@
 {
     public enum OperationStatus
     {
+        Unknown = 0,
         Continue = 100,
         SwitchingProtocols = 101,
         Processing = 102,
