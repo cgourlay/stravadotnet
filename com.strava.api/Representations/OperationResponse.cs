@@ -10,21 +10,13 @@ namespace com.strava.api.Representations
         public virtual OperationStatus Status { get; set; }
     }
 
-
-
-
-
-
-
     public class OperationResponse<T> : OperationResponse where T : class
     {
         public virtual T Data { set; get; }
 
-        
         public virtual string DataAsJson()
         {
-            var x =  JsonConvert.SerializeObject(Data,new JsonSerializerSettings {PreserveReferencesHandling = PreserveReferencesHandling.Objects});
-            return x;
+            return JsonConvert.SerializeObject(Data, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
         }
     }
 }

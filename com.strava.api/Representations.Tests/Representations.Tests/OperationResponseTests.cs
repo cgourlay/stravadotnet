@@ -63,5 +63,33 @@ namespace Representations.Tests
                 Assert.That(operationResponse.Status, Is.EqualTo(OperationStatus.Created));
             }
         }
+
+        public class Data : OperationResponseTests
+        {
+            [Test]
+            public void CanGet()
+            {
+                var operationResponse = new OperationResponse<string>();
+                Assert.That(operationResponse.Data, Is.Null);
+            }
+
+            [Test]
+            public void CanSet()
+            {
+                var operationResponse = new OperationResponse<string>();
+                Assert.That(operationResponse.Data, Is.Null);
+                operationResponse.Data = "some-string";
+                Assert.That(operationResponse.Data, Is.StringContaining("some-string"));
+            }
+        }
+
+        public class DataAsJson : OperationResponseTests
+        {
+            [Test]
+            [Ignore("TODO: CG to complete... This test is a marker - refer to issue #32")]
+            public void CanSerialiseTheData()
+            {
+            }
+        }
     }
 }
