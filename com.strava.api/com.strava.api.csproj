@@ -126,7 +126,6 @@
     <Compile Include="Common\MapType.cs" />
     <Compile Include="Common\PolylineDecoder.cs" />
     <Compile Include="Common\Unmarshaller.cs" />
-    <Compile Include="Common\Version.cs" />
     <Compile Include="Gear\BikeType.cs" />
     <Compile Include="Gear\Bike.cs" />
     <Compile Include="Gear\GearSummary.cs" />
