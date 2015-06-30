@@ -137,11 +137,7 @@
     <Compile Include="Common\MapType.cs" />
     <Compile Include="Common\PolylineDecoder.cs" />
     <Compile Include="Common\Unmarshaller.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Common\UrlHelper.cs" />
-    <Compile Include="Common\Version.cs" />
->>>>>>> rnrbrste/master
     <Compile Include="Gear\BikeType.cs" />
     <Compile Include="Gear\Bike.cs" />
     <Compile Include="Gear\GearSummary.cs" />
