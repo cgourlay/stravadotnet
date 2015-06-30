@@ -61,6 +61,7 @@
     <Compile Include="Activities\ActivityZone.cs" />
     <Compile Include="Clients\IStravaClient.cs" />
     <Compile Include="Clients\StatsClient.cs" />
+    <Compile Include="Repositories\IProvider.cs" />
     <Compile Include="Representations\BaseRepresentation.cs" />
     <Compile Include="Representations\OperationResponse.cs" />
     <Compile Include="Representations\OperationStatus.cs" />
