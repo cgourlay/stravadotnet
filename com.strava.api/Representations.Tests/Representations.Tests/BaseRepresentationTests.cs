@@ -12,7 +12,7 @@ namespace Representations.Tests
             [Test]
             public void CanGet()
             {
-                Assert.That(BaseRepresentation.ApplicationNamespace, Is.EqualTo(@"http://schemas.swim-bike-run/tavla"));
+                Assert.That(BaseRepresentation.ApplicationNamespace.ToString(), Is.EqualTo(@"http://schemas.swim-bike-run/tavla"));
             }
         }
 

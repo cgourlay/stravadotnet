@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Globalization;
 using com.strava.api.Activities;
+using com.strava.api.Filters;
 
 namespace com.strava.api.Common
 {
+
     /// <summary>
     ///  Helper class to create correct url parameters for the strava api
     /// </summary>
@@ -40,61 +42,62 @@ namespace com.strava.api.Common
         /// </summary>
         /// <param name="age"></param>
         /// <returns></returns>
-        public static string AgeGroupToString(AgeGroup age)
+        public static string AgeGroupToString(AgeFilter age)
         {
             String ageFilter = String.Empty;
 
             switch (age)
             {
-                case AgeGroup.One:
+                case AgeFilter.One:
                     ageFilter = "0_24";
                     break;
-                case AgeGroup.Two:
+                case AgeFilter.Two:
                     ageFilter = "25_34";
                     break;
-                case AgeGroup.Three:
+                case AgeFilter.Three:
                     ageFilter = "35_44";
                     break;
-                case AgeGroup.Four:
+                case AgeFilter.Four:
                     ageFilter = "45_54";
                     break;
-                case AgeGroup.Five:
+                case AgeFilter.Five:
                     ageFilter = "55_64";
                     break;
-                case AgeGroup.Six:
+                case AgeFilter.Six:
                     ageFilter = "65_plus";
                     break;
             }
             return ageFilter;
         }
 
+        
         /// <summary>
         ///  WeightClass to string
         /// </summary>
         /// <param name="weight"></param>
         /// <returns></returns>
-        public static string WeightClassToString(WeightClass weight)
+        public static string WeightClassToString(WeightFilter weight)
         {
             String weightClass = String.Empty;
 
             switch (weight)
             {
-                case WeightClass.One:
+                case WeightFilter.One:
                     weightClass = "0_54";
                     break;
-                case WeightClass.Two:
+                case WeightFilter.Two:
                     weightClass = "55_64";
                     break;
-                case WeightClass.Three:
+                case WeightFilter.Three:
                     weightClass = "65_74";
                     break;
-                case WeightClass.Four:
+                case WeightFilter.Four:
                     weightClass = "75_84";
                     break;
-                case WeightClass.Five:
+                case WeightFilter.Five:
                     weightClass = "85_94";
                     break;
-                case WeightClass.Six:
+                case WeightFilter.Six:
                     weightClass = "95_plus";
                     break;
             }
