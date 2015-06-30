@@ -61,6 +61,8 @@
     <Compile Include="Activities\ActivityZone.cs" />
     <Compile Include="Clients\IStravaClient.cs" />
     <Compile Include="Clients\StatsClient.cs" />
+    <Compile Include="Helpers\Nancy\JsonNetSerializer.cs" />
+    <Compile Include="Helpers\Nancy\Bootstrapper.cs" />
     <Compile Include="Repositories\IProvider.cs" />
     <Compile Include="Representations\BaseRepresentation.cs" />
     <Compile Include="Representations\OperationResponse.cs" />
@@ -165,9 +167,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
