@@ -369,11 +369,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}/?access_token={1}", Endpoints.Starred, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-<<<<<<< HEAD
-            return Unmarshaller<List<BaseSegment>>.Unmarshal(json);
-=======
-            return Unmarshaller.Unmarshal<List<SegmentSummary>>(json);
->>>>>>> ml/master
+            return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
         }
 
         /// <summary>
@@ -385,11 +381,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("https://www.strava.com/api/v3/athletes/{0}/segments/starred/?access_token={1}", athleteId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-<<<<<<< HEAD
-            return Unmarshaller<List<BaseSegment>>.Unmarshal(json);
-=======
-            return Unmarshaller.Unmarshal<List<SegmentSummary>>(json);
->>>>>>> ml/master
+            return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
         }
 
         /// <summary>
@@ -871,11 +863,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("https://www.strava.com/api/v3/athletes/{0}/segments/starred?access_token={1}", athleteId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-<<<<<<< HEAD
-            return Unmarshaller<List<BaseSegment>>.Unmarshal(json);
-=======
-            return Unmarshaller.Unmarshal<List<SegmentSummary>>(json);
->>>>>>> ml/master
+            return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
         }
 
         /// <summary>
@@ -887,11 +875,7 @@ namespace com.strava.api.Clients
             String getUrl = String.Format("{0}?access_token={1}", Endpoints.Starred, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-<<<<<<< HEAD
-            return Unmarshaller<List<BaseSegment>>.Unmarshal(json);
-=======
-            return Unmarshaller.Unmarshal<List<SegmentSummary>>(json);
->>>>>>> ml/master
+            return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
         }
 
         /// <summary>
@@ -1030,14 +1014,9 @@ namespace com.strava.api.Clients
             return Unmarshaller.Unmarshal<ExplorerResult>(json);
         }
 
-       
+
         #endregion
 
-<<<<<<< HEAD
-=======
-            return Unmarshaller.Unmarshal<Segment>(json);
-        }
->>>>>>> ml/master
         
     }
 }

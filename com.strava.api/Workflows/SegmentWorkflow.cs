@@ -12,7 +12,7 @@ namespace com.strava.api.Workflows
         public OperationResponse<ISegment> GetById(int segmentId)
         {
             var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId, "pull the auth.AccessToken from somewhere")));
-            return new OperationResponse<ISegment>() { Data = Unmarshaller<Segment>.Unmarshal(json), Status = OperationStatus.Ok };
+            return new OperationResponse<ISegment>() { Data = Unmarshaller.Unmarshal<Segment>(json), Status = OperationStatus.Ok };
         }
     }
 }
