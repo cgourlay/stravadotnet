@@ -71,6 +71,7 @@
     <Compile Include="Helpers\Nancy\JsonNetSerializer.cs" />
     <Compile Include="Helpers\Nancy\Bootstrapper.cs" />
     <Compile Include="Helpers\Nancy\User.cs" />
+    <Compile Include="Model\Converters\MapConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Repositories\IProvider.cs" />
     <Compile Include="Representations\BaseRepresentation.cs" />

@@ -21,7 +21,7 @@ namespace com.strava.api.Model.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new NotImplementedException("TODO: Refer to issue #29");
+            serializer.Serialize(writer, value);
         }
     }
 }

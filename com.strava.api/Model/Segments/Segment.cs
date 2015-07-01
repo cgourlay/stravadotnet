@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 using com.strava.api.Activities;
+using com.strava.api.Model.Converters;
 
 namespace com.strava.api.Model.Segments
 {
@@ -17,6 +18,7 @@ namespace com.strava.api.Model.Segments
         public bool IsHazardous { get; set; }
 
         [JsonProperty("map")]
+        [JsonConverter(typeof(MapConverter))]
         public IMap Map { get; set; }
 
         [JsonProperty("athlete_count")]

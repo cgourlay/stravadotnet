@@ -16,7 +16,7 @@ namespace com.strava.api.Representations
 
         public virtual string DataAsJson()
         {
-            return JsonConvert.SerializeObject(Data, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+            return JsonConvert.SerializeObject(Data);
         }
     }
 }
