@@ -176,14 +176,8 @@
     <Compile Include="Utilities\GoogleImageLoader.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <None Include="App.config" />
     <None Include="packages.config" />
-=======
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
->>>>>>> statproperties/master
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

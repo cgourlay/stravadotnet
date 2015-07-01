@@ -2,9 +2,6 @@
 
 namespace com.strava.api.Statistics
 {
-    /// <summary>
-    /// Represents recent (lats 4 weeks) run totals for a Strava athelete.
-    /// </summary>
     public class RecentRunTotals
     {
         /// <summary>
