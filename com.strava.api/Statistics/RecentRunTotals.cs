@@ -3,42 +3,42 @@
 namespace com.strava.api.Statistics
 {
     /// <summary>
-    /// Run totals of the past four weeks.
+    /// Represents recent (lats 4 weeks) run totals for a Strava athelete.
     /// </summary>
     public class RecentRunTotals
     {
         /// <summary>
-        /// Number of activities.
+        /// The number of activities.
         /// </summary>
         [JsonProperty("count")]
         public int Count { get; set; }
 
         /// <summary>
-        /// Total distance.
+        /// The total distance (in meters).
         /// </summary>
         [JsonProperty("distance")]
         public double Distance { get; set; }
 
         /// <summary>
-        /// Moving time.
+        /// The total moving time (in seconds).
         /// </summary>
         [JsonProperty("moving_time")]
         public int MovingTime { get; set; }
 
         /// <summary>
-        /// Elapsed time.
+        /// The total elapsed time (in seconds).
         /// </summary>
         [JsonProperty("elapsed_time")]
         public int ElapsedTime { get; set; }
 
         /// <summary>
-        /// Elevation gain in metres.
+        /// The total elevation gain (in meters).
         /// </summary>
         [JsonProperty("elevation_gain")]
         public double ElevationGain { get; set; }
 
         /// <summary>
-        /// Achievement count.
+        /// The number of achievements earned.
         /// </summary>
         [JsonProperty("achievement_count")]
         public int AchievementCount { get; set; }

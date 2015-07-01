@@ -21,29 +21,56 @@ using Newtonsoft.Json;
 
 namespace com.strava.api.Statistics
 {
+    /// <summary>
+    /// Represents statistics for a Strava athlete.
+    /// </summary>
     public class Stats
     {
+        /// <summary>
+        /// The biggest ride distance (in meters).
+        /// </summary>
         [JsonProperty("biggest_ride_distance")]
         public double BiggestRideDistance { get; set; }
 
+        /// <summary>
+        /// The biggest climb elevation gain (in meters).
+        /// </summary>
         [JsonProperty("biggest_climb_elevation_gain")]
         public double BiggestClimbElevationGain { get; set; }
 
+        /// <summary>
+        /// Recent ride statistics (last 4 weeks).
+        /// </summary>
         [JsonProperty("recent_ride_totals")]
         public RecentRideTotals RecentRideTotals { get; set; }
 
+        /// <summary>
+        /// Recent run statistics (last 4 weeks).
+        /// </summary>
         [JsonProperty("recent_run_totals")]
         public RecentRunTotals RecentRunTotals { get; set; }
 
+        /// <summary>
+        /// Year to date ride statistics.
+        /// </summary>
         [JsonProperty("ytd_ride_totals")]
         public YearToDateRideTotals YearToDateRideTotals { get; set; }
 
+        /// <summary>
+        /// Year to date run statistics.
+        /// </summary>
         [JsonProperty("ytd_run_totals")]
         public YearToDateRunTotals YearToDateRunTotals { get; set; }
 
+        /// <summary>
+        /// All time ride statistics.
+        /// </summary>
         [JsonProperty("all_ride_totals")]
         public AllRideTotals RideTotals { get; set; }
         
+        /// <summary>
+        /// All time run statistics.
+        /// </summary>
         [JsonProperty("all_run_totals")]
         public AllRunTotals RunTotals { get; set; }
     }

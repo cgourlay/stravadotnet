@@ -20,7 +20,7 @@
 namespace com.strava.api.Filters
 {
     /// <summary>
-    /// This enum is used to filter a segment leaderboard. A Strava premium account is needed to filter a segment leasderboard.
+    /// This enum is used to filter a segment leaderboard. A Strava premium account is needed to filter a segment leaderboard.
     /// </summary>
     public enum AgeFilter
     {
