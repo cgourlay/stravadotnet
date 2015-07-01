@@ -12,8 +12,8 @@ namespace com.strava.api.Workflows
     {
         public OperationResponse<ISegment> GetById(int segmentId)
         {
-            var accessToken = Thread.CurrentPrincipal.Identity.Name;
-            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId, accessToken)));
+            // TODO: Refactor the Endpoints type; Refactor the uri being built and refactor the WebRequest type.
+            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId, Thread.CurrentPrincipal.Identity.Name)));
             return new OperationResponse<ISegment>() { Data = Unmarshaller.Unmarshal<Segment>(json), Status = OperationStatus.Ok };
         }
     }
