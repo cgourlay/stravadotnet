@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+
+using com.strava.api.Model.Segments;
 
 namespace com.strava.api.Repositories
 {
-    public interface IProvider<T>
+    public interface IProvider
     {
-        void Create(T businessObject);
-        T Read(Guid businessObjectId);
-        IList<T> Read();
-        void Update(Guid businessObjectId, T updatedBusinessObject);
-        void Delete(Guid businessObjectId);
+        void Create(ISegment segment);
+        ISegment Read(int segmentId);
+        IList<ISegment> Read();
+        void Update(int segmentId, ISegment updatedSegment);
+        void Delete(int segmentId);
     }
 }

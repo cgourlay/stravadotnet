@@ -5,6 +5,7 @@ using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 
 using com.strava.api.Workflows;
+using com.strava.api.Repositories;
 
 namespace com.strava.api.Helpers.Nancy
 {
@@ -14,6 +15,7 @@ namespace com.strava.api.Helpers.Nancy
         {
             base.ConfigureApplicationContainer(container);
             container.Register(typeof(ISegmentWorkflow), typeof(SegmentWorkflow));
+            container.Register(typeof(IProvider), typeof(Neo4JProvider));
         }
 
         protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)
