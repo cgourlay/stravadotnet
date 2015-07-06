@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using com.strava.api.Model.Segments;
 using Neo4jClient;
 
@@ -11,28 +12,42 @@ namespace com.strava.api.Repositories
 
         public Neo4JProvider(IGraphClient graphClient)
         {
-            // TODO: CG to complete... Work in progress, refactor this.
-            var client = new GraphClient(new Uri(@"http://localhost:7474/"));
+            var client = new GraphClient(new Uri(@"http://neo4j:password@localhost:7474/db/data"));
             client.Connect();
             _graphClient = graphClient;   
         }
 
         public Neo4JProvider()
         {
-            // TODO: Complete member initialization
+            var client = new GraphClient(new Uri(@"http://neo4j:password@localhost:7474/db/data"));
+            client.Connect();
+            _graphClient = client;  
         }
 
-        public void Create(ISegment segment)
+        public void Create(ISegment newSegment)
         {
-            throw new System.NotImplementedException();
+            var fakeSegment = new Segment
+            {
+                Id = newSegment.Id,
+                ActivityType = newSegment.ActivityType,
+                Name = newSegment.Name, 
+                City = newSegment.City, 
+                NumberOfAthletes = newSegment.NumberOfAthletes, 
+                TotalElevationGain = newSegment.TotalElevationGain
+            };
+            _graphClient.Cypher.Create("(segment:Segment {fakeSegment})")
+                               .WithParam("fakeSegment", fakeSegment)
+                               .ExecuteWithoutResults();
         }
 
         public ISegment Read(int segmentId)
         {
-            return _graphClient.Cypher.Match("(segment:Segment)")
-                                      .Where((ISegment segment) => segment.Id == segmentId)
-                                      .Return(segment => segment.As<ISegment>())
-                                      .Results.SingleOrDefault();
+            var segment = _graphClient.Cypher
+                                      .Match("(s:Segment)")
+                                      .Return(s => s.Node<Segment>())
+                                      .Results.FirstOrDefault();
+
+            return new Segment();
         }
 
         public System.Collections.Generic.IList<ISegment> Read()
