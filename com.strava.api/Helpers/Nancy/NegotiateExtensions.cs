@@ -18,9 +18,9 @@ namespace com.strava.api.Helpers.Nancy
                              .ForJson(operationResponse);
         }
 
-        private static Negotiator ForJson(this Negotiator negotiator, object model)
+        private static Negotiator ForJson(this Negotiator negotiator, OperationResponse<ISegment> model)
         {
-            return negotiator.WithMediaRangeModel(new MediaRange("application/json"), model);
+            return negotiator.WithMediaRangeModel(new MediaRange("application/json"), model.DataAsJson());
         }
 
         private static Negotiator WithEtagHeader(this Negotiator negotiator, OperationResponse<ISegment> operationResponse)

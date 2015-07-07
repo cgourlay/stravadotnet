@@ -1,9 +1,6 @@
 ﻿using System.Threading;
-using com.strava.api.Model.Segments;
 using Nancy;
 using Nancy.Bootstrapper;
-using Nancy.Hal;
-using Nancy.Hal.Configuration;
 using Nancy.TinyIoc;
 
 using com.strava.api.Workflows;
