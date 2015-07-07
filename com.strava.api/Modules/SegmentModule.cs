@@ -1,7 +1,6 @@
-﻿using System.Globalization;
+﻿using Nancy;
 
-using Nancy;
-
+using com.strava.api.Helpers.Nancy;
 using com.strava.api.Model.Segments;
 using com.strava.api.Representations;
 using com.strava.api.Workflows;
@@ -24,10 +23,7 @@ namespace com.strava.api.Modules
         {
             OperationResponse<ISegment> operationResponse = _segmentWorkflow.GetById(parameters.Id);
             if (!operationResponse.OperationSucceeded) { return (HttpStatusCode) operationResponse.Status; }
-            return Negotiate.WithHeader("ETag", string.Format("\"{0}\"", operationResponse.Data.GetHashCode().ToString(CultureInfo.InvariantCulture)))
-                            .WithHeader("Location", string.Format(@"{0}/{1}", BaseEndpoint, operationResponse.Data.Id))
-                            .WithStatusCode((HttpStatusCode)operationResponse.Status)
-                            .WithModel(operationResponse.DataAsJson());
+            return Negotiate.Content(operationResponse);
         }
     }
 }

@@ -68,7 +68,7 @@ namespace Modules.Tests
             }
 
             [Test]
-            [Ignore("Refer to issue #31")]
+            [Ignore("TODO: CG to complete... Refer to issue #31 for further information.")]
             public void ReturnsEtagHeaderWhenSegmentFound()
             {
             }
