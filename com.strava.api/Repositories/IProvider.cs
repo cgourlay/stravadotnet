@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using SwimBikeRun.Model.Segments;
 
-namespace com.Strava.api.Repositories
+namespace com.Strava.Api.Repositories
 {
     public interface IProvider
     {

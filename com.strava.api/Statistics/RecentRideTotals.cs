@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace com.Strava.api.Statistics
+namespace com.Strava.Api.Statistics
 {
     /// <summary>
     /// Represents recent (lats 4 weeks) ride totals for a Strava athelete.

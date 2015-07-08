@@ -1,6 +1,6 @@
 using System;
 
-using com.Strava.api.Activities;
+using com.Strava.Api.Activities;
 
 namespace SwimBikeRun.Model.Segments
 {

@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Activities
+namespace com.Strava.Api.Activities
 {
     /// <summary>
     /// Class that stores the results of the segment explorer.

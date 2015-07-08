@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Activities
+namespace com.Strava.Api.Activities
 {
     /// <summary>
     /// This class represents a distribution bucket. It holds information about the max and min value and the time 

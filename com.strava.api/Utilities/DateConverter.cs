@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.Strava.api.Utilities
+namespace com.Strava.Api.Utilities
 {
     /// <summary>
     /// This class is used to convert dates.

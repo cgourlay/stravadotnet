@@ -20,11 +20,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using com.Strava.api.Athletes;
-using com.Strava.api.Model.Activities;
+using com.Strava.Api.Athletes;
+using com.Strava.Api.Model.Activities;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Activities
+namespace com.Strava.Api.Activities
 {
     /// <summary>
     /// Represents a less detailed version of an activity.

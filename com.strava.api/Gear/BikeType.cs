@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.Strava.api.Gear
+namespace com.Strava.Api.Gear
 {
     /// <summary>
     /// This enum is used to return a more expressive bike type instead of just a number.

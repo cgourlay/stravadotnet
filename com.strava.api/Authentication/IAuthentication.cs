@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.Strava.api.Authentication
+namespace com.Strava.Api.Authentication
 {
     /// <summary>
     /// The IAuthentication is used for classes that contain methods to receive an access token from Strava.

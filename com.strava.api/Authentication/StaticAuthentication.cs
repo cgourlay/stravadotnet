@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.Strava.api.Authentication
+namespace com.Strava.Api.Authentication
 {
     /// <summary>
     /// This class is used to authenticate with Strava.

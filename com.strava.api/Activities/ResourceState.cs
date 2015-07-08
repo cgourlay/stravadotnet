@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.Strava.api.Activities
+namespace com.Strava.Api.Activities
 {
     /// <summary>
     /// Indicates the levels of detail of a object returned by Strava.

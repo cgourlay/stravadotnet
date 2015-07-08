@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Streams
+namespace com.Strava.Api.Streams
 {
     /// <summary>
     /// Streams represent the raw data of the uploaded file. External applications may only access this information for 

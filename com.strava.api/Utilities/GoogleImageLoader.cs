@@ -22,10 +22,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
-using com.Strava.api.Common;
-using com.Strava.api.Http;
+using com.Strava.Api.Common;
+using com.Strava.Api.Http;
 
-namespace com.Strava.api.Utilities
+namespace com.Strava.Api.Utilities
 {
     /// <summary>
     /// This class sends your polyline to the Google Maps server which then return a map image.

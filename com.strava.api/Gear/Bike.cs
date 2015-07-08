@@ -20,7 +20,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Gear
+namespace com.Strava.Api.Gear
 {
     /// <summary>
     /// This class represents gear.

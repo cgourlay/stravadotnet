@@ -18,10 +18,10 @@
 #endregion
 
 using System;
-using com.Strava.api.Athletes;
+using com.Strava.Api.Athletes;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Activities
+namespace com.Strava.Api.Activities
 {
     /// <summary>
     /// Laps are triggered by athletes using their respective devices, such as Garmin watches.

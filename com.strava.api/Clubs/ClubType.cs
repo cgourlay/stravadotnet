@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.Strava.api.Clubs
+namespace com.Strava.Api.Clubs
 {
     /// <summary>
     /// This enum is used by the Club class and represents the type of a club.

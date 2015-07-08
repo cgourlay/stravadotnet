@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.Strava.api.Common
+namespace com.Strava.Api.Common
 {
     /// <summary>
     /// Contains information about a width x height box.

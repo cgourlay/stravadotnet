@@ -24,7 +24,7 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace com.Strava.api.Http
+namespace com.Strava.Api.Http
 {
     /// <summary>
     /// This class can be used to download a picture.

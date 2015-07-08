@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Streams
+namespace com.Strava.Api.Streams
 {
     /// <summary>
     /// This class represents a segment effort stream.

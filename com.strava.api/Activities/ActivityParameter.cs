@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.Strava.api.Activities
+namespace com.Strava.Api.Activities
 {
     /// <summary>
     /// Specifies the parameter that is being updated.

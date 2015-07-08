@@ -19,9 +19,9 @@
 
 using System;
 using System.Reflection;
-using com.Strava.api.Authentication;
+using com.Strava.Api.Authentication;
 
-namespace com.Strava.api.Clients
+namespace com.Strava.Api.Clients
 {
     /// <summary>
     /// The StravaClient is used to receive data from Strava. The client offers various subclients, which you can use to

@@ -50,20 +50,20 @@ namespace Model.Tests.Segments
             {
                 const string json = "{ \"activity_type\":\"Ride\" }";
                 var segment = JsonConvert.DeserializeObject<Segment>(json);
-                Assert.That(segment.ActivityType, Is.EqualTo(com.Strava.api.Model.Activities.ActivityType.Ride));
+                Assert.That(segment.ActivityType, Is.EqualTo(com.Strava.Api.Model.Activities.ActivityType.Ride));
             }
 
             [Test]
             public void CanGet()
             {
                 var segment = new Segment();
-                Assert.That(segment.ActivityType, Is.EqualTo(com.Strava.api.Model.Activities.ActivityType.Unknown));
+                Assert.That(segment.ActivityType, Is.EqualTo(com.Strava.Api.Model.Activities.ActivityType.Unknown));
             }
 
             [Test]
             public void CanSerialiseToJson()
             {
-                var segment = new Segment { ActivityType = com.Strava.api.Model.Activities.ActivityType.Ride };
+                var segment = new Segment { ActivityType = com.Strava.Api.Model.Activities.ActivityType.Ride };
                 var output = JsonConvert.SerializeObject(segment);
                 Assert.That(output, Is.StringContaining("\"activity_type\":\"Ride\""));
             }
@@ -71,8 +71,8 @@ namespace Model.Tests.Segments
             [Test]
             public void CanSet()
             {
-                var segment = new Segment {ActivityType = com.Strava.api.Model.Activities.ActivityType.Ride};
-                Assert.That(segment.ActivityType, Is.EqualTo(com.Strava.api.Model.Activities.ActivityType.Ride));
+                var segment = new Segment {ActivityType = com.Strava.Api.Model.Activities.ActivityType.Ride};
+                Assert.That(segment.ActivityType, Is.EqualTo(com.Strava.Api.Model.Activities.ActivityType.Ride));
             }
         }
 

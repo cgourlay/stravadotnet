@@ -18,12 +18,12 @@
 #endregion
 
 using System;
-using com.Strava.api.Activities;
-using com.Strava.api.Athletes;
+using com.Strava.Api.Activities;
+using com.Strava.Api.Athletes;
 using SwimBikeRun.Model.Segments;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Segments
+namespace com.Strava.Api.Segments
 {
     /// <summary>
     /// A segment effort represents an athlete’s attempt at a segment. It can also be 

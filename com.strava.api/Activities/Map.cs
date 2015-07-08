@@ -20,7 +20,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Activities
+namespace com.Strava.Api.Activities
 {
     public interface IMap
     {

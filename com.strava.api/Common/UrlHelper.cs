@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
-using com.Strava.api.Activities;
-using com.Strava.api.Filters;
+using com.Strava.Api.Activities;
+using com.Strava.Api.Filters;
 
-namespace com.Strava.api.Common
+namespace com.Strava.Api.Common
 {
 
     /// <summary>

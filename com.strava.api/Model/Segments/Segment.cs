@@ -3,8 +3,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-using com.Strava.api.Activities;
-using com.Strava.api.Model.Converters;
+using com.Strava.Api.Activities;
+using com.Strava.Api.Model.Converters;
 
 namespace SwimBikeRun.Model.Segments
 {

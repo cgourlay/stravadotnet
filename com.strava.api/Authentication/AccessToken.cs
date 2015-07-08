@@ -20,7 +20,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Authentication
+namespace com.Strava.Api.Authentication
 {
     /// <summary>
     /// This class holds an access token.

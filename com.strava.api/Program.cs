@@ -3,7 +3,7 @@ using System.Configuration;
 
 using Nancy.Hosting.Self;
 
-namespace com.Strava.api
+namespace com.Strava.Api
 {
     internal static class Program
     {

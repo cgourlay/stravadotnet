@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace com.Strava.api.Statistics
+namespace com.Strava.Api.Statistics
 {
     /// <summary>
     /// Represents this years run totals for a Strava athelete.

@@ -22,13 +22,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
-using com.Strava.api.Api;
-using com.Strava.api.Authentication;
-using com.Strava.api.Common;
-using com.Strava.api.Http;
-using com.Strava.api.Streams;
+using com.Strava.Api.Api;
+using com.Strava.Api.Authentication;
+using com.Strava.Api.Common;
+using com.Strava.Api.Http;
+using com.Strava.Api.Streams;
 
-namespace com.Strava.api.Clients
+namespace com.Strava.Api.Clients
 {
     /// <summary>
     /// Streams is the Strava term for the raw data associated with an activity. 

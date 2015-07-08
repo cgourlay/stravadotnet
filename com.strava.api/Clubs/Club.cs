@@ -20,7 +20,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Clubs
+namespace com.Strava.Api.Clubs
 {
     /// <summary>
     /// This class represents a Strava Club.

@@ -23,9 +23,9 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading;
-using com.Strava.api.Common;
+using com.Strava.Api.Common;
 
-namespace com.Strava.api.Authentication
+namespace com.Strava.Api.Authentication
 {
     /// <summary>
     /// This class starts a local web server. This web server is needed to receive the callback from

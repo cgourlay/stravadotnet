@@ -4,7 +4,7 @@ using Moq;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-using com.Strava.api.Activities;
+using com.Strava.Api.Activities;
 using SwimBikeRun.Model.Segments;
 
 namespace Model.Tests.Segments

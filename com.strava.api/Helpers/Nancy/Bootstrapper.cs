@@ -4,9 +4,9 @@ using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 
 using SwimBikeRun.Workflows;
-using com.Strava.api.Repositories;
+using com.Strava.Api.Repositories;
 
-namespace com.Strava.api.Helpers.Nancy
+namespace com.Strava.Api.Helpers.Nancy
 {
     public class Bootstrapper : DefaultNancyBootstrapper
     {

@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.Strava.api.Filters
+namespace com.Strava.Api.Filters
 {
     /// <summary>
     /// Converts various Filters to a string that can be used as a parameter in a Strava request.

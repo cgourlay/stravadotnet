@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.Strava.api.Athletes
+namespace com.Strava.Api.Athletes
 {
     /// <summary>
     /// The Gender of an athlete.

@@ -20,7 +20,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Upload
+namespace com.Strava.Api.Upload
 {
     /// <summary>
     /// Contains information about the status of your upload.

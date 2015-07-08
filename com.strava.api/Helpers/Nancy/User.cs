@@ -3,7 +3,7 @@ using System.Security.Principal;
 
 using Nancy.Security;
 
-namespace com.Strava.api.Helpers.Nancy
+namespace com.Strava.Api.Helpers.Nancy
 {
     public class User : IUserIdentity, IPrincipal
     {

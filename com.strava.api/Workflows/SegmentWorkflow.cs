@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
 
-using com.Strava.api.Api;
-using com.Strava.api.Common;
-using com.Strava.api.Repositories;
+using com.Strava.Api.Api;
+using com.Strava.Api.Common;
+using com.Strava.Api.Repositories;
 using SwimBikeRun.Representations;
-using com.Strava.api.Http;
+using com.Strava.Api.Http;
 using SwimBikeRun.Model.Segments;
 
 using Neo4jClient;

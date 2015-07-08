@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 using SwimBikeRun.Model.Segments;
 using Neo4jClient;
 
-namespace com.Strava.api.Repositories
+namespace com.Strava.Api.Repositories
 {
     public class Neo4JProvider : IProvider
     {

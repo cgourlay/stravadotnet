@@ -1,6 +1,6 @@
 ﻿using System.Device.Location;
 
-using com.Strava.api.Model.Activities;
+using com.Strava.Api.Model.Activities;
 
 namespace SwimBikeRun.Model.Segments
 {

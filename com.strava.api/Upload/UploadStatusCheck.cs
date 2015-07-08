@@ -19,10 +19,10 @@
 
 using System;
 using System.Timers;
-using com.Strava.api.Authentication;
-using com.Strava.api.Clients;
+using com.Strava.Api.Authentication;
+using com.Strava.Api.Clients;
 
-namespace com.Strava.api.Upload
+namespace com.Strava.Api.Upload
 {
     /// <summary>
     /// This class is used to check the status of an upload. You can subscribe to the UploadChecked event which is raised 

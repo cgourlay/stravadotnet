@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Statistics
+namespace com.Strava.Api.Statistics
 {
     /// <summary>
     /// Represents statistics for a Strava athlete.

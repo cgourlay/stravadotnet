@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.Strava.api.Filters
+namespace com.Strava.Api.Filters
 {
     /// <summary>
     /// This enum is used to filter a segment leaderboard. You need a Strava premium account to filter segment leaderboards.

@@ -3,7 +3,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace com.Strava.api.Model.Converters
+namespace com.Strava.Api.Model.Converters
 {
     public abstract class JsonArrayConverter<T> : JsonConverter
     {

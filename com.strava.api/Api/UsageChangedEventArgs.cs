@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.Strava.api.Api
+namespace com.Strava.Api.Api
 {
     /// <summary>
     /// Class that holds information about the API usage.

@@ -7,7 +7,7 @@ using NUnit.Framework;
 
 using SwimBikeRun.Representations;
 using SwimBikeRun.Model.Segments;
-using com.Strava.api.Modules;
+using com.Strava.Api.Modules;
 using SwimBikeRun.Workflows;
 
 namespace Modules.Tests
