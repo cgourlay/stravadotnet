@@ -4,7 +4,7 @@ using Nancy;
 using Nancy.Responses.Negotiation;
 
 using SwimBikeRun.Model.Segments;
-using com.Strava.api.Representations;
+using SwimBikeRun.Representations;
 
 namespace SwimBikeRun.Helpers.Nancy
 {

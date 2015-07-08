@@ -1,4 +1,4 @@
-﻿using com.Strava.api.Representations;
+﻿using SwimBikeRun.Representations;
 using SwimBikeRun.Model.Segments;
 
 namespace SwimBikeRun.Workflows

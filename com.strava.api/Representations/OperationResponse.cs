@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace com.Strava.api.Representations
+namespace SwimBikeRun.Representations
 {
     public class OperationResponse : BaseRepresentation
     {

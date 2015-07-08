@@ -4,7 +4,7 @@ using System.Threading;
 using com.Strava.api.Api;
 using com.Strava.api.Common;
 using com.Strava.api.Repositories;
-using com.Strava.api.Representations;
+using SwimBikeRun.Representations;
 using com.Strava.api.Http;
 using SwimBikeRun.Model.Segments;
 

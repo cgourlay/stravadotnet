@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-using com.Strava.api.Representations;
+using SwimBikeRun.Representations;
 
 namespace Representations.Tests
 {

@@ -1,4 +1,4 @@
-﻿namespace com.Strava.api.Representations
+﻿namespace SwimBikeRun.Representations
 {
     public enum OperationStatus
     {

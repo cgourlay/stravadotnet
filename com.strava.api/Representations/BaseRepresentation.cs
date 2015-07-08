@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace com.Strava.api.Representations
+namespace SwimBikeRun.Representations
 {
     public abstract class BaseRepresentation
     {

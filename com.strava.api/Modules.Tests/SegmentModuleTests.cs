@@ -5,7 +5,7 @@ using Nancy;
 using Nancy.Testing;
 using NUnit.Framework;
 
-using com.Strava.api.Representations;
+using SwimBikeRun.Representations;
 using SwimBikeRun.Model.Segments;
 using com.Strava.api.Modules;
 using SwimBikeRun.Workflows;

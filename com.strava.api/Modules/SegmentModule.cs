@@ -2,6 +2,7 @@
 
 using SwimBikeRun.Helpers.Nancy;
 using SwimBikeRun.Model.Segments;
+using SwimBikeRun.Representations;
 
 
 
@@ -16,8 +17,6 @@ using SwimBikeRun.Model.Segments;
 
 
 
-
-using com.Strava.api.Representations;
 using SwimBikeRun.Workflows;
 
 namespace com.Strava.api.Modules
