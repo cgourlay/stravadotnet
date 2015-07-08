@@ -19,7 +19,7 @@
 
 using System.Net.Http;
 
-namespace com.strava.api.Http
+namespace com.Strava.api.Http
 {
     /// <summary>
     /// This class holds information about a asynchronously received server response.

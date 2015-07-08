@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace com.strava.api.Statistics
+namespace com.Strava.api.Statistics
 {
     public class RecentRunTotals
     {

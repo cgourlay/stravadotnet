@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.strava.api.Upload
+namespace com.Strava.api.Upload
 {
     /// <summary>
     /// Contains information about the current status of an upload.

@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace com.strava.api.Streams
+namespace com.Strava.api.Streams
 {
     /// <summary>
     /// Streams is the Strava term for the raw data associated with an activity. All streams for a given 

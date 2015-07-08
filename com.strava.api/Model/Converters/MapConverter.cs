@@ -2,9 +2,9 @@
 
 using Newtonsoft.Json;
 
-using com.strava.api.Activities;
+using com.Strava.api.Activities;
 
-namespace com.strava.api.Model.Converters
+namespace com.Strava.api.Model.Converters
 {
     public class MapConverter : JsonConverter
     {

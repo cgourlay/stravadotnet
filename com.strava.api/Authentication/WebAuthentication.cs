@@ -20,7 +20,7 @@
 using System;
 using System.Diagnostics;
 
-namespace com.strava.api.Authentication
+namespace com.Strava.api.Authentication
 {
     /// <summary>
     /// This class is used to start a local web server to receive a callback message from Strava. This message 

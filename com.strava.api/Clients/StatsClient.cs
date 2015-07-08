@@ -19,12 +19,12 @@
 
 using System;
 using System.Threading.Tasks;
-using com.strava.api.Athletes;
-using com.strava.api.Authentication;
-using com.strava.api.Common;
-using com.strava.api.Statistics;
+using com.Strava.api.Athletes;
+using com.Strava.api.Authentication;
+using com.Strava.api.Common;
+using com.Strava.api.Statistics;
 
-namespace com.strava.api.Clients
+namespace com.Strava.api.Clients
 {
     /// <summary>
     /// Used to get statistics data from Strava.

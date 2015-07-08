@@ -20,13 +20,13 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using com.strava.api.Api;
-using com.strava.api.Authentication;
-using com.strava.api.Common;
-using com.strava.api.Http;
-using com.strava.api.Segments;
+using com.Strava.api.Api;
+using com.Strava.api.Authentication;
+using com.Strava.api.Common;
+using com.Strava.api.Http;
+using com.Strava.api.Segments;
 
-namespace com.strava.api.Clients
+namespace com.Strava.api.Clients
 {
     /// <summary>
     /// The EffortClient class is used to retrieve efforts of an segment.

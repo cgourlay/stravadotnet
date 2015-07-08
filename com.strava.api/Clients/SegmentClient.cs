@@ -21,17 +21,17 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
-using com.strava.api.Activities;
-using com.strava.api.Api;
-using com.strava.api.Authentication;
-using com.strava.api.Common;
-using com.strava.api.Filters;
-using com.strava.api.Http;
-using com.strava.api.Model.Segments;
-using com.strava.api.Segments;
+using com.Strava.api.Activities;
+using com.Strava.api.Api;
+using com.Strava.api.Authentication;
+using com.Strava.api.Common;
+using com.Strava.api.Filters;
+using com.Strava.api.Http;
+using com.Strava.api.Model.Segments;
+using com.Strava.api.Segments;
 
 
-namespace com.strava.api.Clients
+namespace com.Strava.api.Clients
 {
     /// <summary>
     /// Segments are specific sections of road. Athletes’ times are compared on these segments and leaderboards are created.

@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.strava.api.Upload
+namespace com.Strava.api.Upload
 {
     /// <summary>
     /// This enum is used to specify the file extension when uploading a file to Strava.

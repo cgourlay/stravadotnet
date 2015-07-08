@@ -20,7 +20,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace com.strava.api.Clubs
+namespace com.Strava.api.Clubs
 {
     /// <summary>
     /// A summary of a Strava Club. The ClubSummary contains less information than a Club.

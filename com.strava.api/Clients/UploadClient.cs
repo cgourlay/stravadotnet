@@ -21,15 +21,15 @@ using System;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using com.strava.api.Activities;
-using com.strava.api.Api;
-using com.strava.api.Authentication;
-using com.strava.api.Common;
-using com.strava.api.Http;
-using com.strava.api.Model.Activities;
-using com.strava.api.Upload;
+using com.Strava.api.Activities;
+using com.Strava.api.Api;
+using com.Strava.api.Authentication;
+using com.Strava.api.Common;
+using com.Strava.api.Http;
+using com.Strava.api.Model.Activities;
+using com.Strava.api.Upload;
 
-namespace com.strava.api.Clients
+namespace com.Strava.api.Clients
 {
     /// <summary>
     /// This class contains methods for uploading new activities to Strava. Use the UploadStatusCheck class to 

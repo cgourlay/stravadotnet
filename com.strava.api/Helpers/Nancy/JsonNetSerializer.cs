@@ -5,7 +5,7 @@ using Nancy;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace com.strava.api.Helpers
+namespace com.Strava.api.Helpers
 {
     public sealed class JsonNetSerializer : ISerializer
     {

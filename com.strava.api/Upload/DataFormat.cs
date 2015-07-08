@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.strava.api.Upload
+namespace com.Strava.api.Upload
 {
     /// <summary>
     /// Use this enum to specify the data format.

@@ -19,11 +19,11 @@
 
 using System;
 using System.Collections.Generic;
-using com.strava.api.Clubs;
-using com.strava.api.Gear;
+using com.Strava.api.Clubs;
+using com.Strava.api.Gear;
 using Newtonsoft.Json;
 
-namespace com.strava.api.Athletes
+namespace com.Strava.api.Athletes
 {
     /// <summary>
     /// Represents a Strava athlete.

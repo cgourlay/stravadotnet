@@ -3,10 +3,10 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-using com.strava.api.Model.Activities;
-using com.strava.api.Model.Converters;
+using com.Strava.api.Model.Activities;
+using com.Strava.api.Model.Converters;
 
-namespace com.strava.api.Model.Segments
+namespace com.Strava.api.Model.Segments
 {
     public class BaseSegment : IBaseSegment
     {

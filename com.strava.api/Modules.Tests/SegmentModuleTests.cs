@@ -5,10 +5,10 @@ using Nancy;
 using Nancy.Testing;
 using NUnit.Framework;
 
-using com.strava.api.Representations;
-using com.strava.api.Model.Segments;
-using com.strava.api.Modules;
-using com.strava.api.Workflows;
+using com.Strava.api.Representations;
+using com.Strava.api.Model.Segments;
+using com.Strava.api.Modules;
+using com.Strava.api.Workflows;
 
 namespace Modules.Tests
 {

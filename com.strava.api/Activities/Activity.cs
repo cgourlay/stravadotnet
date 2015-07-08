@@ -19,11 +19,11 @@
 
 using System;
 using System.Collections.Generic;
-using com.strava.api.Gear;
-using com.strava.api.Segments;
+using com.Strava.api.Gear;
+using com.Strava.api.Segments;
 using Newtonsoft.Json;
 
-namespace com.strava.api.Activities
+namespace com.Strava.api.Activities
 {
     /// <summary>
     /// Activities are the base object for Strava runs, rides, swims etc.

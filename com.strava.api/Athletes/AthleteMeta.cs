@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 
-namespace com.strava.api.Athletes
+namespace com.Strava.api.Athletes
 {
     /// <summary>
     /// This class represents an athlete.

@@ -1,7 +1,7 @@
-﻿using com.strava.api.Representations;
-using com.strava.api.Model.Segments;
+﻿using com.Strava.api.Representations;
+using com.Strava.api.Model.Segments;
 
-namespace com.strava.api.Workflows
+namespace com.Strava.api.Workflows
 {
     public interface ISegmentWorkflow
     {

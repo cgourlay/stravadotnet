@@ -3,10 +3,10 @@
 using Nancy;
 using Nancy.Responses.Negotiation;
 
-using com.strava.api.Model.Segments;
-using com.strava.api.Representations;
+using com.Strava.api.Model.Segments;
+using com.Strava.api.Representations;
 
-namespace com.strava.api.Helpers.Nancy
+namespace SwimBikeRun.Helpers.Nancy
 {
     public static class NegotiateExtensions
     {

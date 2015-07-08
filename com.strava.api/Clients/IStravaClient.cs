@@ -1,4 +1,4 @@
-﻿namespace com.strava.api.Clients
+﻿namespace com.Strava.api.Clients
 {
     /// <summary>
     /// The StravaClient is used to receive data from Strava. The client offers various subclients, which you can use to

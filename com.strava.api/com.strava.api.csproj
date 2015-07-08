@@ -7,7 +7,7 @@
     <ProjectGuid>{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.strava.api</RootNamespace>
+    <RootNamespace>com.Strava.api</RootNamespace>
     <AssemblyName>com.strava.api</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

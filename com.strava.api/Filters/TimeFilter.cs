@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.strava.api.Filters
+namespace com.Strava.api.Filters
 {
     /// <summary>
     /// Used to filter a segment leaderboard. Valid values from Strava are:

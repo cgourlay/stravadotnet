@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace com.strava.api.Activities
+namespace com.Strava.api.Activities
 {
     /// <summary>
     /// This class represents a summary.

@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.strava.api.Common
+namespace com.Strava.api.Common
 {
     /// <summary>
     /// This class represents a lat/lng coordinate.

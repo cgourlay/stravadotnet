@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.strava.api.Filters
+namespace com.Strava.api.Filters
 {
     /// <summary>
     /// Use this enum to filter a Strava segment leaderboard. You can only filter the leaderboard by gender, if you have a Strava 

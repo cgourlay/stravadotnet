@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using com.strava.api.Model.Segments;
+using com.Strava.api.Model.Segments;
 
-namespace com.strava.api.Repositories
+namespace com.Strava.api.Repositories
 {
     public interface IProvider
     {

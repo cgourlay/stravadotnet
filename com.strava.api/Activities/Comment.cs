@@ -18,10 +18,10 @@
 #endregion
 
 using System;
-using com.strava.api.Athletes;
+using com.Strava.api.Athletes;
 using Newtonsoft.Json;
 
-namespace com.strava.api.Activities
+namespace com.Strava.api.Activities
 {
     /// <summary>
     /// Represents a comment of an activity.

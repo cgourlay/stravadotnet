@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.strava.api.Streams
+namespace com.Strava.api.Streams
 {
     /// <summary>
     /// Used to specify which stream should be received from the server.

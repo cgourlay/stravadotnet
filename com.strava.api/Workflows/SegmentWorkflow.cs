@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Threading;
 
-using com.strava.api.Api;
-using com.strava.api.Common;
-using com.strava.api.Repositories;
-using com.strava.api.Representations;
-using com.strava.api.Http;
-using com.strava.api.Model.Segments;
+using com.Strava.api.Api;
+using com.Strava.api.Common;
+using com.Strava.api.Repositories;
+using com.Strava.api.Representations;
+using com.Strava.api.Http;
+using com.Strava.api.Model.Segments;
 
 using Neo4jClient;
 
-namespace com.strava.api.Workflows
+namespace com.Strava.api.Workflows
 {
     public class SegmentWorkflow : ISegmentWorkflow
     {

@@ -1,5 +1,6 @@
 ﻿using Nancy;
 
+using SwimBikeRun.Helpers.Nancy;
 
 
 
@@ -16,13 +17,11 @@
 
 
 
+using com.Strava.api.Model.Segments;
+using com.Strava.api.Representations;
+using com.Strava.api.Workflows;
 
-using com.strava.api.Helpers.Nancy;
-using com.strava.api.Model.Segments;
-using com.strava.api.Representations;
-using com.strava.api.Workflows;
-
-namespace com.strava.api.Modules
+namespace com.Strava.api.Modules
 {
     public class SegmentModule : NancyModule
     {

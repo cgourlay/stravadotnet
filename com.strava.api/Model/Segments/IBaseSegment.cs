@@ -1,8 +1,8 @@
 ﻿using System.Device.Location;
 
-using com.strava.api.Model.Activities;
+using com.Strava.api.Model.Activities;
 
-namespace com.strava.api.Model.Segments
+namespace com.Strava.api.Model.Segments
 {
     public interface IBaseSegment
     {

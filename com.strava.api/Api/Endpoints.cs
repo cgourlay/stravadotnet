@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.strava.api.Api
+namespace com.Strava.api.Api
 {
     /// <summary>
     /// This static class contains the Strava API endpoint Urls.

@@ -3,7 +3,7 @@ using System.Device.Location;
 
 using Newtonsoft.Json.Linq;
 
-namespace com.strava.api.Model.Converters
+namespace com.Strava.api.Model.Converters
 {
     public class GeoCoordinateConverter : JsonArrayConverter<GeoCoordinate>
     {

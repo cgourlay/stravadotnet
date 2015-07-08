@@ -1,4 +1,4 @@
-﻿namespace com.strava.api.Model.Segments
+﻿namespace com.Strava.api.Model.Segments
 {
     public enum ClimbType
     {

@@ -20,7 +20,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace com.strava.api.Gear
+namespace com.Strava.api.Gear
 {
     /// <summary>
     /// Represents a piece of gear (Bike or Shoes). This object only contains summary details.

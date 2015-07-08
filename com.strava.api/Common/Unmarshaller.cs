@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace com.strava.api.Common
+namespace com.Strava.api.Common
 {
     internal static class Unmarshaller
     {

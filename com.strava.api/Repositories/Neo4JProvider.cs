@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using com.strava.api.Model.Segments;
+using com.Strava.api.Model.Segments;
 using Neo4jClient;
 
-namespace com.strava.api.Repositories
+namespace com.Strava.api.Repositories
 {
     public class Neo4JProvider : IProvider
     {

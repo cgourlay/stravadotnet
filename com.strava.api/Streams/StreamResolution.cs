@@ -17,7 +17,7 @@
 
 #endregion
 
-namespace com.strava.api.Streams
+namespace com.Strava.api.Streams
 {
     /// <summary>
     /// Indicates desired number of data points, streams will only be down sampled.

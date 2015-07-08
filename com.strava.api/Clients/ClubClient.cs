@@ -20,15 +20,15 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using com.strava.api.Activities;
-using com.strava.api.Api;
-using com.strava.api.Athletes;
-using com.strava.api.Authentication;
-using com.strava.api.Clubs;
-using com.strava.api.Common;
-using com.strava.api.Http;
+using com.Strava.api.Activities;
+using com.Strava.api.Api;
+using com.Strava.api.Athletes;
+using com.Strava.api.Authentication;
+using com.Strava.api.Clubs;
+using com.Strava.api.Common;
+using com.Strava.api.Http;
 
-namespace com.strava.api.Clients
+namespace com.Strava.api.Clients
 {
     /// <summary>
     /// Used to receive information about clubs from Strava.

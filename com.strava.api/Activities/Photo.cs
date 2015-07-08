@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace com.strava.api.Activities
+namespace com.Strava.api.Activities
 {
     /// <summary>
     /// Represents a photo linked to an activity.

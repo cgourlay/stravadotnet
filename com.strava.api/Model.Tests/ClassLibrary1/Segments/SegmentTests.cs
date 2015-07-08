@@ -4,8 +4,8 @@ using Moq;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-using com.strava.api.Activities;
-using com.strava.api.Model.Segments;
+using com.Strava.api.Activities;
+using com.Strava.api.Model.Segments;
 
 namespace Model.Tests.Segments
 {

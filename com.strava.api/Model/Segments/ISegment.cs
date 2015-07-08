@@ -1,8 +1,8 @@
 using System;
 
-using com.strava.api.Activities;
+using com.Strava.api.Activities;
 
-namespace com.strava.api.Model.Segments
+namespace com.Strava.api.Model.Segments
 {
     public interface ISegment : IBaseSegment
     {

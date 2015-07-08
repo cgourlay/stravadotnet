@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.strava.api.Authentication
+namespace com.Strava.api.Authentication
 {
     /// <summary>
     /// Thius class holds information about a access token that was received from the server.

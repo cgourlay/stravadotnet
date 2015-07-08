@@ -1,4 +1,4 @@
-﻿namespace com.strava.api.Model.Activities
+﻿namespace com.Strava.api.Model.Activities
 {
     public enum ActivityType
     {

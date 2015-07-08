@@ -3,10 +3,10 @@ using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 
-using com.strava.api.Workflows;
-using com.strava.api.Repositories;
+using com.Strava.api.Workflows;
+using com.Strava.api.Repositories;
 
-namespace com.strava.api.Helpers.Nancy
+namespace com.Strava.api.Helpers.Nancy
 {
     public class Bootstrapper : DefaultNancyBootstrapper
     {

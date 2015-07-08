@@ -19,7 +19,7 @@
 
 using System;
 
-namespace com.strava.api.Streams
+namespace com.Strava.api.Streams
 {
     /// <summary>
     /// Specifies which information about a segment is being received.

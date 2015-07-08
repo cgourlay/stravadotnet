@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-using com.strava.api.Representations;
+using com.Strava.api.Representations;
 
 namespace Representations.Tests
 {

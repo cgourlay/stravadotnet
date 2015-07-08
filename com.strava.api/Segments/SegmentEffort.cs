@@ -18,12 +18,12 @@
 #endregion
 
 using System;
-using com.strava.api.Activities;
-using com.strava.api.Athletes;
-using com.strava.api.Model.Segments;
+using com.Strava.api.Activities;
+using com.Strava.api.Athletes;
+using com.Strava.api.Model.Segments;
 using Newtonsoft.Json;
 
-namespace com.strava.api.Segments
+namespace com.Strava.api.Segments
 {
     /// <summary>
     /// A segment effort represents an athlete’s attempt at a segment. It can also be 
