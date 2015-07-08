@@ -1,4 +1,4 @@
-﻿
+﻿using Nancy;
 
 
 
@@ -16,8 +16,6 @@
 
 
 
-
-using Nancy;
 
 using com.strava.api.Helpers.Nancy;
 using com.strava.api.Model.Segments;

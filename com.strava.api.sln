@@ -36,6 +36,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers.Tests", "com.strava
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.Tests", "com.strava.api\Repositories.Tests\Repositories.Tests\Repositories.Tests.csproj", "{3E73AFA4-5631-4CED-AAD6-3128875FC405}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Metrics", "Metrics", "{DFB76058-0338-454B-B551-431389AD1FC8}"
+	ProjectSection(SolutionItems) = preProject
+		com.strava.api.ruleset = com.strava.api.ruleset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
