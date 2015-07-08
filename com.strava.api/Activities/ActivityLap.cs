@@ -87,39 +87,14 @@ namespace com.strava.api.Activities
         }
 
         [JsonProperty("start_date")]
-        private String _start;
-
-        /// <summary>
-        /// The date and time when the lap was started.
-        /// </summary>
-        public DateTime Start
-        {
-            get
-            {
-                if (!String.IsNullOrEmpty(_start))
-                    return DateTime.Parse(_start);
-
-                return DateTime.MinValue;
-            }
-        }
-
-        private String _startLocal;
-
+        public DateTime Start { get; set; }
+        
         /// <summary>
         /// The local date and time when the lap was started.
         /// </summary>
         [JsonProperty("start_date_local")]
-        public DateTime StartLocal
-        {
-            get
-            {
-                if (!String.IsNullOrEmpty(_startLocal))
-                    return DateTime.Parse(_startLocal);
-
-                return DateTime.MinValue;
-            }
-        }
-
+        public DateTime StartLocal { get; set; }
+        
         /// <summary>
         /// The distance of the lap measured in meters.
         /// </summary>
