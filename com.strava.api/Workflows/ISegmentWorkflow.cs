@@ -1,7 +1,7 @@
 ﻿using com.Strava.api.Representations;
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 
-namespace com.Strava.api.Workflows
+namespace SwimBikeRun.Workflows
 {
     public interface ISegmentWorkflow
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 using Neo4jClient;
 
 namespace com.Strava.api.Repositories

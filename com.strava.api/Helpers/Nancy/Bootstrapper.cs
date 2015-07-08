@@ -3,7 +3,7 @@ using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 
-using com.Strava.api.Workflows;
+using SwimBikeRun.Workflows;
 using com.Strava.api.Repositories;
 
 namespace com.Strava.api.Helpers.Nancy

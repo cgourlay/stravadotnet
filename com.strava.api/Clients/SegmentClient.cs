@@ -27,7 +27,7 @@ using com.Strava.api.Authentication;
 using com.Strava.api.Common;
 using com.Strava.api.Filters;
 using com.Strava.api.Http;
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 using com.Strava.api.Segments;
 
 

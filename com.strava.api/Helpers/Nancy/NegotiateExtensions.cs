@@ -3,7 +3,7 @@
 using Nancy;
 using Nancy.Responses.Negotiation;
 
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 using com.Strava.api.Representations;
 
 namespace SwimBikeRun.Helpers.Nancy

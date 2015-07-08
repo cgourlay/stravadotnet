@@ -6,9 +6,9 @@ using Nancy.Testing;
 using NUnit.Framework;
 
 using com.Strava.api.Representations;
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 using com.Strava.api.Modules;
-using com.Strava.api.Workflows;
+using SwimBikeRun.Workflows;
 
 namespace Modules.Tests
 {

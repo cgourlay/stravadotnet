@@ -1,4 +1,4 @@
-﻿namespace com.Strava.api.Model.Segments
+﻿namespace SwimBikeRun.Model.Segments
 {
     public enum ClimbType
     {

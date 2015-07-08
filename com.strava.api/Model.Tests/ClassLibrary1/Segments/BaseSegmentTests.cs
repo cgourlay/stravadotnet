@@ -3,7 +3,7 @@
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 
 namespace Model.Tests.Segments
 {
@@ -150,21 +150,21 @@ namespace Model.Tests.Segments
             {
                 const string json = "{ \"climb_category\":1 }";
                 var segment = JsonConvert.DeserializeObject<Segment>(json);
-                Assert.That(segment.ClimbType, Is.EqualTo(com.Strava.api.Model.Segments.ClimbType.CategoryOne));
+                Assert.That(segment.ClimbType, Is.EqualTo(SwimBikeRun.Model.Segments.ClimbType.CategoryOne));
             }
 
             [Test]
             public void CanGet()
             {
                 var segment = new Segment();
-                Assert.That(segment.ClimbType, Is.EqualTo(com.Strava.api.Model.Segments.ClimbType.CategoryZero));
+                Assert.That(segment.ClimbType, Is.EqualTo(SwimBikeRun.Model.Segments.ClimbType.CategoryZero));
             }
 
             [Test]
             [Ignore("The serialization of the StringEnumConverter needs to be modified - refer to issue #30.")]
             public void CanSerialiseToJson()
             {
-                var segment = new Segment { ClimbType = com.Strava.api.Model.Segments.ClimbType.CategoryOne };
+                var segment = new Segment { ClimbType = SwimBikeRun.Model.Segments.ClimbType.CategoryOne };
                 var output = JsonConvert.SerializeObject(segment);
                 Assert.That(output, Is.StringContaining("\"climb_category\":1"));
             }
@@ -172,8 +172,8 @@ namespace Model.Tests.Segments
             [Test]
             public void CanSet()
             {
-                var segment = new Segment {ClimbType = com.Strava.api.Model.Segments.ClimbType.CategoryOne};
-                Assert.That(segment.ClimbType, Is.EqualTo(com.Strava.api.Model.Segments.ClimbType.CategoryOne));
+                var segment = new Segment { ClimbType = SwimBikeRun.Model.Segments.ClimbType.CategoryOne };
+                Assert.That(segment.ClimbType, Is.EqualTo(SwimBikeRun.Model.Segments.ClimbType.CategoryOne));
             }
         }
 

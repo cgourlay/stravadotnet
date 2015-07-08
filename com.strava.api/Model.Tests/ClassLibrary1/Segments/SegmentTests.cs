@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 
 using com.Strava.api.Activities;
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 
 namespace Model.Tests.Segments
 {

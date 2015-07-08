@@ -2,7 +2,7 @@ using System;
 
 using com.Strava.api.Activities;
 
-namespace com.Strava.api.Model.Segments
+namespace SwimBikeRun.Model.Segments
 {
     public interface ISegment : IBaseSegment
     {

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 
 namespace com.Strava.api.Repositories
 {

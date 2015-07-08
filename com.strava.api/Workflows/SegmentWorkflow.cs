@@ -6,11 +6,11 @@ using com.Strava.api.Common;
 using com.Strava.api.Repositories;
 using com.Strava.api.Representations;
 using com.Strava.api.Http;
-using com.Strava.api.Model.Segments;
+using SwimBikeRun.Model.Segments;
 
 using Neo4jClient;
 
-namespace com.Strava.api.Workflows
+namespace SwimBikeRun.Workflows
 {
     public class SegmentWorkflow : ISegmentWorkflow
     {

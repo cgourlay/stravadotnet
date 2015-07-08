@@ -6,7 +6,7 @@ using Newtonsoft.Json.Converters;
 using com.Strava.api.Activities;
 using com.Strava.api.Model.Converters;
 
-namespace com.Strava.api.Model.Segments
+namespace SwimBikeRun.Model.Segments
 {
     public sealed class Segment : BaseSegment, ISegment
     {
