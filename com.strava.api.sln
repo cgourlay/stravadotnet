@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Metrics", "Metrics", "{DFB7
 		com.strava.api.ruleset = com.strava.api.ruleset
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimBikeRun.Strive.Modules", "com.strava.api\SwimBikeRun.Strive.Modules\SwimBikeRun.Strive.Modules.csproj", "{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

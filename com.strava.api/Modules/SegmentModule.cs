@@ -1,23 +1,30 @@
-﻿using Nancy;
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using Nancy;
 
 using SwimBikeRun.Helpers.Nancy;
 using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Representations;
 using SwimBikeRun.Workflows;
 
-
-
-
-
-
-
-
-
-
-
-
-
-namespace com.Strava.Api.Modules // TODO: CG to complete... Refactored up to this point.
+namespace SwimBikeRun.Modules // TODO: CG to complete... Refactored up to this point.
 {
     public class SegmentModule : NancyModule
     {
