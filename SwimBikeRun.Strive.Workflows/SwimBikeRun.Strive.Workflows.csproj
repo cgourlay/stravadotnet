@@ -53,6 +53,14 @@
       <Project>{20400ff7-8e2e-4066-a5a3-24e955929a7e}</Project>
       <Name>SwimBikeRun.Strive.Model.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SwimBikeRun.Strive.Model\SwimBikeRun.Strive.Model.csproj">
+      <Project>{7A521178-9C1B-4CEC-A1CD-0BBF4ECFE53F}</Project>
+      <Name>SwimBikeRun.Strive.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwimBikeRun.Strive.Repositories\SwimBikeRun.Strive.Repositories.csproj">
+      <Project>{30237B2F-6421-4171-85BA-75E990C49B2A}</Project>
+      <Name>SwimBikeRun.Strive.Repositories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SwimBikeRun.Strive.Representations\SwimBikeRun.Strive.Representations.csproj">
       <Project>{88db79f3-dbab-477e-9450-8a60792a168c}</Project>
       <Name>SwimBikeRun.Strive.Representations</Name>

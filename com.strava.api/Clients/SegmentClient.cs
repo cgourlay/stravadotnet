@@ -29,6 +29,7 @@ using com.Strava.Api.Filters;
 using com.Strava.Api.Http;
 using SwimBikeRun.Model.Segments;
 using com.Strava.Api.Segments;
+using SwimBikeRun.Strive.Model.Segments;
 
 
 namespace com.Strava.Api.Clients

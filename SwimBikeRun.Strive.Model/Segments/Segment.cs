@@ -1,14 +1,11 @@
 ﻿using System;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-
-using com.Strava.Api.Activities;
-using com.Strava.Api.Model.Converters;
+using SwimBikeRun.Strive.Model.Converters;
 using SwimBikeRun.Strive.Model.Interfaces.Activities;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
-namespace SwimBikeRun.Model.Segments
+namespace SwimBikeRun.Strive.Model.Segments
 {
     public sealed class Segment : BaseSegment, ISegment
     {

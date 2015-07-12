@@ -4,9 +4,9 @@ using com.Strava.Api.Api;
 using com.Strava.Api.Common;
 using com.Strava.Api.Http;
 using com.Strava.Api.Repositories;
-using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Representations;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
+using SwimBikeRun.Strive.Model.Segments;
 using SwimBikeRun.Strive.Representations;
 
 namespace SwimBikeRun.Strive.Workflows

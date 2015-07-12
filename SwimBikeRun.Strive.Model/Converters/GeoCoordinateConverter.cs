@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Device.Location;
-
 using Newtonsoft.Json.Linq;
 
-namespace com.Strava.Api.Model.Converters
+namespace SwimBikeRun.Strive.Model.Converters
 {
     public class GeoCoordinateConverter : JsonArrayConverter<GeoCoordinate>
     {

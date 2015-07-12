@@ -1,12 +1,12 @@
 ﻿using System.Device.Location;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using com.Strava.Api.Model.Converters;
+using SwimBikeRun.Model.Segments;
+using SwimBikeRun.Strive.Model.Converters;
 using SwimBikeRun.Strive.Model.Enums.Activities;
 using SwimBikeRun.Strive.Model.Enums.Segments;
 
-namespace SwimBikeRun.Model.Segments
+namespace SwimBikeRun.Strive.Model.Segments
 {
     public class BaseSegment : IBaseSegment
     {

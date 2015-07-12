@@ -1,9 +1,9 @@
 ﻿using System.Threading;
-
+using com.Strava.Api.Repositories;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
-using com.Strava.Api.Repositories;
+using SwimBikeRun.Strive.Repositories;
 using SwimBikeRun.Strive.Workflows;
 
 namespace SwimBikeRun.Strive.Modules

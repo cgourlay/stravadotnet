@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 
 using SwimBikeRun.Model.Segments;
+using SwimBikeRun.Strive.Model.Segments;
 
 namespace Model.Tests.Segments
 {

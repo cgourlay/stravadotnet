@@ -1,9 +1,8 @@
 ﻿using System;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace com.Strava.Api.Model.Converters
+namespace SwimBikeRun.Strive.Model.Converters
 {
     public abstract class JsonArrayConverter<T> : JsonConverter
     {
