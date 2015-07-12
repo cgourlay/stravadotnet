@@ -42,9 +42,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CsQuery">
-      <HintPath>..\..\packages\CsQuery.1.3.3\lib\net40\CsQuery.dll</HintPath>
-    </Reference>
     <Reference Include="Moq">
       <HintPath>..\..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
     </Reference>
@@ -54,20 +51,11 @@
     <Reference Include="Nancy.Testing">
       <HintPath>..\..\packages\Nancy.Testing.1.2.0\lib\net40\Nancy.Testing.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.Runners.2.6.4\tools\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SegmentModuleTests.cs" />
@@ -96,14 +84,6 @@
     <ProjectReference Include="..\..\SwimBikeRun.Strive.Workflows.Interfaces\SwimBikeRun.Strive.Workflows.Interfaces.csproj">
       <Project>{43CFCB33-5830-4F80-BC57-3980B85B0CB0}</Project>
       <Name>SwimBikeRun.Strive.Workflows.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SwimBikeRun.Strive.Workflows\SwimBikeRun.Strive.Workflows.csproj">
-      <Project>{7263AE19-7B31-41A7-9D4E-535D87C67139}</Project>
-      <Name>SwimBikeRun.Strive.Workflows</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\com.strava.api.csproj">
-      <Project>{22adbc7c-a736-49f8-bd04-bc4e2ad9b5b8}</Project>
-      <Name>com.strava.api</Name>
     </ProjectReference>
     <ProjectReference Include="..\SwimBikeRun.Strive.Modules\SwimBikeRun.Strive.Modules.csproj">
       <Project>{68f5f5f3-b8bb-4911-875f-6f00aae04ea6}</Project>
