@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace com.Strava.Api.Common
 {
-    internal static class Unmarshaller
+    public static class Unmarshaller
     {
         public static T Unmarshal<T>(string json)
         {

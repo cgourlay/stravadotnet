@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Security.Principal;
-
 using Nancy.Security;
 
-namespace com.Strava.Api.Helpers.Nancy
+namespace SwimBikeRun.Strive.Modules
 {
     public class User : IUserIdentity, IPrincipal
     {

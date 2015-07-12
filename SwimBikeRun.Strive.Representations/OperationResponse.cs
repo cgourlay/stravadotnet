@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-
 using Newtonsoft.Json;
+using SwimBikeRun.Representations;
 
-namespace SwimBikeRun.Representations
+namespace SwimBikeRun.Strive.Representations
 {
     public class OperationResponse : BaseRepresentation
     {

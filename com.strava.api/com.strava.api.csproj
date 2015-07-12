@@ -100,20 +100,13 @@
     <Compile Include="Activities\ActivityZone.cs" />
     <Compile Include="Clients\IStravaClient.cs" />
     <Compile Include="Clients\StatsClient.cs" />
-    <Compile Include="Helpers\Nancy\JsonNetSerializer.cs" />
-    <Compile Include="Helpers\Nancy\User.cs" />
     <Compile Include="Model\Converters\MapConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Repositories\IProvider.cs" />
     <Compile Include="Repositories\Neo4JProvider.cs" />
-    <Compile Include="Representations\BaseRepresentation.cs" />
-    <Compile Include="Representations\OperationResponse.cs" />
-    <Compile Include="Representations\OperationStatus.cs" />
     <Compile Include="Filters\AgeFilter.cs" />
     <Compile Include="Activities\Comment.cs" />
     <Compile Include="Activities\DistributionBucket.cs" />
-    <Compile Include="Workflows\ISegmentWorkflow.cs" />
-    <Compile Include="Workflows\SegmentWorkflow.cs" />
     <Compile Include="Model\Converters\GeoCoordinateConverter.cs" />
     <Compile Include="Model\Converters\JsonArrayConverter.cs" />
     <Compile Include="Model\Segments\BaseSegment.cs" />
@@ -214,6 +207,10 @@
     <ProjectReference Include="..\SwimBikeRun.Strive.Model.Interfaces\SwimBikeRun.Strive.Model.Interfaces.csproj">
       <Project>{20400ff7-8e2e-4066-a5a3-24e955929a7e}</Project>
       <Name>SwimBikeRun.Strive.Model.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwimBikeRun.Strive.Representations\SwimBikeRun.Strive.Representations.csproj">
+      <Project>{88DB79F3-DBAB-477E-9450-8A60792A168C}</Project>
+      <Name>SwimBikeRun.Strive.Representations</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

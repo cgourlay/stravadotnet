@@ -1,27 +1,22 @@
 ﻿using Nancy;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-using SwimBikeRun.Representations;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
-using SwimBikeRun.Workflows;
+using SwimBikeRun.Strive.Representations;
+using SwimBikeRun.Strive.Workflows;
 
 namespace SwimBikeRun.Strive.Modules 
+
+
+
+
+
+
+
+
+
+
+
+
 {
     public class SegmentModule : NancyModule
     {

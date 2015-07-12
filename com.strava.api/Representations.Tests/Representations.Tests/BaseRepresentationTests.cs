@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 
 using SwimBikeRun.Representations;
+using SwimBikeRun.Strive.Representations;
 
 namespace Representations.Tests
 {
@@ -12,7 +13,7 @@ namespace Representations.Tests
             [Test]
             public void CanGet()
             {
-                Assert.That(BaseRepresentation.ApplicationNamespace.ToString(), Is.EqualTo(@"http://schemas.swim-bike-run/tavla"));
+                Assert.That(BaseRepresentation.ApplicationNamespace.ToString(), Is.EqualTo(@"http://schemas.swim-bike-run/strive"));
             }
         }
 
@@ -21,7 +22,7 @@ namespace Representations.Tests
             [Test]
             public void CanGet()
             {
-                Assert.That(BaseRepresentation.DomainApplicationProtocolNamespace, Is.EqualTo(@"http://schemas.swim-bike-run/tavla/dap"));
+                Assert.That(BaseRepresentation.DomainApplicationProtocolNamespace, Is.EqualTo(@"http://schemas.swim-bike-run/strive/dap"));
             }
         }
 
@@ -30,7 +31,7 @@ namespace Representations.Tests
             [Test]
             public void CanGet()
             {
-                Assert.That(BaseRepresentation.ApplicationMediaType, Is.EqualTo(@"application/vnd.tavla+json"));
+                Assert.That(BaseRepresentation.ApplicationMediaType, Is.EqualTo(@"application/vnd.strive+json"));
             }
         }
 

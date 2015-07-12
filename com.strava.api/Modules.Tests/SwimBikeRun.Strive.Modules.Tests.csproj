@@ -81,6 +81,14 @@
       <Project>{20400FF7-8E2E-4066-A5A3-24E955929A7E}</Project>
       <Name>SwimBikeRun.Strive.Model.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\SwimBikeRun.Strive.Representations\SwimBikeRun.Strive.Representations.csproj">
+      <Project>{88DB79F3-DBAB-477E-9450-8A60792A168C}</Project>
+      <Name>SwimBikeRun.Strive.Representations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SwimBikeRun.Strive.Workflows\SwimBikeRun.Strive.Workflows.csproj">
+      <Project>{7263AE19-7B31-41A7-9D4E-535D87C67139}</Project>
+      <Name>SwimBikeRun.Strive.Workflows</Name>
+    </ProjectReference>
     <ProjectReference Include="..\com.strava.api.csproj">
       <Project>{22adbc7c-a736-49f8-bd04-bc4e2ad9b5b8}</Project>
       <Name>com.strava.api</Name>

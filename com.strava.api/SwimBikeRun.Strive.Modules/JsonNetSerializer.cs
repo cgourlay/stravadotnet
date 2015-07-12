@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-
 using Nancy;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace SwimBikeRun.Helpers
+namespace SwimBikeRun.Strive.Modules
 {
     public sealed class JsonNetSerializer : ISerializer
     {
@@ -20,7 +19,7 @@ namespace SwimBikeRun.Helpers
 
         public bool CanSerialize(string contentType)
         {
-            return contentType == Representations.BaseRepresentation.ApplicationMediaType;
+            return contentType == SwimBikeRun.Strive.Representations.BaseRepresentation.ApplicationMediaType;
         }
 
         public void Serialize<TModel>(string contentType, TModel model, Stream outputStream)

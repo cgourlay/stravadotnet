@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 
 using SwimBikeRun.Representations;
+using SwimBikeRun.Strive.Representations;
 
 namespace Representations.Tests
 {

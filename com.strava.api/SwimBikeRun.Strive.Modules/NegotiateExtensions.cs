@@ -6,6 +6,7 @@ using Nancy.Responses.Negotiation;
 using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Representations;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
+using SwimBikeRun.Strive.Representations;
 
 namespace SwimBikeRun.Strive.Modules
 {

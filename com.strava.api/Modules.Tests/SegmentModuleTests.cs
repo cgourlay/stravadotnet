@@ -5,10 +5,11 @@ using Nancy;
 using Nancy.Testing;
 using NUnit.Framework;
 using SwimBikeRun.Representations;
-using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
 using SwimBikeRun.Strive.Modules;
-using SwimBikeRun.Workflows;
+using SwimBikeRun.Strive.Representations;
+using SwimBikeRun.Strive.Workflows;
+
 
 namespace Modules.Tests
 {
