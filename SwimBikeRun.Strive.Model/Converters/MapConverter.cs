@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using SwimBikeRun.Strive.Model.Activities;
 using SwimBikeRun.Strive.Model.Interfaces.Activities;
 
 namespace SwimBikeRun.Strive.Model.Converters
@@ -13,7 +14,7 @@ namespace SwimBikeRun.Strive.Model.Converters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return serializer.Deserialize(reader, typeof(IMap));
+            return serializer.Deserialize(reader, typeof(Map));
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
