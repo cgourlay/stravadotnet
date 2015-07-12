@@ -6,23 +6,11 @@ using SwimBikeRun.Strive.Workflows.Interfaces;
 
 namespace SwimBikeRun.Strive.Modules
 {
-
-
-
-
-
-
-
-
-
-
-
     public class SegmentModule : NancyModule
     {
-        private const string BaseEndpoint = @"/Segments";
         private readonly ISegmentWorkflow _segmentWorkflow;
 
-        public SegmentModule(ISegmentWorkflow segmentWorkflow) : base(BaseEndpoint)
+        public SegmentModule(ISegmentWorkflow segmentWorkflow) : base(@"/Segments")
         {
             _segmentWorkflow = segmentWorkflow;
 
