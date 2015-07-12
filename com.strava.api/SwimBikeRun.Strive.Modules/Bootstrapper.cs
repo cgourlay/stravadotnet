@@ -1,21 +1,20 @@
 ﻿using System.Threading;
-using com.Strava.Api.Repositories;
+
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
-using SwimBikeRun.Strive.Repositories;
+
 using SwimBikeRun.Strive.Workflows;
 using SwimBikeRun.Strive.Workflows.Interfaces;
 
 namespace SwimBikeRun.Strive.Modules
 {
-    public class SwimBikeRunBootstrapper : DefaultNancyBootstrapper
+    public class Bootstrapper : DefaultNancyBootstrapper
     {
         protected override void ConfigureApplicationContainer(TinyIoCContainer container)
         {
             base.ConfigureApplicationContainer(container);
             container.Register(typeof(ISegmentWorkflow), typeof(SegmentWorkflow));
-            container.Register(typeof(IProvider), typeof(Neo4JProvider));
         }
 
         protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)
