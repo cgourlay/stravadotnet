@@ -7,8 +7,8 @@
     <ProjectGuid>{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Modules.Tests</RootNamespace>
-    <AssemblyName>Modules.Tests</AssemblyName>
+    <RootNamespace>SwimBikeRun.Strive.Modules.Tests</RootNamespace>
+    <AssemblyName>SwimBikeRun.Strive.Modules.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>

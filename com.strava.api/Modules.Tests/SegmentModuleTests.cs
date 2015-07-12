@@ -4,15 +4,13 @@ using Moq;
 using Nancy;
 using Nancy.Testing;
 using NUnit.Framework;
+
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
-using SwimBikeRun.Strive.Modules;
 using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Representations.Enums;
-using SwimBikeRun.Strive.Workflows;
 using SwimBikeRun.Strive.Workflows.Interfaces;
 
-
-namespace Modules.Tests
+namespace SwimBikeRun.Strive.Modules.Tests
 {
     [TestFixture]
     public class SegmentModuleTests
