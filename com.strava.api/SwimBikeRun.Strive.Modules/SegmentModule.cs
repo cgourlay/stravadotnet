@@ -19,9 +19,8 @@ namespace SwimBikeRun.Strive.Modules
 
         private dynamic GetSegment(dynamic parameters)
         {
-            IOperationResponse<ISegment> operationResponse = _segmentWorkflow.GetById(parameters.Id);
-            if (!operationResponse.OperationSucceeded) { return (HttpStatusCode) operationResponse.Status; }
-            return Negotiate.Content(operationResponse);
+            IOperationResponse<ISegment> response = _segmentWorkflow.GetById(parameters.Id);
+            return response.OperationSucceeded ? Negotiate.Content(response) : (dynamic) (HttpStatusCode) response.Status;
         }
     }
 }
