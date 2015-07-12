@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{11D33253
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.Tests", "com.strava.api\Model.Tests\ClassLibrary1\Model.Tests.csproj", "{B936D450-38B1-4BE3-8544-F4556528CB91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Tests", "com.strava.api\Modules.Tests\Modules.Tests.csproj", "{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimBikeRun.Strive.Modules.Tests", "com.strava.api\Modules.Tests\SwimBikeRun.Strive.Modules.Tests.csproj", "{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{808C6FB6-8659-4740-810D-0F7AC19A25D6}"
 	ProjectSection(SolutionItems) = preProject
@@ -43,36 +43,53 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Metrics", "Metrics", "{DFB7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimBikeRun.Strive.Modules", "com.strava.api\SwimBikeRun.Strive.Modules\SwimBikeRun.Strive.Modules.csproj", "{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{19938A27-71C7-41DD-BB86-5C8ADEF8795B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AppVeyor|Any CPU = AppVeyor|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22ADBC7C-A736-49F8-BD04-BC4E2AD9B5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B936D450-38B1-4BE3-8544-F4556528CB91}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{B936D450-38B1-4BE3-8544-F4556528CB91}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{B936D450-38B1-4BE3-8544-F4556528CB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B936D450-38B1-4BE3-8544-F4556528CB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B936D450-38B1-4BE3-8544-F4556528CB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B936D450-38B1-4BE3-8544-F4556528CB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00887CA-3C28-45C8-96A8-60DD646B3A86}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{D00887CA-3C28-45C8-96A8-60DD646B3A86}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{D00887CA-3C28-45C8-96A8-60DD646B3A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D00887CA-3C28-45C8-96A8-60DD646B3A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D00887CA-3C28-45C8-96A8-60DD646B3A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D00887CA-3C28-45C8-96A8-60DD646B3A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E73AFA4-5631-4CED-AAD6-3128875FC405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.AppVeyor|Any CPU.Build.0 = AppVeyor|Any CPU
 		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,6 +97,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E} = {19938A27-71C7-41DD-BB86-5C8ADEF8795B}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\com.strava.api.ndproj"
