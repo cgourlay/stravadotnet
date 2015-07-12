@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Security.Principal;
+
 using Nancy.Security;
 
 namespace SwimBikeRun.Strive.Modules
@@ -12,7 +13,7 @@ namespace SwimBikeRun.Strive.Modules
 
         public bool IsInRole(string role)
         {
-            throw new System.NotImplementedException("Only included to satisfy the interface an implementation is not required.");
+            throw new System.NotImplementedException("Included only to satisfy the interface - no implementation required.");
         }
     }
 }
