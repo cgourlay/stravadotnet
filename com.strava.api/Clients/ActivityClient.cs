@@ -25,9 +25,9 @@ using com.Strava.Api.Api;
 using com.Strava.Api.Athletes;
 using com.Strava.Api.Authentication;
 using com.Strava.Api.Common;
-using com.Strava.Api.Model.Activities;
 using com.Strava.Api.Utilities;
 using System.Globalization;
+using SwimBikeRun.Strive.Model.Enums.Activities;
 
 namespace com.Strava.Api.Clients
 {

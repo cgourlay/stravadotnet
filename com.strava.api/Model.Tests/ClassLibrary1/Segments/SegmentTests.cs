@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 using com.Strava.Api.Activities;
 using SwimBikeRun.Model.Segments;
+using SwimBikeRun.Strive.Model.Interfaces.Activities;
 
 namespace Model.Tests.Segments
 {

@@ -21,8 +21,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using com.Strava.Api.Athletes;
-using com.Strava.Api.Model.Activities;
 using Newtonsoft.Json;
+using SwimBikeRun.Strive.Model.Enums.Activities;
 
 namespace com.Strava.Api.Activities
 {

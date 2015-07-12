@@ -5,8 +5,9 @@ using Nancy.Responses.Negotiation;
 
 using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Representations;
+using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
-namespace SwimBikeRun.Helpers.Nancy
+namespace SwimBikeRun.Strive.Modules
 {
     public static class NegotiateExtensions
     {

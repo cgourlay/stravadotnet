@@ -1,8 +1,8 @@
 using System;
+using SwimBikeRun.Model.Segments;
+using SwimBikeRun.Strive.Model.Interfaces.Activities;
 
-using com.Strava.Api.Activities;
-
-namespace SwimBikeRun.Model.Segments
+namespace SwimBikeRun.Strive.Model.Interfaces.Segments
 {
     public interface ISegment : IBaseSegment
     {

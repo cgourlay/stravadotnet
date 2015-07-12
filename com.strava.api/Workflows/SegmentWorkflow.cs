@@ -9,6 +9,7 @@ using com.Strava.Api.Http;
 using SwimBikeRun.Model.Segments;
 
 using Neo4jClient;
+using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
 namespace SwimBikeRun.Workflows
 {

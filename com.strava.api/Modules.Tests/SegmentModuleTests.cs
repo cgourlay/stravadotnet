@@ -4,9 +4,10 @@ using Moq;
 using Nancy;
 using Nancy.Testing;
 using NUnit.Framework;
-using SwimBikeRun.Modules;
 using SwimBikeRun.Representations;
 using SwimBikeRun.Model.Segments;
+using SwimBikeRun.Strive.Model.Interfaces.Segments;
+using SwimBikeRun.Strive.Modules;
 using SwimBikeRun.Workflows;
 
 namespace Modules.Tests

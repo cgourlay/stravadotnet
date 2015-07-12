@@ -3,6 +3,7 @@
 using Newtonsoft.Json;
 
 using com.Strava.Api.Activities;
+using SwimBikeRun.Strive.Model.Interfaces.Activities;
 
 namespace com.Strava.Api.Model.Converters
 {

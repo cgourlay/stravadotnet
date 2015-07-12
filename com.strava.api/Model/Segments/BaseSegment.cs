@@ -2,9 +2,9 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-
-using com.Strava.Api.Model.Activities;
 using com.Strava.Api.Model.Converters;
+using SwimBikeRun.Strive.Model.Enums.Activities;
+using SwimBikeRun.Strive.Model.Enums.Segments;
 
 namespace SwimBikeRun.Model.Segments
 {

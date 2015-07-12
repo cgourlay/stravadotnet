@@ -1,4 +1,4 @@
-﻿namespace com.Strava.Api.Model.Activities
+﻿namespace SwimBikeRun.Strive.Model.Enums.Activities
 {
     public enum ActivityType
     {

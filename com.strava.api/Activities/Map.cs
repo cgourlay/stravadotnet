@@ -19,17 +19,10 @@
 
 using System;
 using Newtonsoft.Json;
+using SwimBikeRun.Strive.Model.Interfaces.Activities;
 
 namespace com.Strava.Api.Activities
 {
-    public interface IMap
-    {
-        string Id { get; set;}
-        string Polyline { get; set; }
-        string SummaryPolyline { get; set; }
-        int ResourceState { get; set; }
-    }
-
     /// <summary>
     /// This class contains information about the route of an activity.
     /// </summary>

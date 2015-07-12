@@ -1,4 +1,4 @@
-﻿
+﻿using Nancy;
 
 
 
@@ -17,14 +17,11 @@
 
 
 
-using Nancy;
-
-using SwimBikeRun.Helpers.Nancy;
-using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Representations;
+using SwimBikeRun.Strive.Model.Interfaces.Segments;
 using SwimBikeRun.Workflows;
 
-namespace SwimBikeRun.Modules // TODO: CG to complete... Refactored up to this point.
+namespace SwimBikeRun.Strive.Modules 
 {
     public class SegmentModule : NancyModule
     {

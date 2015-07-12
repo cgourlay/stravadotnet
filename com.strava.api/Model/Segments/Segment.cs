@@ -5,6 +5,8 @@ using Newtonsoft.Json.Converters;
 
 using com.Strava.Api.Activities;
 using com.Strava.Api.Model.Converters;
+using SwimBikeRun.Strive.Model.Interfaces.Activities;
+using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
 namespace SwimBikeRun.Model.Segments
 {

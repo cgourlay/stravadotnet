@@ -1,6 +1,7 @@
 ﻿using System.Device.Location;
 
-using com.Strava.Api.Model.Activities;
+using SwimBikeRun.Strive.Model.Enums.Activities;
+using SwimBikeRun.Strive.Model.Enums.Segments;
 
 namespace SwimBikeRun.Model.Segments
 {

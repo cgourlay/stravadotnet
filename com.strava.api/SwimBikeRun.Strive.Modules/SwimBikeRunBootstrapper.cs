@@ -1,14 +1,16 @@
 ﻿using System.Threading;
+
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 
-using SwimBikeRun.Workflows;
+using com.Strava.Api.Helpers.Nancy;
 using com.Strava.Api.Repositories;
+using SwimBikeRun.Workflows;
 
-namespace com.Strava.Api.Helpers.Nancy
+namespace SwimBikeRun.Strive.Modules
 {
-    public class Bootstrapper : DefaultNancyBootstrapper
+    public class SwimBikeRunBootstrapper : DefaultNancyBootstrapper
     {
         protected override void ConfigureApplicationContainer(TinyIoCContainer container)
         {
@@ -22,16 +24,16 @@ namespace com.Strava.Api.Helpers.Nancy
             pipelines.BeforeRequest += ctx =>
             {
                 var authorizationHeader = ctx.Request.Headers["Authorization"];
-                if(authorizationHeader == null) { return new Response { StatusCode = HttpStatusCode.Unauthorized }; }
+                if (authorizationHeader == null) { return new Response { StatusCode = HttpStatusCode.Unauthorized }; }
 
                 var accessToken = ctx.Request.Headers.Authorization;
                 if (string.IsNullOrEmpty(accessToken)) { return new Response { StatusCode = HttpStatusCode.Unauthorized }; }
 
                 Thread.CurrentPrincipal = new User { UserName = accessToken };
-                
+
                 return null;
             };
-            
+
             base.RequestStartup(container, pipelines, context);
         }
     }

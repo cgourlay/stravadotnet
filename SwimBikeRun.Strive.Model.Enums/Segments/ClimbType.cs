@@ -1,4 +1,4 @@
-﻿namespace SwimBikeRun.Model.Segments
+﻿namespace SwimBikeRun.Strive.Model.Enums.Segments
 {
     public enum ClimbType
     {

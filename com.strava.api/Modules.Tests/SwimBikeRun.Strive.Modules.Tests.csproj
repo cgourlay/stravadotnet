@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Modules.Tests</RootNamespace>
     <AssemblyName>Modules.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,9 +77,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SwimBikeRun.Strive.Model.Interfaces\SwimBikeRun.Strive.Model.Interfaces.csproj">
+      <Project>{20400FF7-8E2E-4066-A5A3-24E955929A7E}</Project>
+      <Name>SwimBikeRun.Strive.Model.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\com.strava.api.csproj">
       <Project>{22adbc7c-a736-49f8-bd04-bc4e2ad9b5b8}</Project>
       <Name>com.strava.api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwimBikeRun.Strive.Modules\SwimBikeRun.Strive.Modules.csproj">
+      <Project>{68f5f5f3-b8bb-4911-875f-6f00aae04ea6}</Project>
+      <Name>SwimBikeRun.Strive.Modules</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

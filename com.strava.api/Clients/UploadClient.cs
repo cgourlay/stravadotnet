@@ -21,13 +21,12 @@ using System;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using com.Strava.Api.Activities;
 using com.Strava.Api.Api;
 using com.Strava.Api.Authentication;
 using com.Strava.Api.Common;
 using com.Strava.Api.Http;
-using com.Strava.Api.Model.Activities;
 using com.Strava.Api.Upload;
+using SwimBikeRun.Strive.Model.Enums.Activities;
 
 namespace com.Strava.Api.Clients
 {
