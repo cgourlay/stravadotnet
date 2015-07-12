@@ -2,13 +2,13 @@
 
 using Nancy;
 using Nancy.Responses.Negotiation;
+
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
-using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Representations.Interfaces;
 
-namespace SwimBikeRun.Strive.Modules
+namespace SwimBikeRun.Strive.Modules.Helpers
 {
-    public static class NegotiateExtensions
+    public static class NegotiatorExtensions
     {
         public static Negotiator Content(this Negotiator negotiator, IOperationResponse<ISegment> operationResponse)
         {

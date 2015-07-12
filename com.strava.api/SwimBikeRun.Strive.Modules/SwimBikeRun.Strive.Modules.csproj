@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JsonNetSerializer.cs" />
-    <Compile Include="NegotiateExtensions.cs" />
+    <Compile Include="Helpers\NegotiatorExtensions.cs" />
     <Compile Include="SwimBikeRunBootstrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
