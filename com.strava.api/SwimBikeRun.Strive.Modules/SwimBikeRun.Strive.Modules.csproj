@@ -90,7 +90,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JsonNetSerializer.cs" />
+    <Compile Include="Helpers\JsonNetSerializer.cs" />
     <Compile Include="Helpers\NegotiatorExtensions.cs" />
     <Compile Include="SwimBikeRunBootstrapper.cs" />
     <Compile Include="Program.cs" />
