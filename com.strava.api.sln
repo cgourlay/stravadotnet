@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimBikeRun.Strive.Represen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimBikeRun.Strive.Representations.Enums", "SwimBikeRun.Strive.Representations.Enums\SwimBikeRun.Strive.Representations.Enums.csproj", "{E28C7FF1-1C39-46B1-BDD2-333FD5766DC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimBikeRun.Strive.Workflows.Interfaces", "SwimBikeRun.Strive.Workflows.Interfaces\SwimBikeRun.Strive.Workflows.Interfaces.csproj", "{43CFCB33-5830-4F80-BC57-3980B85B0CB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AppVeyor|Any CPU = AppVeyor|Any CPU
@@ -158,6 +160,12 @@ Global
 		{E28C7FF1-1C39-46B1-BDD2-333FD5766DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E28C7FF1-1C39-46B1-BDD2-333FD5766DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E28C7FF1-1C39-46B1-BDD2-333FD5766DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43CFCB33-5830-4F80-BC57-3980B85B0CB0}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{43CFCB33-5830-4F80-BC57-3980B85B0CB0}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{43CFCB33-5830-4F80-BC57-3980B85B0CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43CFCB33-5830-4F80-BC57-3980B85B0CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43CFCB33-5830-4F80-BC57-3980B85B0CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43CFCB33-5830-4F80-BC57-3980B85B0CB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

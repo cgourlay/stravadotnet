@@ -9,6 +9,7 @@ using SwimBikeRun.Strive.Modules;
 using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Representations.Enums;
 using SwimBikeRun.Strive.Workflows;
+using SwimBikeRun.Strive.Workflows.Interfaces;
 
 
 namespace Modules.Tests

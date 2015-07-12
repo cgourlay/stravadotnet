@@ -5,6 +5,7 @@ using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 using SwimBikeRun.Strive.Repositories;
 using SwimBikeRun.Strive.Workflows;
+using SwimBikeRun.Strive.Workflows.Interfaces;
 
 namespace SwimBikeRun.Strive.Modules
 {

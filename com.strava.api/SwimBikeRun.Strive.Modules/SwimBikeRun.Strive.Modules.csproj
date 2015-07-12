@@ -149,6 +149,10 @@
       <Project>{88db79f3-dbab-477e-9450-8a60792a168c}</Project>
       <Name>SwimBikeRun.Strive.Representations</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\SwimBikeRun.Strive.Workflows.Interfaces\SwimBikeRun.Strive.Workflows.Interfaces.csproj">
+      <Project>{43CFCB33-5830-4F80-BC57-3980B85B0CB0}</Project>
+      <Name>SwimBikeRun.Strive.Workflows.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SwimBikeRun.Strive.Workflows\SwimBikeRun.Strive.Workflows.csproj">
       <Project>{7263ae19-7b31-41a7-9d4e-535d87c67139}</Project>
       <Name>SwimBikeRun.Strive.Workflows</Name>

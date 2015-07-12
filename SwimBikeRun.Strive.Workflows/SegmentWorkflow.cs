@@ -8,12 +8,14 @@ using SwimBikeRun.Strive.Model.Interfaces.Segments;
 using SwimBikeRun.Strive.Model.Segments;
 using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Representations.Enums;
+using SwimBikeRun.Strive.Representations.Interfaces;
+using SwimBikeRun.Strive.Workflows.Interfaces;
 
 namespace SwimBikeRun.Strive.Workflows
 {
     public class SegmentWorkflow : ISegmentWorkflow
     {
-        public OperationResponse<ISegment> GetById(int segmentId)
+        public IOperationResponse<ISegment> GetById(int segmentId)
         {
             // Get the segment from the cache.
             var databaseProvider = new Neo4JProvider();
