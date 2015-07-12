@@ -4,10 +4,10 @@ using Moq;
 using Nancy;
 using Nancy.Testing;
 using NUnit.Framework;
-using SwimBikeRun.Representations;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
 using SwimBikeRun.Strive.Modules;
 using SwimBikeRun.Strive.Representations;
+using SwimBikeRun.Strive.Representations.Enums;
 using SwimBikeRun.Strive.Workflows;
 
 

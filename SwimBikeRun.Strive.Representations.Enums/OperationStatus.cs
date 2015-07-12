@@ -1,4 +1,4 @@
-﻿namespace SwimBikeRun.Representations
+﻿namespace SwimBikeRun.Strive.Representations.Enums
 {
     public enum OperationStatus
     {

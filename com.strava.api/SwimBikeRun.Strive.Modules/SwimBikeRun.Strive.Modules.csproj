@@ -137,6 +137,14 @@
       <Project>{30237B2F-6421-4171-85BA-75E990C49B2A}</Project>
       <Name>SwimBikeRun.Strive.Repositories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\SwimBikeRun.Strive.Representations.Enums\SwimBikeRun.Strive.Representations.Enums.csproj">
+      <Project>{E28C7FF1-1C39-46B1-BDD2-333FD5766DC7}</Project>
+      <Name>SwimBikeRun.Strive.Representations.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SwimBikeRun.Strive.Representations.Interfaces\SwimBikeRun.Strive.Representations.Interfaces.csproj">
+      <Project>{3F7A9C79-DCDC-442D-B8E2-2B2216849F0B}</Project>
+      <Name>SwimBikeRun.Strive.Representations.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SwimBikeRun.Strive.Representations\SwimBikeRun.Strive.Representations.csproj">
       <Project>{88db79f3-dbab-477e-9450-8a60792a168c}</Project>
       <Name>SwimBikeRun.Strive.Representations</Name>

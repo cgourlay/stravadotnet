@@ -1,23 +1,22 @@
 ﻿using Nancy;
 
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
-using SwimBikeRun.Strive.Representations;
+using SwimBikeRun.Strive.Representations.Interfaces;
 using SwimBikeRun.Strive.Workflows;
 
-namespace SwimBikeRun.Strive.Modules 
-
-
-
-
-
-
-
-
-
-
-
-
+namespace SwimBikeRun.Strive.Modules
 {
+
+
+
+
+
+
+
+
+
+
+
     public class SegmentModule : NancyModule
     {
         private const string BaseEndpoint = @"/Segments";
@@ -32,7 +31,7 @@ namespace SwimBikeRun.Strive.Modules
 
         private dynamic GetSegment(dynamic parameters)
         {
-            OperationResponse<ISegment> operationResponse = _segmentWorkflow.GetById(parameters.Id);
+            IOperationResponse<ISegment> operationResponse = _segmentWorkflow.GetById(parameters.Id);
             if (!operationResponse.OperationSucceeded) { return (HttpStatusCode) operationResponse.Status; }
             return Negotiate.Content(operationResponse);
         }
