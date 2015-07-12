@@ -1,21 +1,22 @@
-﻿namespace SwimBikeRun.Strive.Modules
+﻿using System;
+using System.Configuration;
+
+using Nancy.Hosting.Self;
+
+namespace SwimBikeRun.Strive.Modules
 {
-    using System;
-    using Nancy.Hosting.Self;
-
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var uri =
-                new Uri("http://localhost:3579");
+            var uri = ConfigurationManager.AppSettings["HostUri"];
 
-            using (var host = new NancyHost(uri))
+            using (var host = new NancyHost(new Uri(uri)))
             {
                 host.Start();
 
-                Console.WriteLine("Your application is running on " + uri);
-                Console.WriteLine("Press any [Enter] to close the host.");
+                Console.WriteLine("Your application is running on {0}", uri);
+                Console.WriteLine("Press any key to close the host.");
                 Console.ReadLine();
             }
         }
