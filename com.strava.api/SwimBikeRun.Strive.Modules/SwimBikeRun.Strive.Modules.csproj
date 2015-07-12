@@ -145,10 +145,6 @@
       <Project>{7263ae19-7b31-41a7-9d4e-535d87c67139}</Project>
       <Name>SwimBikeRun.Strive.Workflows</Name>
     </ProjectReference>
-    <ProjectReference Include="..\com.strava.api.csproj">
-      <Project>{22adbc7c-a736-49f8-bd04-bc4e2ad9b5b8}</Project>
-      <Name>com.strava.api</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
