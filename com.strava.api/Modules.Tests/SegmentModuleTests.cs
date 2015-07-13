@@ -18,7 +18,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
         public class Authorization : SegmentModuleTests
         {
             [Test]
-            public void HandlesMissingAuthorizationHeader()
+            public static void HandlesMissingAuthorizationHeader()
             {
                 var browser = new Browser(new Bootstrapper());
                 
@@ -35,7 +35,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
             }
 
             [Test]
-            public void HandlesNullAuthorizationToken()
+            public static void HandlesNullAuthorizationToken()
             {
                 var browser = new Browser(new Bootstrapper());
 
@@ -53,7 +53,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
             }
 
             [Test]
-            public void HandlesMissingAuthorizationToken()
+            public static void HandlesMissingAuthorizationToken()
             {
                 var browser = new Browser(new Bootstrapper());
 
@@ -71,7 +71,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
             }
 
             [Test]
-            public void UserTokenAttachedToThread()
+            public static void UserTokenAttachedToThread()
             {
                 var browser = new Browser(new Bootstrapper());
                 var expectedUser = new User {UserName = "1234567890"};
@@ -82,7 +82,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
                     with.Header("Accept", "application/json");
                     with.Header("Authorization", "1234567890");
                 });
-
+                
                 Assert.That(Thread.CurrentPrincipal.Identity.Name, Is.EqualTo(expectedUser.UserName));
             }
         }
@@ -91,12 +91,12 @@ namespace SwimBikeRun.Strive.Modules.Tests
         {
             [Test]
             [Ignore("TODO: CG to complete... Refer to issue #31 for further information.")]
-            public void ReturnsEtag()
+            public static void ReturnsEtag()
             {
             }
 
             [Test]
-            public void ReturnsLocation()
+            public static void ReturnsLocation()
             {
                 var workflowMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<IOperationResponse<ISegment>>();
@@ -122,7 +122,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
             }
 
             [Test]
-            public void ReturnsStatusCode()
+            public static void ReturnsStatusCode()
             {
                 var workflowMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<IOperationResponse<ISegment>>();
@@ -148,7 +148,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
             }
 
             [Test]
-            public void ReturnsModelAsJson()
+            public static void ReturnsModelAsJson()
             {
                 var workflowMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<IOperationResponse<ISegment>>();
@@ -179,7 +179,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
         public class GetSegment : SegmentModuleTests
         {
             [Test]
-            public void HandlesApplicationFailure()
+            public static void HandlesApplicationFailure()
             {
                 var workflowMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<IOperationResponse<ISegment>>();
@@ -207,7 +207,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
             }
 
             [Test]
-            public void HandlesInvalidId()
+            public static void HandlesInvalidId()
             {
                 var browser = new Browser(with =>
                 {

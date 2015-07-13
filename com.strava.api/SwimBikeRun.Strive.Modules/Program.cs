@@ -14,9 +14,6 @@ namespace SwimBikeRun.Strive.Modules
             using (var host = new NancyHost(new Uri(uri)))
             {
                 host.Start();
-
-                Console.WriteLine("Your application is running on {0}", uri);
-                Console.WriteLine("Press any key to close the host.");
                 Console.ReadLine();
             }
         }
