@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using SwimBikeRun.Strive.Representations;
+
 using SwimBikeRun.Strive.Representations.Enums;
 
-namespace Representations.Tests
+namespace SwimBikeRun.Strive.Representations.Tests
 {
     [TestFixture]
     public class OperationResponseTests

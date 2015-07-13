@@ -30,7 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{808C6FB6-8
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Representations.Tests", "com.strava.api\Representations.Tests\Representations.Tests\Representations.Tests.csproj", "{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimBikeRun.Strive.Representations.Tests", "com.strava.api\Representations.Tests\Representations.Tests\SwimBikeRun.Strive.Representations.Tests.csproj", "{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers.Tests", "com.strava.api\Helpers.Tests\Helpers.Tests\Helpers.Tests.csproj", "{D00887CA-3C28-45C8-96A8-60DD646B3A86}"
 EndProject
@@ -172,6 +172,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8BBB95EA-7A90-4A23-AD3B-EEA402D2109E} = {19938A27-71C7-41DD-BB86-5C8ADEF8795B}
+		{19E3CF3B-AFD3-40D1-8ED0-20BDD1BF3358} = {19938A27-71C7-41DD-BB86-5C8ADEF8795B}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\com.strava.api.ndproj"

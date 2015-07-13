@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
-using SwimBikeRun.Strive.Representations;
 
-namespace Representations.Tests
+namespace SwimBikeRun.Strive.Representations.Tests
 {
     [TestFixture]
     public class BaseRepresentationTests

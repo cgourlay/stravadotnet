@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+
 using Newtonsoft.Json;
+
 using SwimBikeRun.Strive.Representations.Enums;
 using SwimBikeRun.Strive.Representations.Interfaces;
 
