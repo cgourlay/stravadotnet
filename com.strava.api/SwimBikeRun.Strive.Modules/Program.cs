@@ -5,7 +5,7 @@ using Nancy.Hosting.Self;
 
 namespace SwimBikeRun.Strive.Modules
 {
-    public class Program
+    public static class Program
     {
         static void Main()
         {

@@ -76,7 +76,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 var browser = new Browser(new Bootstrapper());
                 var expectedUser = new User {UserName = "1234567890"};
 
-                var response = browser.Get("/Segments/1234", with =>
+                browser.Get("/Segments/1234", with =>
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
