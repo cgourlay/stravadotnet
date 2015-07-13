@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.Threading;
 using Moq;
 using Nancy;
 using Nancy.Testing;
@@ -68,6 +68,22 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 Assert.That(() => response.Headers["ETag"], Throws.Exception.TypeOf<KeyNotFoundException>());
                 Assert.That(() => response.Headers["Location"], Throws.Exception.TypeOf<KeyNotFoundException>());
                 Assert.That(response.Body, Is.Empty);
+            }
+
+            [Test]
+            public void UserTokenAttachedToThread()
+            {
+                var browser = new Browser(new Bootstrapper());
+                var expectedUser = new User {UserName = "1234567890"};
+
+                var response = browser.Get("/Segments/1234", with =>
+                {
+                    with.HttpRequest();
+                    with.Header("Accept", "application/json");
+                    with.Header("Authorization", "1234567890");
+                });
+
+                Assert.That(Thread.CurrentPrincipal.Identity.Name, Is.EqualTo(expectedUser.UserName));
             }
         }
 
