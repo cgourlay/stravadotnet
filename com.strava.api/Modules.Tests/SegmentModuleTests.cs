@@ -15,52 +15,56 @@ namespace SwimBikeRun.Strive.Modules.Tests
     [TestFixture]
     public class SegmentModuleTests
     {
-        public class GetSegment : SegmentModuleTests
+        public class Authorization : SegmentModuleTests
         {
             [Test]
-            public void HandlesApplicationFailure()
+            public void HandlesMissingAuthorizationHeader()
             {
-                var workflowMock = new Mock<ISegmentWorkflow>();
-                var responseMock = new Mock<IOperationResponse<ISegment>>();
-
-                responseMock.SetupProperty(s => s.Status, OperationStatus.InternalServerError);
-                responseMock.SetupProperty(s => s.OperationSucceeded, false);
-                workflowMock.Setup(m => m.GetById(It.IsAny<int>())).Returns(responseMock.Object);
-
-                var browser = new Browser(with =>
-                {
-                    with.Module<SegmentModule>();
-                    with.Dependency(workflowMock.Object);
-                });
-
+                var browser = new Browser(new Bootstrapper());
+                
                 var response = browser.Get("/Segments/1234", with =>
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
                 });
 
-                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.InternalServerError));
+                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
                 Assert.That(() => response.Headers["ETag"], Throws.Exception.TypeOf<KeyNotFoundException>());
                 Assert.That(() => response.Headers["Location"], Throws.Exception.TypeOf<KeyNotFoundException>());
                 Assert.That(response.Body, Is.Empty);
             }
 
             [Test]
-            public void HandlesInvalidId()
+            public void HandlesNullAuthorizationToken()
             {
-                var browser = new Browser(with =>
-                {
-                    with.Module<SegmentModule>();
-                    with.Dependency(new Mock<ISegmentWorkflow>().Object);
-                });
+                var browser = new Browser(new Bootstrapper());
 
-                var response = browser.Get("/Segments/qwerty", with =>
+                var response = browser.Get("/Segments/1234", with =>
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
+                    with.Header("Authorization", null);
                 });
 
-                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
+                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
+                Assert.That(() => response.Headers["ETag"], Throws.Exception.TypeOf<KeyNotFoundException>());
+                Assert.That(() => response.Headers["Location"], Throws.Exception.TypeOf<KeyNotFoundException>());
+                Assert.That(response.Body, Is.Empty);
+            }
+
+            [Test]
+            public void HandlesMissingAuthorizationToken()
+            {
+                var browser = new Browser(new Bootstrapper());
+
+                var response = browser.Get("/Segments/1234", with =>
+                {
+                    with.HttpRequest();
+                    with.Header("Accept", "application/json");
+                    with.Header("Authorization", string.Empty);
+                });
+
+                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
                 Assert.That(() => response.Headers["ETag"], Throws.Exception.TypeOf<KeyNotFoundException>());
                 Assert.That(() => response.Headers["Location"], Throws.Exception.TypeOf<KeyNotFoundException>());
                 Assert.That(response.Body, Is.Empty);
@@ -153,6 +157,58 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 });
 
                 Assert.That(response.Body.AsString(), Is.StringContaining("Hawk Hill"));
+            }
+        }
+
+        public class GetSegment : SegmentModuleTests
+        {
+            [Test]
+            public void HandlesApplicationFailure()
+            {
+                var workflowMock = new Mock<ISegmentWorkflow>();
+                var responseMock = new Mock<IOperationResponse<ISegment>>();
+
+                responseMock.SetupProperty(s => s.Status, OperationStatus.InternalServerError);
+                responseMock.SetupProperty(s => s.OperationSucceeded, false);
+                workflowMock.Setup(m => m.GetById(It.IsAny<int>())).Returns(responseMock.Object);
+
+                var browser = new Browser(with =>
+                {
+                    with.Module<SegmentModule>();
+                    with.Dependency(workflowMock.Object);
+                });
+
+                var response = browser.Get("/Segments/1234", with =>
+                {
+                    with.HttpRequest();
+                    with.Header("Accept", "application/json");
+                });
+
+                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.InternalServerError));
+                Assert.That(() => response.Headers["ETag"], Throws.Exception.TypeOf<KeyNotFoundException>());
+                Assert.That(() => response.Headers["Location"], Throws.Exception.TypeOf<KeyNotFoundException>());
+                Assert.That(response.Body, Is.Empty);
+            }
+
+            [Test]
+            public void HandlesInvalidId()
+            {
+                var browser = new Browser(with =>
+                {
+                    with.Module<SegmentModule>();
+                    with.Dependency(new Mock<ISegmentWorkflow>().Object);
+                });
+
+                var response = browser.Get("/Segments/qwerty", with =>
+                {
+                    with.HttpRequest();
+                    with.Header("Accept", "application/json");
+                });
+
+                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
+                Assert.That(() => response.Headers["ETag"], Throws.Exception.TypeOf<KeyNotFoundException>());
+                Assert.That(() => response.Headers["Location"], Throws.Exception.TypeOf<KeyNotFoundException>());
+                Assert.That(response.Body, Is.Empty);
             }
         }
     }
