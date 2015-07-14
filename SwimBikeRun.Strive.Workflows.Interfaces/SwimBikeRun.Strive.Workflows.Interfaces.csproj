@@ -38,11 +38,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISegmentWorkflow.cs" />
@@ -56,10 +51,6 @@
     <ProjectReference Include="..\SwimBikeRun.Strive.Representations.Interfaces\SwimBikeRun.Strive.Representations.Interfaces.csproj">
       <Project>{3F7A9C79-DCDC-442D-B8E2-2B2216849F0B}</Project>
       <Name>SwimBikeRun.Strive.Representations.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SwimBikeRun.Strive.Representations\SwimBikeRun.Strive.Representations.csproj">
-      <Project>{88DB79F3-DBAB-477E-9450-8A60792A168C}</Project>
-      <Name>SwimBikeRun.Strive.Representations</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
