@@ -1,14 +1,14 @@
 ﻿using System;
+using System.Net;
+using System.Net.Http;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
 
-
-
-
-using com.Strava.Api.Http;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
+using SwimBikeRun.Strive.Model.Segments;
 using SwimBikeRun.Strive.Repositories;
 using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Representations.Enums;
@@ -28,9 +28,10 @@ namespace SwimBikeRun.Strive.Workflows
             _endpoints = endpoints;
         }
 
-        private void AddSegmentToCache(ISegment segment)
+        private void AddSegmentToCache(Task<ISegment> segment)
         {
-            _repository.Create(segment);
+            // TODO: CG to complete...
+            //_repository.Create(segment);
         }
 
         public IOperationResponse<ISegment> GetById(int segmentId)
@@ -39,26 +40,29 @@ namespace SwimBikeRun.Strive.Workflows
             if (cachedSegment != null) { return new OperationResponse<ISegment> { Data = cachedSegment, Status = OperationStatus.Ok }; }
 
             var segment = GetSegmentFromStrava(segmentId);
-            if (segment == null) { return new OperationResponse<ISegment> { Data = null, Status = OperationStatus.InternalServerError }; }
             
-            AddSegmentToCache(segment);
-            return new OperationResponse<ISegment>() { Data = segment, Status = OperationStatus.Ok };
+            //AddSegmentToCache(segment);
+            return new OperationResponse<ISegment>() { Data = segment.Result, Status = OperationStatus.Ok };
         }
 
         private ISegment GetCachedSegment(int segmentId)
         {
-            return _repository.Read(segmentId);
+            //return _repository.Read(segmentId);
+            // TODO: CG to complete...
+            return null;
         }
 
-        private ISegment GetSegmentFromStrava(int segmentId)
+        private async Task<Segment> GetSegmentFromStrava(int segmentId)
         {
-            // TODO: Refactor the uri being built and refactor the WebRequest type.
-            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", 
-                                                                                            _endpoints.Leaderboard, 
-                                                                                            segmentId,
-                                                                                            Thread.CurrentPrincipal.Identity.Name)));
-
-            return json != null ? JsonConvert.DeserializeObject<ISegment>(json) : null;
+            var uri = new Uri(string.Format("{0}/{1}?access_token={2}",
+                                            _endpoints.Leaderboard, 
+                                            segmentId,
+                                            Thread.CurrentPrincipal.Identity.Name));
+            
+            var httpClient = new HttpClient();
+            var response = await httpClient.GetAsync(uri); 
+            if (!response.IsSuccessStatusCode) { return null; }
+            return JsonConvert.DeserializeObject<Segment>(response.Content.ReadAsStringAsync().Result);
         }
     }
 }
