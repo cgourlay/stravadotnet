@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 
 
 
@@ -7,7 +7,6 @@
 
 
 
-using System;
 using System.Threading;
 using com.Strava.Api.Api;
 using com.Strava.Api.Common;
@@ -34,9 +33,9 @@ namespace SwimBikeRun.Strive.Workflows
 
         public IOperationResponse<ISegment> GetById(int segmentId)
         {
-            // Get the segment from the cache.
-            _repository.Read(segmentId);
-            
+            var cachedSegment = GetCachedSegment(segmentId);
+            if (cachedSegment != null) { return new OperationResponse<ISegment> {Data = cachedSegment, Status = OperationStatus.Ok}; }
+
 
             // If not found in the cache, get the segment from Strava and add to the cache.
             // TODO: Refactor the Endpoints type; Refactor the uri being built and refactor the WebRequest type.
@@ -44,6 +43,11 @@ namespace SwimBikeRun.Strive.Workflows
             _repository.Create(Unmarshaller.Unmarshal<Segment>(json));
             // Return the result
             return new OperationResponse<ISegment>() { Data = Unmarshaller.Unmarshal<Segment>(json), Status = OperationStatus.Ok };
+        }
+
+        private ISegment GetCachedSegment(int segmentId)
+        {
+            return _repository.Read(segmentId);
         }
     }
 }
