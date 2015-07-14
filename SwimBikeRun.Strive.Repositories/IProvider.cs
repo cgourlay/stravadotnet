@@ -3,7 +3,7 @@ using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
 namespace SwimBikeRun.Strive.Repositories
 {
-    public interface IProvider
+    public interface IRepository
     {
         void Create(ISegment segment);
         ISegment Read(int segmentId);

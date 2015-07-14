@@ -9,7 +9,7 @@ using SwimBikeRun.Strive.Repositories;
 
 namespace com.Strava.Api.Repositories
 {
-    public class Neo4JProvider : IProvider
+    public class Neo4JProvider : IRepository
     {
         private readonly IGraphClient _graphClient;
 
