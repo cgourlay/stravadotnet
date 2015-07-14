@@ -1,13 +1,12 @@
 ﻿using System;
-
-
-
-
-
-
-
-
 using System.Threading;
+
+
+
+
+
+
+
 using com.Strava.Api.Api;
 using com.Strava.Api.Common;
 using com.Strava.Api.Http;
@@ -31,23 +30,33 @@ namespace SwimBikeRun.Strive.Workflows
             _repository = repository;
         }
 
+        private void AddSegmentToCache(ISegment segment)
+        {
+            _repository.Create(segment);
+        }
+
         public IOperationResponse<ISegment> GetById(int segmentId)
         {
             var cachedSegment = GetCachedSegment(segmentId);
-            if (cachedSegment != null) { return new OperationResponse<ISegment> {Data = cachedSegment, Status = OperationStatus.Ok}; }
+            if (cachedSegment != null) { return new OperationResponse<ISegment> { Data = cachedSegment, Status = OperationStatus.Ok }; }
 
-
-            // If not found in the cache, get the segment from Strava and add to the cache.
-            // TODO: Refactor the Endpoints type; Refactor the uri being built and refactor the WebRequest type.
-            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId, Thread.CurrentPrincipal.Identity.Name)));
-            _repository.Create(Unmarshaller.Unmarshal<Segment>(json));
-            // Return the result
-            return new OperationResponse<ISegment>() { Data = Unmarshaller.Unmarshal<Segment>(json), Status = OperationStatus.Ok };
+            var segment = GetSegmentFromStrava(segmentId);
+            AddSegmentToCache(segment);
+            
+            return new OperationResponse<ISegment>() { Data = segment, Status = OperationStatus.Ok };
         }
 
         private ISegment GetCachedSegment(int segmentId)
         {
             return _repository.Read(segmentId);
+        }
+
+        private ISegment GetSegmentFromStrava(int segmentId)
+        {
+            // TODO: Refactor the Endpoints type; Refactor the uri being built and refactor the WebRequest type.
+            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId,
+                        Thread.CurrentPrincipal.Identity.Name)));
+            return Unmarshaller.Unmarshal<ISegment>(json);
         }
     }
 }
