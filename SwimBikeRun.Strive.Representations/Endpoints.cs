@@ -1,20 +1,20 @@
 ﻿namespace SwimBikeRun.Strive.Representations
 {
-    public class Endpoints
+    public class Endpoints : IEndpoints
     {
-        public readonly string Activity = @"https://www.strava.com/api/v3/activities";
-        public readonly string Activities = @"https://www.strava.com/api/v3/athlete/activities";
-        public readonly string ActivitiesFollowers = @"https://www.strava.com/api/v3/activities/following";
-        public readonly string Athlete = @"https://www.strava.com/api/v3/athlete";
-        public readonly string Athletes = @"https://www.strava.com/api/v3/athletes";
-        public readonly string Club = @"https://www.strava.com/api/v3/clubs";
-        public readonly string Clubs = @"https://www.strava.com/api/v3/athlete/clubs";
-        public readonly string Friends = @"https://www.strava.com/api/v3/athlete/friends";
-        public readonly string Follower = @"https://www.strava.com/api/v3/athlete/followers";
-        public readonly string Followers = @"https://www.strava.com/api/v3/athletes";
-        public readonly string Gear = @"https://www.strava.com/api/v3/gear";
-        public readonly string Leaderboard = @"https://www.strava.com/api/v3/segments";
-        public readonly string Starred = @"https://www.strava.com/api/v3/segments/starred";
-        public readonly string Uploads = @"https://www.strava.com/api/v3/uploads/";
+        public string Activity { get { return @"https://www.strava.com/api/v3/activities"; } }
+        public string Activities { get { return @"https://www.strava.com/api/v3/athlete/activities"; } }
+        public string ActivitiesFollowers { get { return @"https://www.strava.com/api/v3/activities/following"; } }
+        public string Athlete { get { return @"https://www.strava.com/api/v3/athlete"; } }
+        public string Athletes { get { return @"https://www.strava.com/api/v3/athletes"; } }
+        public string Club { get { return @"https://www.strava.com/api/v3/clubs"; } }
+        public string Clubs { get { return @"https://www.strava.com/api/v3/athlete/clubs"; } }
+        public string Friends { get { return @"https://www.strava.com/api/v3/athlete/friends"; } }
+        public string Follower { get { return @"https://www.strava.com/api/v3/athlete/followers"; } }
+        public string Followers { get { return @"https://www.strava.com/api/v3/athletes"; } }
+        public string Gear { get { return @"https://www.strava.com/api/v3/gear"; } }
+        public string Leaderboard { get { return @"https://www.strava.com/api/v3/segments"; } }
+        public string Starred { get { return @"https://www.strava.com/api/v3/segments/starred"; } }
+        public string Uploads { get { return @"https://www.strava.com/api/v3/uploads/"; } }
     }
 }

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BaseRepresentation.cs" />
     <Compile Include="Endpoints.cs" />
+    <Compile Include="IEndpoints.cs" />
     <Compile Include="OperationResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
