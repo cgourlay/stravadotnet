@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Threading;
 
+using Newtonsoft.Json;
 
 
 
 
 
-
-using com.Strava.Api.Common;
 using com.Strava.Api.Http;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
 using SwimBikeRun.Strive.Repositories;
@@ -40,8 +39,9 @@ namespace SwimBikeRun.Strive.Workflows
             if (cachedSegment != null) { return new OperationResponse<ISegment> { Data = cachedSegment, Status = OperationStatus.Ok }; }
 
             var segment = GetSegmentFromStrava(segmentId);
-            AddSegmentToCache(segment);
+            if (segment == null) { return new OperationResponse<ISegment> { Data = null, Status = OperationStatus.InternalServerError }; }
             
+            AddSegmentToCache(segment);
             return new OperationResponse<ISegment>() { Data = segment, Status = OperationStatus.Ok };
         }
 
@@ -52,10 +52,13 @@ namespace SwimBikeRun.Strive.Workflows
 
         private ISegment GetSegmentFromStrava(int segmentId)
         {
-            // TODO: Refactor the Endpoints type; Refactor the uri being built and refactor the WebRequest type.
-            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", _endpoints.Leaderboard, segmentId,
-                        Thread.CurrentPrincipal.Identity.Name)));
-            return Unmarshaller.Unmarshal<ISegment>(json);
+            // TODO: Refactor the uri being built and refactor the WebRequest type.
+            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", 
+                                                                                            _endpoints.Leaderboard, 
+                                                                                            segmentId,
+                                                                                            Thread.CurrentPrincipal.Identity.Name)));
+
+            return json != null ? JsonConvert.DeserializeObject<ISegment>(json) : null;
         }
     }
 }
