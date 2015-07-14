@@ -7,12 +7,9 @@ using System.Threading;
 
 
 
-using com.Strava.Api.Api;
 using com.Strava.Api.Common;
 using com.Strava.Api.Http;
-using com.Strava.Api.Repositories;
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
-using SwimBikeRun.Strive.Model.Segments;
 using SwimBikeRun.Strive.Repositories;
 using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Representations.Enums;
@@ -23,11 +20,13 @@ namespace SwimBikeRun.Strive.Workflows
 {
     public class SegmentWorkflow : ISegmentWorkflow
     {
+        private IEndpoints _endpoints;
         private IRepository _repository;
 
-        public SegmentWorkflow(IRepository repository)
+        public SegmentWorkflow(IRepository repository, IEndpoints endpoints)
         {
             _repository = repository;
+            _endpoints = endpoints;
         }
 
         private void AddSegmentToCache(ISegment segment)
@@ -54,7 +53,7 @@ namespace SwimBikeRun.Strive.Workflows
         private ISegment GetSegmentFromStrava(int segmentId)
         {
             // TODO: Refactor the Endpoints type; Refactor the uri being built and refactor the WebRequest type.
-            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", Endpoints.Leaderboard, segmentId,
+            var json = WebRequest.SendGet(new Uri(string.Format("{0}/{1}?access_token={2}", _endpoints.Leaderboard, segmentId,
                         Thread.CurrentPrincipal.Identity.Name)));
             return Unmarshaller.Unmarshal<ISegment>(json);
         }
