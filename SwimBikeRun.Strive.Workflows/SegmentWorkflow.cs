@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
-using SwimBikeRun.Strive.Model.Segments;
+using SwimBikeRun.Strive.Model.Segments; // TODO: CG to complete... JsonConvert. is forcing me to use a concrete type!
 using SwimBikeRun.Strive.Repositories;
 using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Representations.Enums;
