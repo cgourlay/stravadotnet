@@ -111,7 +111,6 @@
     <Compile Include="Filters\TimeFilter.cs" />
     <Compile Include="Filters\WeightFilter.cs" />
     <Compile Include="Activities\Summary.cs" />
-    <Compile Include="Api\Endpoints.cs" />
     <Compile Include="Api\Limit.cs" />
     <Compile Include="Api\Limits.cs" />
     <Compile Include="Api\Usage.cs" />

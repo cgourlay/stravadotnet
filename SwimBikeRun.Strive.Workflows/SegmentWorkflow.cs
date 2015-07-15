@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
-
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
+
 using SwimBikeRun.Strive.Model.Segments;
 using SwimBikeRun.Strive.Repositories;
 using SwimBikeRun.Strive.Representations;

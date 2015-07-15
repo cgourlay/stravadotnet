@@ -27,6 +27,7 @@ using com.Strava.Api.Common;
 using com.Strava.Api.Http;
 using com.Strava.Api.Upload;
 using SwimBikeRun.Strive.Model.Enums.Activities;
+using SwimBikeRun.Strive.Representations;
 
 namespace com.Strava.Api.Clients
 {
@@ -104,7 +105,7 @@ namespace com.Strava.Api.Clients
         /// <returns>The status of the upload.</returns>
         public async Task<UploadStatus> CheckUploadStatusAsync(String uploadId)
         {
-            String checkUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Uploads, uploadId, Authentication.AccessToken);
+            String checkUrl = String.Format("{0}/{1}?access_token={2}", new Endpoints().Uploads, uploadId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(checkUrl));
 
             return Unmarshaller.Unmarshal<UploadStatus>(json);
@@ -121,7 +122,7 @@ namespace com.Strava.Api.Clients
         /// <returns>The status of the upload.</returns>
         public UploadStatus CheckUploadStatus(String uploadId)
         {
-            String checkUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Uploads, uploadId, Authentication.AccessToken);
+            String checkUrl = String.Format("{0}/{1}?access_token={2}", new Endpoints().Uploads, uploadId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(checkUrl));
 
             return Unmarshaller.Unmarshal<UploadStatus>(json);

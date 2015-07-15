@@ -25,6 +25,7 @@ using com.Strava.Api.Authentication;
 using com.Strava.Api.Common;
 using com.Strava.Api.Http;
 using com.Strava.Api.Segments;
+using SwimBikeRun.Strive.Representations;
 
 namespace com.Strava.Api.Clients
 {
@@ -84,7 +85,7 @@ namespace com.Strava.Api.Clients
         public async Task<List<SegmentEffort>> GetSegmentEffortsByTimeAsync(String segmentId, DateTime after, DateTime before, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/all_efforts?start_date_local={2}&end_date_local={3}&page={4}&per_page={5}&access_token={6}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 after.ToString("O"),
                 before.ToString("O"),
@@ -139,7 +140,7 @@ namespace com.Strava.Api.Clients
         public async Task<List<SegmentEffort>> GetSegmentEffortsByAthleteAsync(String segmentId, String athleteId, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/all_efforts?athlete_id={2}&page={3}&per_page={4}&access_token={5}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 athleteId,
                 page,
@@ -197,7 +198,7 @@ namespace com.Strava.Api.Clients
         public async Task<List<SegmentEffort>> GetSegmentEffortsAsync(String segmentId, String athleteId, DateTime after, DateTime before, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/all_efforts?athlete_id={2}&start_date_local={3}&end_date_local={4}&page={5}per_page={6}&access_token={7}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 athleteId,
                 after.ToString("O"),
@@ -251,7 +252,7 @@ namespace com.Strava.Api.Clients
         public async Task<List<SegmentEffort>> GetSegmentEffortsAsync(String segmentId, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/all_efforts?page={2}per_page={3}&access_token={4}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 page,
                 perPage,
@@ -310,7 +311,7 @@ namespace com.Strava.Api.Clients
         public List<SegmentEffort> GetSegmentEffortsByTime(String segmentId, DateTime after, DateTime before, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/all_efforts?start_date_local={2}&end_date_local={3}&page={4}&per_page={5}&access_token={6}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 after.ToString("O"),
                 before.ToString("O"),
@@ -365,7 +366,7 @@ namespace com.Strava.Api.Clients
         public List<SegmentEffort> GetSegmentEffortsByAthlete(String segmentId, String athleteId, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/all_efforts?athlete_id={2}&page={3}&per_page={4}&access_token={5}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 athleteId,
                 page,
@@ -423,7 +424,7 @@ namespace com.Strava.Api.Clients
         public List<SegmentEffort> GetSegmentEfforts(String segmentId, String athleteId, DateTime after, DateTime before, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/all_efforts?athlete_id={2}&start_date_local={3}&end_date_local={4}&page={5}per_page={6}&access_token={7}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 athleteId,
                 after.ToString("O"),
@@ -477,7 +478,7 @@ namespace com.Strava.Api.Clients
         public List<SegmentEffort> GetSegmentEfforts(String segmentId, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/all_efforts?page={2}per_page={3}&access_token={4}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 page,
                 perPage,

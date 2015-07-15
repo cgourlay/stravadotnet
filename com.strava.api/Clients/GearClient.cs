@@ -23,6 +23,7 @@ using com.Strava.Api.Api;
 using com.Strava.Api.Authentication;
 using com.Strava.Api.Common;
 using com.Strava.Api.Http;
+using SwimBikeRun.Strive.Representations;
 
 namespace com.Strava.Api.Clients
 {
@@ -46,7 +47,7 @@ namespace com.Strava.Api.Clients
         /// <returns>The gear object.</returns>
         public async Task<Gear.Bike> GetGearAsync(String gearId)
         {
-            String getUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Gear, gearId, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/{1}?access_token={2}", new Endpoints().Gear, gearId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
             return Unmarshaller.Unmarshal<Gear.Bike>(json);
@@ -63,7 +64,7 @@ namespace com.Strava.Api.Clients
         /// <returns>The gear object.</returns>
         public Gear.Bike GetGear(String gearId)
         {
-            String getUrl = String.Format("{0}/{1}?access_token={2}", Endpoints.Gear, gearId, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/{1}?access_token={2}", new Endpoints().Gear, gearId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
             return Unmarshaller.Unmarshal<Gear.Bike>(json);

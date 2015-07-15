@@ -30,6 +30,7 @@ using com.Strava.Api.Http;
 using SwimBikeRun.Model.Segments;
 using com.Strava.Api.Segments;
 using SwimBikeRun.Strive.Model.Segments;
+using SwimBikeRun.Strive.Representations;
 
 
 namespace com.Strava.Api.Clients
@@ -130,7 +131,7 @@ namespace com.Strava.Api.Clients
             }
 
             String getUrl = String.Format("{0}/{1}/leaderboard?{2}&{3}&{4}&{5}&page={6}&per_page={7}&access_token={8}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 useGender ? genderFilter : String.Empty,
                 useTime ? timeFilter : String.Empty,
@@ -230,7 +231,7 @@ namespace com.Strava.Api.Clients
             }
 
             String getUrl = String.Format("{0}/{1}/leaderboard?{2}&{3}&{4}&{5}&club_id={6}&page={7}&per_page={8}&access_token={9}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 useGender ? genderFilter : String.Empty,
                 useTime ? timeFilter : String.Empty,
@@ -331,7 +332,7 @@ namespace com.Strava.Api.Clients
             }
 
             String getUrl = String.Format("{0}/{1}/leaderboard?{2}&{3}&{4}&{5}&following={6}&page={7}&per_page={8}&access_token={9}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 useGender ? genderFilter : String.Empty,
                 useTime ? timeFilter : String.Empty,
@@ -355,7 +356,7 @@ namespace com.Strava.Api.Clients
         /// <returns>A list of segments where the athlete is the record holder.</returns>
         public async Task<List<SegmentEffort>> GetRecordsAsync(String athleteId)
         {
-            String getUrl = String.Format("{0}/{1}/koms?access_token={2}", Endpoints.Athletes, athleteId, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/{1}/koms?access_token={2}", new Endpoints().Athletes, athleteId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
             return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
@@ -367,7 +368,7 @@ namespace com.Strava.Api.Clients
         /// <returns>A list of segments that are starred by the currently authenticated athlete.</returns>
         public async Task<List<BaseSegment>> GetStarredSegmentsAsync()
         {
-            String getUrl = String.Format("{0}/?access_token={1}", Endpoints.Starred, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/?access_token={1}", new Endpoints().Starred, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
             return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
@@ -427,7 +428,7 @@ namespace com.Strava.Api.Clients
         public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&page={2}&per_page={3}&access_token={4}", 
-                Endpoints.Leaderboard, 
+                new Endpoints().Leaderboard, 
                 segmentId,
                 page,
                 perPage,
@@ -444,7 +445,7 @@ namespace com.Strava.Api.Clients
         /// <returns>The total number of entries of the specified Strava segment.</returns>
         public async Task<int> GetSegmentEntryCountAsync(String segmentId)
         {
-            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", new Endpoints().Leaderboard, segmentId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
             Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
@@ -458,7 +459,7 @@ namespace com.Strava.Api.Clients
         /// <returns>The total number of efforts of the specified Strava segment.</returns>
         public async Task<int> GetSegmentEffortCountAsync(String segmentId)
         {
-            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", new Endpoints().Leaderboard, segmentId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
             Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
@@ -482,7 +483,7 @@ namespace com.Strava.Api.Clients
                 );
             
             String getUrl = String.Format("{0}/explore?bounds={1}&access_token={2}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 bnds,
                 Authentication.AccessToken);
 
@@ -510,7 +511,7 @@ namespace com.Strava.Api.Clients
                 );
 
             String getUrl = String.Format("{0}/explore?bounds={1}&min_cat={2}&max_cat={3}&access_token={4}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 bnds,
                 minCat,
                 maxCat,
@@ -529,7 +530,7 @@ namespace com.Strava.Api.Clients
         public async Task<Segment> GetSegmentAsync(String segmentId)
         {
             String getUrl = String.Format("{0}/{1}?access_token={2}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 Authentication.AccessToken);
 
@@ -624,7 +625,7 @@ namespace com.Strava.Api.Clients
             }
 
             String getUrl = String.Format("{0}/{1}/leaderboard?{2}&{3}&{4}&{5}&page={6}&per_page={7}&access_token={8}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 useGender ? genderFilter : String.Empty,
                 useTime ? timeFilter : String.Empty,
@@ -724,7 +725,7 @@ namespace com.Strava.Api.Clients
             }
 
             String getUrl = String.Format("{0}/{1}/leaderboard?{2}&{3}&{4}&{5}&club_id={6}&page={7}&per_page={8}&access_token={9}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 useGender ? genderFilter : String.Empty,
                 useTime ? timeFilter : String.Empty,
@@ -825,7 +826,7 @@ namespace com.Strava.Api.Clients
             }
 
             String getUrl = String.Format("{0}/{1}/leaderboard?{2}&{3}&{4}&{5}&following={6}&page={7}&per_page={8}&access_token={9}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 useGender ? genderFilter : String.Empty,
                 useTime ? timeFilter : String.Empty,
@@ -849,7 +850,7 @@ namespace com.Strava.Api.Clients
         /// <returns>A list of segments where the athlete is the record holder.</returns>
         public List<SegmentEffort> GetRecords(String athleteId)
         {
-            String getUrl = String.Format("{0}/{1}/koms?access_token={2}", Endpoints.Athletes, athleteId, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/{1}/koms?access_token={2}", new Endpoints().Athletes, athleteId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
             return Unmarshaller.Unmarshal<List<SegmentEffort>>(json);
@@ -873,7 +874,7 @@ namespace com.Strava.Api.Clients
         /// <returns>A list of segments that are starred by the currently authenticated athlete.</returns>
         public List<BaseSegment> GetStarredSegments()
         {
-            String getUrl = String.Format("{0}?access_token={1}", Endpoints.Starred, Authentication.AccessToken);
+            String getUrl = String.Format("{0}?access_token={1}", new Endpoints().Starred, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
             return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
@@ -921,7 +922,7 @@ namespace com.Strava.Api.Clients
         public Leaderboard GetSegmentLeaderboard(String segmentId, int page, int perPage)
         {
             String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&page={2}&per_page={3}&access_token={4}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 page,
                 perPage,
@@ -938,7 +939,7 @@ namespace com.Strava.Api.Clients
         /// <returns>The total number of entries of the specified Strava segment.</returns>
         public int GetSegmentEntryCount(String segmentId)
         {
-            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", new Endpoints().Leaderboard, segmentId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
             Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
@@ -952,7 +953,7 @@ namespace com.Strava.Api.Clients
         /// <returns>The total number of efforts of the specified Strava segment.</returns>
         public int GetSegmentEffortCount(String segmentId)
         {
-            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", Endpoints.Leaderboard, segmentId, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&access_token={2}", new Endpoints().Leaderboard, segmentId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
             Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
@@ -976,7 +977,7 @@ namespace com.Strava.Api.Clients
                 );
 
             String getUrl = String.Format("{0}/explore?bounds={1}&access_token={2}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 bnds,
                 Authentication.AccessToken);
 
@@ -1004,7 +1005,7 @@ namespace com.Strava.Api.Clients
                 );
 
             String getUrl = String.Format("{0}/explore?bounds={1}&min_cat={2}&max_cat={3}&access_token={4}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 bnds,
                 minCat,
                 maxCat,

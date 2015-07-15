@@ -27,6 +27,7 @@ using com.Strava.Api.Authentication;
 using com.Strava.Api.Common;
 using com.Strava.Api.Http;
 using com.Strava.Api.Streams;
+using SwimBikeRun.Strive.Representations;
 
 namespace com.Strava.Api.Clients
 {
@@ -68,7 +69,7 @@ namespace com.Strava.Api.Clients
             types.Remove(types.ToString().Length - 1, 1);
 
             String getUrl = String.Format("{0}/{1}/streams/{2}?{3}&access_token={4}",
-                Endpoints.Activity,
+                new Endpoints().Activity,
                 activityId,
                 types,
                 resolution != StreamResolution.All ? "resolution=" + resolution.ToString().ToLower() : "",
@@ -105,7 +106,7 @@ namespace com.Strava.Api.Clients
             types.Remove(types.ToString().Length - 1, 1);
 
             String getUrl = String.Format("{0}/{1}/streams/{2}?{3}&access_token={4}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 types,
                 resolution != StreamResolution.All ? "resolution=" + resolution.ToString().ToLower() : "",
@@ -179,7 +180,7 @@ namespace com.Strava.Api.Clients
             types.Remove(types.ToString().Length - 1, 1);
 
             String getUrl = String.Format("{0}/{1}/streams/{2}?{3}&access_token={4}",
-                Endpoints.Activity,
+                new Endpoints().Activity,
                 activityId,
                 types,
                 resolution != StreamResolution.All ? "resolution=" + resolution.ToString().ToLower() : "",
@@ -250,7 +251,7 @@ namespace com.Strava.Api.Clients
             types.Remove(types.ToString().Length - 1, 1);
 
             String getUrl = String.Format("{0}/{1}/streams/{2}?{3}&access_token={4}",
-                Endpoints.Leaderboard,
+                new Endpoints().Leaderboard,
                 segmentId,
                 types,
                 resolution != StreamResolution.All ? "resolution=" + resolution.ToString().ToLower() : "",
