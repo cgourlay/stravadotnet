@@ -1144,7 +1144,7 @@
             Quotes and appends the specified text to the argument builder.
             </summary>
             <param name="builder">The builder.</param>
-            <param name="text">The text to be appended.</param>
+            <param name="text">The text to be quoted and appended.</param>
             <returns>The same <see cref="T:Cake.Core.IO.ProcessArgumentBuilder"/> instance so that multiple calls can be chained.</returns>
         </member>
         <member name="M:Cake.Core.ProcessArgumentListExtensions.AppendQuoted(Cake.Core.IO.ProcessArgumentBuilder,Cake.Core.IO.IProcessArgument)">
@@ -1163,12 +1163,28 @@
             <param name="text">The secret text to be appended.</param>
             <returns>The same <see cref="T:Cake.Core.IO.ProcessArgumentBuilder"/> instance so that multiple calls can be chained.</returns>
         </member>
+        <member name="M:Cake.Core.ProcessArgumentListExtensions.AppendSecret(Cake.Core.IO.ProcessArgumentBuilder,Cake.Core.IO.IProcessArgument)">
+            <summary>
+            Appends the specified secret text to the argument builder.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="argument">The secret argument to be appended.</param>
+            <returns>The same <see cref="T:Cake.Core.IO.ProcessArgumentBuilder"/> instance so that multiple calls can be chained.</returns>
+        </member>
         <member name="M:Cake.Core.ProcessArgumentListExtensions.AppendQuotedSecret(Cake.Core.IO.ProcessArgumentBuilder,System.String)">
             <summary>
             Quotes and appends the specified secret text to the argument builder.
             </summary>
             <param name="builder">The builder.</param>
             <param name="text">The secret text to be quoted and appended.</param>
+            <returns>The same <see cref="T:Cake.Core.IO.ProcessArgumentBuilder"/> instance so that multiple calls can be chained.</returns>
+        </member>
+        <member name="M:Cake.Core.ProcessArgumentListExtensions.AppendQuotedSecret(Cake.Core.IO.ProcessArgumentBuilder,Cake.Core.IO.IProcessArgument)">
+            <summary>
+            Quotes and appends the specified secret text to the argument builder.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="argument">The secret argument to be appended.</param>
             <returns>The same <see cref="T:Cake.Core.IO.ProcessArgumentBuilder"/> instance so that multiple calls can be chained.</returns>
         </member>
         <member name="T:Cake.Core.ProcessRunnerExtensions">
@@ -1183,6 +1199,43 @@
             <param name="processRunner">The process runner.</param>
             <param name="filePath">The file name such as an application or document with which to start the process.</param>
             <returns>A process handle.</returns>
+        </member>
+        <member name="T:Cake.Core.ProcessSettingsExtensions">
+            <summary>
+            Contains extension methods for <see cref="T:Cake.Core.IO.ProcessSettings"/>.
+            </summary>
+        </member>
+        <member name="M:Cake.Core.ProcessSettingsExtensions.WithArguments(Cake.Core.IO.ProcessSettings,System.Action{Cake.Core.IO.ProcessArgumentBuilder})">
+            <summary>
+            Sets the arguments for the process
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="arguments">The action used to set arguments.</param>
+            <returns>The same <see cref="T:Cake.Core.IO.ProcessSettings"/> instance so that multiple calls can be chained.</returns>
+        </member>
+        <member name="M:Cake.Core.ProcessSettingsExtensions.UseWorkingDirectory(Cake.Core.IO.ProcessSettings,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Sets the working directory for the process to be started.
+            </summary>
+            <param name="settings">The process settings.</param>
+            <param name="path">The working directory for the process to be started.</param>
+            <returns>The same <see cref="T:Cake.Core.IO.ProcessSettings"/> instance so that multiple calls can be chained.</returns>
+        </member>
+        <member name="M:Cake.Core.ProcessSettingsExtensions.SetRedirectStandardOutput(Cake.Core.IO.ProcessSettings,System.Boolean)">
+            <summary>
+            Sets a value indicating whether the output of an application is written to the <see cref="P:System.Diagnostics.Process.StandardOutput"/> stream.
+            </summary>
+            <param name="settings">The process settings.</param>
+            <param name="redirect">true if output should be written to <see cref="P:System.Diagnostics.Process.StandardOutput"/>; otherwise, false. The default is false.</param>
+            <returns>The same <see cref="T:Cake.Core.IO.ProcessSettings"/> instance so that multiple calls can be chained.</returns>
+        </member>
+        <member name="M:Cake.Core.ProcessSettingsExtensions.SetTimeout(Cake.Core.IO.ProcessSettings,System.Int32)">
+            <summary>
+            Sets the optional timeout for process execution
+            </summary>
+            <param name="settings">The process settings.</param>
+            <param name="timeout">The timeout duration</param>
+            <returns>The same <see cref="T:Cake.Core.IO.ProcessSettings"/> instance so that multiple calls can be chained.</returns>
         </member>
         <member name="T:Cake.Core.StringExtensions">
             <summary>
@@ -1584,6 +1637,16 @@
             <param name="pattern">The pattern.</param>
             <returns>The directories matching the specified pattern.</returns>
         </member>
+        <member name="M:Cake.Core.IO.GlobberExtensions.Match(Cake.Core.IO.IGlobber,System.String)">
+            <summary>
+            Returns <see cref="T:Cake.Core.IO.Path"/> instances matching the specified pattern.
+            </summary>
+            <param name="globber">The globber.</param>
+            <param name="pattern">The pattern to match.</param>
+            <returns>
+              <see cref="T:Cake.Core.IO.Path"/> instances matching the specified pattern.
+            </returns>
+        </member>
         <member name="T:Cake.Core.CakeEnvironment">
             <summary>
             Represents the environment Cake operates in.
@@ -1842,12 +1905,15 @@
             Represents a file system globber.
             </summary>
         </member>
-        <member name="M:Cake.Core.IO.IGlobber.Match(System.String)">
+        <member name="M:Cake.Core.IO.IGlobber.Match(System.String,System.Func{Cake.Core.IO.IFileSystemInfo,System.Boolean})">
             <summary>
             Returns <see cref="T:Cake.Core.IO.Path"/> instances matching the specified pattern.
             </summary>
             <param name="pattern">The pattern to match.</param>
-            <returns><see cref="T:Cake.Core.IO.Path"/> instances matching the specified pattern.</returns>
+            <param name="predicate">The predicate used to filter directories based on file system information.</param>
+            <returns>
+              <see cref="T:Cake.Core.IO.Path"/> instances matching the specified pattern.
+            </returns>
         </member>
         <member name="M:Cake.Core.IO.Globber.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment)">
             <summary>
@@ -1856,11 +1922,12 @@
             <param name="fileSystem">The file system.</param>
             <param name="environment">The environment.</param>
         </member>
-        <member name="M:Cake.Core.IO.Globber.Match(System.String)">
+        <member name="M:Cake.Core.IO.Globber.Match(System.String,System.Func{Cake.Core.IO.IFileSystemInfo,System.Boolean})">
             <summary>
             Returns <see cref="T:Cake.Core.IO.Path"/> instances matching the specified pattern.
             </summary>
             <param name="pattern">The pattern to match.</param>
+            <param name="predicate">The predicate used to filter directories based on file system information.</param>
             <returns>
               <see cref="T:Cake.Core.IO.Path"/> instances matching the specified pattern.
             </returns>
@@ -2155,6 +2222,12 @@
             </summary>
             <returns>The filename.</returns>
         </member>
+        <member name="M:Cake.Core.IO.FilePath.GetFilenameWithoutExtension">
+            <summary>
+            Gets the filename without it's extension.
+            </summary>
+            <returns>The filename without it's extension.</returns>
+        </member>
         <member name="M:Cake.Core.IO.FilePath.GetExtension">
             <summary>
             Gets the file extension.
@@ -2352,6 +2425,12 @@
             </summary>
             <returns>A safe string representation of the argument.</returns>
         </member>
+        <member name="M:Cake.Core.IO.Arguments.QuotedArgument.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
         <member name="T:Cake.Core.IO.SearchScope">
             <summary>
             Represents a search scope.
@@ -2392,6 +2471,12 @@
             </summary>
             <returns>A safe string representation of the argument.</returns>
         </member>
+        <member name="M:Cake.Core.IO.Arguments.SecretArgument.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
         <member name="T:Cake.Core.IO.SpecialPath">
             <summary>
             Represents a special path.
@@ -2430,6 +2515,11 @@
             The Windows folder.
             </summary>
         </member>
+        <member name="F:Cake.Core.IO.SpecialPath.LocalTemp">
+            <summary>
+            The current user's temporary folder.
+            </summary>
+        </member>
         <member name="T:Cake.Core.IO.Arguments.TextArgument">
             <summary>
             Represents a text argument.
@@ -2458,6 +2548,12 @@
             <returns>
             A safe string representation of the argument.
             </returns>
+        </member>
+        <member name="M:Cake.Core.IO.Arguments.TextArgument.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
         </member>
         <member name="T:Cake.Core.IO.WindowsRegistry">
             <summary>
@@ -2697,6 +2793,29 @@
             </summary>
             <param name="path">The path.</param>
             <returns>The absolute directory path.</returns>
+        </member>
+        <member name="T:Cake.Core.Scripting.Processors.ShebangProcessor">
+            <summary>
+            Processor for Unix shebang lines (#!).
+            </summary>
+        </member>
+        <member name="M:Cake.Core.Scripting.Processors.ShebangProcessor.#ctor(Cake.Core.ICakeEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Core.Scripting.Processors.ShebangProcessor"/> class.
+            </summary>
+            <param name="environment">The environment.</param>
+        </member>
+        <member name="M:Cake.Core.Scripting.Processors.ShebangProcessor.Process(Cake.Core.Scripting.IScriptProcessor,Cake.Core.Scripting.ScriptProcessorContext,Cake.Core.IO.FilePath,System.String)">
+            <summary>
+            Processes the specified line.
+            </summary>
+            <param name="processor">The script processor.</param>
+            <param name="context">The script processor context.</param>
+            <param name="currentScriptPath">The current script path.</param>
+            <param name="line">The line to process.</param>
+            <returns>
+              <c>true</c> if the processor handled the line; otherwise <c>false</c>.
+            </returns>
         </member>
         <member name="T:Cake.Core.Scripting.Processors.ToolDirectiveProcessor">
             <summary>
@@ -3218,13 +3337,14 @@
             </summary>
             <typeparam name="TSettings">The settings type.</typeparam>
         </member>
-        <member name="M:Cake.Core.Utilities.Tool`1.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner)">
+        <member name="M:Cake.Core.Utilities.Tool`1.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.IO.IGlobber)">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Core.Utilities.Tool`1"/> class.
             </summary>
             <param name="fileSystem">The file system.</param>
             <param name="environment">The environment.</param>
             <param name="processRunner">The process runner.</param>
+            <param name="globber">The globber.</param>
         </member>
         <member name="M:Cake.Core.Utilities.Tool`1.Run(`0,Cake.Core.IO.ProcessArgumentBuilder)">
             <summary>
@@ -3265,6 +3385,12 @@
             </summary>
             <returns>The name of the tool.</returns>
         </member>
+        <member name="M:Cake.Core.Utilities.Tool`1.GetToolExecutableNames">
+            <summary>
+            Gets the possible names of the tool executable.
+            </summary>
+            <returns>The tool executable name.</returns>
+        </member>
         <member name="M:Cake.Core.Utilities.Tool`1.GetWorkingDirectory(`0)">
             <summary>
             Gets the working directory.
@@ -3273,9 +3399,9 @@
             <param name="settings">The settings.</param>
             <returns>The working directory for the tool.</returns>
         </member>
-        <member name="M:Cake.Core.Utilities.Tool`1.GetDefaultToolPath(`0)">
+        <member name="M:Cake.Core.Utilities.Tool`1.GetAlternativeToolPaths(`0)">
             <summary>
-            Gets the default tool path.
+            Gets alternative file paths which the tool may exist in
             </summary>
             <param name="settings">The settings.</param>
             <returns>The default tool path.</returns>
