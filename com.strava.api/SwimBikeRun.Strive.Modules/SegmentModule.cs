@@ -5,24 +5,23 @@ using SwimBikeRun.Strive.Modules.Helpers;
 using SwimBikeRun.Strive.Representations.Interfaces;
 using SwimBikeRun.Strive.Workflows.Interfaces;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace SwimBikeRun.Strive.Modules
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
     public class SegmentModule : NancyModule
     {

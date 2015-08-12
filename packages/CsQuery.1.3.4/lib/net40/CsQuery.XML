@@ -864,6 +864,35 @@
              A string of HTML.
              </returns>
         </member>
+        <member name="M:CsQuery.CQ.RenderSelection(CsQuery.Output.IOutputFormatter)">
+             <summary>
+             Renders just the selection set completely.
+             </summary>
+            
+             <param name="outputFormatter">
+             The output formatter.
+             </param>
+            
+             <returns>
+             A string of HTML.
+             </returns>
+        </member>
+        <member name="M:CsQuery.CQ.RenderSelection(CsQuery.Output.IOutputFormatter,System.IO.StringWriter)">
+             <summary>
+             Renders just the selection set completely.
+             </summary>
+            
+             <param name="outputFormatter">
+             The output formatter.
+             </param>
+             <param name="writer">
+             The writer.
+             </param>
+            
+             <returns>
+             A string of HTML.
+             </returns>
+        </member>
         <member name="M:CsQuery.CQ.Render">
              <summary>
              Renders the document to a string.
@@ -6076,10 +6105,20 @@
             Gets a unique ID for this element among its siblings
             </summary>
         </member>
+        <member name="P:CsQuery.IDomObject.NodePathID">
+            <summary>
+            Gets the full pathname of the node file.
+            </summary>
+        </member>
         <member name="P:CsQuery.IDomObject.Path">
             <summary>
             Gets the unique path to this element from the root of the heirarchy. This is generally only
             used for internal purposes.
+            </summary>
+        </member>
+        <member name="P:CsQuery.IDomObject.NodePath">
+            <summary>
+            Gets the full pathname of the node file.
             </summary>
         </member>
         <member name="P:CsQuery.IDomObject.NodeNameID">
@@ -6118,6 +6157,15 @@
             cache, it prevents us from having to check to see if there's an owning document and access it
             directly. This is an optimizaton as this happens often.
             </summary>
+        </member>
+        <member name="M:CsQuery.Implementation.DomObject.GetPath_UnOptimized">
+             <summary>
+             Gets the full path to this document.
+             </summary>
+            
+             <returns>
+             The path.
+             </returns>
         </member>
         <member name="M:CsQuery.Implementation.DomObject.GetPath">
              <summary>
@@ -6681,10 +6729,15 @@
             Gets a value indicating whether this object type should be indexed.
             </summary>
         </member>
-        <member name="P:CsQuery.Implementation.DomObject.Path">
+        <member name="P:CsQuery.Implementation.DomObject.NodePath">
             <summary>
             The full path to this node. This is calculated by requesting the parent path and adding its
             own ID.
+            </summary>
+        </member>
+        <member name="P:CsQuery.Implementation.DomObject.Path">
+            <summary>
+            Gets the unique path to this element as a string. THIS METHOD IS OBSOLETE. It has been replaced by NodePath.
             </summary>
         </member>
         <member name="P:CsQuery.Implementation.DomObject.Document">
@@ -6735,9 +6788,12 @@
         </member>
         <member name="P:CsQuery.Implementation.DomObject.PathID">
             <summary>
-            Unique ID assigned when added to a dom. This is not the full path but just the ID at this
-            level. The full path is never stored with each node to prevent having to regenerate if node
-            trees are moved.
+            Gets a unique ID for this element among its siblings. THIS METHOD IS OBSOLETE. It has been replaced by NodePath.
+            </summary>
+        </member>
+        <member name="P:CsQuery.Implementation.DomObject.NodePathID">
+            <summary>
+            Gets a unique ID for this element among its siblings.
             </summary>
         </member>
         <member name="P:CsQuery.Implementation.DomObject.Depth">
@@ -7789,7 +7845,7 @@
              true if default value, false if not.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.DomElement.IndexKey(System.String,System.UInt16)">
+        <member name="M:CsQuery.Implementation.DomElement.IndexKey(System.Char,System.UInt16)">
              <summary>
              Index key.
              </summary>
@@ -7805,7 +7861,7 @@
              A string
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.DomElement.IndexKey(System.String,System.String)">
+        <member name="M:CsQuery.Implementation.DomElement.IndexKey(System.Char,System.String)">
              <summary>
              Index key.
              </summary>
@@ -7821,7 +7877,7 @@
              A string
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.DomElement.IndexKey(System.String,System.String,System.String)">
+        <member name="M:CsQuery.Implementation.DomElement.IndexKey(System.Char,System.String,System.UInt16[])">
              <summary>
              Index key.
              </summary>
@@ -7840,7 +7896,7 @@
              .
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.DomElement.IndexKey(System.String,System.UInt16,System.String)">
+        <member name="M:CsQuery.Implementation.DomElement.IndexKey(System.Char,System.UInt16,System.UInt16[])">
              <summary>
              Generates a key that will be used to refernece this item in the index
              </summary>
@@ -9658,7 +9714,7 @@
             Interface for a DOM index. Defines methods to add and remove items from the index, and query the index.
             </summary>
         </member>
-        <member name="M:CsQuery.IDomIndex.AddToIndex(System.String,CsQuery.IDomIndexedNode)">
+        <member name="M:CsQuery.IDomIndex.AddToIndex(System.UInt16[],CsQuery.IDomIndexedNode)">
              <summary>
              Adds an element to the index.
              </summary>
@@ -9680,7 +9736,7 @@
              The element.
              </param>
         </member>
-        <member name="M:CsQuery.IDomIndex.RemoveFromIndex(System.String)">
+        <member name="M:CsQuery.IDomIndex.RemoveFromIndex(System.UInt16[])">
              <summary>
              Removes an element from the index
              </summary>
@@ -9699,7 +9755,7 @@
              The element.
              </param>
         </member>
-        <member name="M:CsQuery.IDomIndex.QueryIndex(System.String,System.Int32,System.Boolean)">
+        <member name="M:CsQuery.IDomIndex.QueryIndex(System.UInt16[],System.Int32,System.Boolean)">
              <summary>
              Queries the index
              </summary>
@@ -9718,7 +9774,7 @@
              An enumerator that allows foreach to be used to process query index in this collection.
              </returns>
         </member>
-        <member name="M:CsQuery.IDomIndex.QueryIndex(System.String)">
+        <member name="M:CsQuery.IDomIndex.QueryIndex(System.UInt16[])">
              <summary>
              Queries the index.
              </summary>
@@ -13231,6 +13287,68 @@
             </summary>
             <returns>The document</returns>
         </member>
+        <member name="T:CsQuery.HtmlParser.BOMReader">
+            <summary>
+            A class to parse and expose information about the byte order marks (BOM) for a stream.
+            </summary>
+        </member>
+        <member name="M:CsQuery.HtmlParser.BOMReader.#ctor(System.IO.Stream)">
+             <summary>
+             Default constructor.
+             </summary>
+            
+             <param name="stream">
+             The stream to analyze.
+             </param>
+        </member>
+        <member name="M:CsQuery.HtmlParser.BOMReader.Parse">
+            <summary>
+            Parses the input stream to obtain an encoding
+            </summary>
+        </member>
+        <member name="M:CsQuery.HtmlParser.BOMReader.Matches(System.Byte[])">
+             <summary>
+             Test if the header matches the bytes passed (up to the length of the array passed)
+             </summary>
+            
+             <param name="buffer">
+             The buffer.
+             </param>
+            
+             <returns>
+             true if it succeeds, false if it fails.
+             </returns>
+        </member>
+        <member name="P:CsQuery.HtmlParser.BOMReader.Encoding">
+            <summary>
+            Gets the encoding detected for the stream
+            </summary>
+        </member>
+        <member name="P:CsQuery.HtmlParser.BOMReader.StreamWithoutBOM">
+            <summary>
+            The input stream stripped of the BOM
+            </summary>
+        </member>
+        <member name="P:CsQuery.HtmlParser.BOMReader.StreamWithBOM">
+            <summary>
+            The original stream
+            </summary>
+        </member>
+        <member name="P:CsQuery.HtmlParser.BOMReader.DefaultEncoding">
+            <summary>
+            Gets or sets the default encoding for the stream (if no BOM detected)
+            </summary>
+        </member>
+        <member name="P:CsQuery.HtmlParser.BOMReader.IsBOM">
+            <summary>
+            When true, indicates a valid BOM was detected
+            </summary>
+        </member>
+        <member name="P:CsQuery.HtmlParser.BOMReader.IsXML">
+            <summary>
+            The document had no BOM, but was an XML document.
+            </summary>
+        </member>
         <member name="T:CsQuery.HtmlParsingOptions">
             <summary>
             The options used when parsing strings of HTML
@@ -13561,20 +13679,32 @@
              A new document.
              </returns>
         </member>
-        <member name="F:CsQuery.HtmlParser.ElementFactory.charSetEncoding">
+        <member name="F:CsQuery.HtmlParser.ElementFactory.AlreadyReEncoded">
             <summary>
-            The character set encoding that's currently active.
+            When true, the document's character set encoding has changed due to a meta http-equiv
+            directive. This can only happen once. After this we will change the encoding of the stream
+            from that point forward only.
             </summary>
         </member>
-        <member name="F:CsQuery.HtmlParser.ElementFactory.reEncode">
+        <member name="F:CsQuery.HtmlParser.ElementFactory.ReEncode">
             <summary>
             This flag can be set during parsing if the character set encoding found in a meta tag is
             different than the stream's current encoding.
             </summary>
         </member>
-        <member name="F:CsQuery.HtmlParser.ElementFactory.activeStream">
+        <member name="F:CsQuery.HtmlParser.ElementFactory.ActiveStream">
             <summary>
             The active stream.
+            </summary>
+        </member>
+        <member name="F:CsQuery.HtmlParser.ElementFactory.ActiveStreamReader">
+            <summary>
+            The active stream reader.
+            </summary>
+        </member>
+        <member name="F:CsQuery.HtmlParser.ElementFactory.ActiveEncoding">
+            <summary>
+            The active encoding.
             </summary>
         </member>
         <member name="M:CsQuery.HtmlParser.ElementFactory.Parse(System.IO.Stream,System.Text.Encoding)">
@@ -13589,7 +13719,7 @@
              Thrown when the requested operation is invalid.
              </exception>
             
-             <param name="html">
+             <param name="inputStream">
              The HTML input.
              </param>
              <param name="encoding">
@@ -13668,6 +13798,11 @@
             Gets or sets a context for the fragment, e.g. a tag name
             </summary>
         </member>
+        <member name="F:CsQuery.HtmlParser.ElementFactory.ReEncodeAction.ChangeEncoding">
+            <summary>
+            The encoding was set from a META tag, allow it to be changed.
+            </summary>
+        </member>
         <member name="T:CsQuery.HtmlParsingMode">
             <summary>
             The methodology applied when parsing strings of HTML
@@ -13691,6 +13826,45 @@
         <member name="F:CsQuery.HtmlParsingMode.Document">
             <summary>
             A complete document; the HTML and BODY tag constructs will be addded if missing..
+            </summary>
+        </member>
+        <member name="T:CsQuery.HtmlParser.HtmlEncoding">
+            <summary>
+            Simplify access to character set encodings for this system.
+            </summary>
+        </member>
+        <member name="M:CsQuery.HtmlParser.HtmlEncoding.TryGetEncoding(System.String,System.Text.Encoding@)">
+             <summary>
+             Try to get a character set encoding from its web name.
+             </summary>
+            
+             <param name="encodingName">
+             Name of the encoding.
+             </param>
+             <param name="encoding">
+             [out] The encoding.
+             </param>
+            
+             <returns>
+             true if it succeeds, false if it fails.
+             </returns>
+        </member>
+        <member name="M:CsQuery.HtmlParser.HtmlEncoding.GetEncoding(System.String)">
+             <summary>
+             Gets an encoding.
+             </summary>
+            
+             <param name="encodingName">
+             Name of the encoding.
+             </param>
+            
+             <returns>
+             The encoding.
+             </returns>
+        </member>
+        <member name="P:CsQuery.HtmlParser.HtmlEncoding.Encodings">
+            <summary>
+            A dictionary of all encodings available on this system
             </summary>
         </member>
         <member name="T:CsQuery.HtmlParser.HtmlStyles">
@@ -15742,6 +15916,77 @@
             Gets the current stream
             </summary>
         </member>
+        <member name="T:CsQuery.Implementation.PathKeyComparer">
+            <summary>
+            A string comparer that is not concerned with anything other than the raw value of the characters. No encoding, no culture.
+            </summary>
+        </member>
+        <member name="M:CsQuery.Implementation.PathKeyComparer.Compare(System.UInt16[],System.UInt16[])">
+             <summary>
+             Compares two string objects to determine their relative ordering.
+             </summary>
+            
+             <param name="x">
+             String to be compared.
+             </param>
+             <param name="y">
+             String to be compared.
+             </param>
+            
+             <returns>
+             Negative if 'x' is less than 'y', 0 if they are equal, or positive if it is greater.
+             </returns>
+        </member>
+        <member name="M:CsQuery.Implementation.PathKeyComparer.CompareEqualLength(System.UInt16[],System.UInt16[])">
+             <summary>
+             Marginally faster when just testing equality than using Compare
+             </summary>
+            
+             <param name="x">
+             String to be compared.
+             </param>
+             <param name="y">
+             String to be compared.
+             </param>
+            
+             <returns>
+             true if it succeeds, false if it fails.
+             </returns>
+        </member>
+        <member name="M:CsQuery.Implementation.PathKeyComparer.Equals(System.UInt16[],System.UInt16[])">
+             <summary>
+             Tests if two string objects are considered equal.
+             </summary>
+            
+             <param name="x">
+             String to be compared.
+             </param>
+             <param name="y">
+             String to be compared.
+             </param>
+            
+             <returns>
+             true if the objects are considered equal, false if they are not.
+             </returns>
+        </member>
+        <member name="M:CsQuery.Implementation.PathKeyComparer.GetHashCode(System.UInt16[])">
+             <summary>
+             Calculates the hash code for this object.
+             </summary>
+            
+             <param name="obj">
+             The object.
+             </param>
+            
+             <returns>
+             The hash code for this object.
+             </returns>
+        </member>
+        <member name="P:CsQuery.Implementation.PathKeyComparer.Comparer">
+            <summary>
+            Gets an instance of TrueStringComparer
+            </summary>
+        </member>
         <member name="T:CsQuery.Implementation.TrueStringComparer">
             <summary>
             A string comparer that is not concerned with anything other than the raw value of the characters. No encoding, no culture.
@@ -16982,11 +17227,14 @@
              the target
              </param>
         </member>
-        <member name="M:CsQuery.StringScanner.CharacterData.SetHtmlIdNameExceptStart(System.UInt32)">
-            <summary>
-            Matches anything but the first character for a valid ID or name value. The first character is just alpha.
-            </summary>
-            <param name="hsb"></param>
+        <member name="M:CsQuery.StringScanner.CharacterData.SetHtmlAttributeName(System.UInt32)">
+             <summary>
+             Matches anything but the first character for a valid HTML attribute name.
+             </summary>
+            
+             <param name="hsb">
+             the target
+             </param>
         </member>
         <member name="M:CsQuery.StringScanner.CharacterData.SetHtmlTagSelectorStart(System.UInt32)">
             <summary>
@@ -17073,7 +17321,7 @@
         </member>
         <member name="F:CsQuery.StringScanner.CharacterType.AlphaISO10646">
             <summary>
-            ISO10646 character set
+            ISO10646 character set excluding numbers
             </summary>
         </member>
         <member name="F:CsQuery.StringScanner.CharacterType.HtmlTagSelectorStart">
@@ -17109,14 +17357,14 @@
             Something that can be anything other than the 1st character of a legal  HTML tag name.
             </summary>
         </member>
-        <member name="F:CsQuery.StringScanner.CharacterType.HtmlIDNameExceptStart">
+        <member name="F:CsQuery.StringScanner.CharacterType.HtmlAttributeName">
             <summary>
-            Something that can be the first character of a legal HTML ID value.
+            Something that can be a character of a legal HTML ID value.
             </summary>
         </member>
-        <member name="F:CsQuery.StringScanner.CharacterType.HtmlIDNameSelectorExceptStart">
+        <member name="F:CsQuery.StringScanner.CharacterType.SelectorTerminator">
             <summary>
-            .
+            Terminates a selector or part of a selector
             </summary>
         </member>
         <member name="F:CsQuery.StringScanner.CharacterType.HtmlSpace">
@@ -18520,7 +18768,7 @@
         </member>
         <member name="M:CsQuery.StringScanner.MatchFunctions.HTMLAttribute">
              <summary>
-             Gets an expect pattern for a string that's an HTML attribuye name
+             Gets an expect pattern for a string that's an HTML attribte name
              </summary>
             
              <returns>
@@ -18679,9 +18927,9 @@
             Matches anything that is bounded by accepted bounding characters
             </summary>
         </member>
-        <member name="T:CsQuery.StringScanner.Patterns.HTMLTagSelectorName">
+        <member name="T:CsQuery.StringScanner.Patterns.HtmlIDSelector">
             <summary>
-            A pattern that matches a valid HTML tag selector.
+            ID can contain any character other than a space; however, a selector is bounded by other terminators.
             </summary>
         </member>
         <member name="T:CsQuery.StringScanner.Patterns.EscapedString">
@@ -18693,6 +18941,32 @@
         <member name="M:CsQuery.StringScanner.Patterns.EscapedString.#ctor">
             <summary>
             Default constructor -- simply parses escapes until the end of the string
+            </summary>
+        </member>
+        <member name="M:CsQuery.StringScanner.Patterns.HtmlIDSelector.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:CsQuery.StringScanner.Patterns.HtmlIDSelector.IsValidIDSelector(System.Int32,System.Char)">
+             <summary>
+             Match a pattern for a valid HTML ID.
+             </summary>
+            
+             <param name="index">
+             The index to match
+             </param>
+             <param name="character">
+             The character to match
+             </param>
+            
+             <returns>
+             true if valid identifier, false if not.
+             </returns>
+        </member>
+        <member name="T:CsQuery.StringScanner.Patterns.HTMLTagSelectorName">
+            <summary>
+            A pattern that matches a valid HTML tag selector.
             </summary>
         </member>
         <member name="M:CsQuery.StringScanner.Patterns.HTMLTagSelectorName.#ctor">
@@ -18720,7 +18994,7 @@
         </member>
         <member name="M:CsQuery.StringScanner.Patterns.HTMLAttributeName.IsValidAttributeName(System.Int32,System.Char)">
             <summary>
-            Match a pattern for am attribute name selector
+            Match a pattern for an attribute name selector
             </summary>
             <param name="index"></param>
             <param name="character"></param>
@@ -18744,33 +19018,6 @@
             <param name="index"></param>
             <param name="character"></param>
             <returns></returns>
-        </member>
-        <member name="T:CsQuery.StringScanner.Patterns.HtmlID">
-            <summary>
-            ID and NAME tokens must begin with a letter ([A-Za-z]) and may be followed by any number of letters, 
-            digits ([0-9]), hyphens ("-"), underscores ("_"), colons (":"), and periods (".").
-            </summary>
-        </member>
-        <member name="M:CsQuery.StringScanner.Patterns.HtmlID.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
-        </member>
-        <member name="M:CsQuery.StringScanner.Patterns.HtmlID.IsValidID(System.Int32,System.Char)">
-             <summary>
-             Match a pattern for a valid HTML ID.
-             </summary>
-            
-             <param name="index">
-             .
-             </param>
-             <param name="character">
-             .
-             </param>
-            
-             <returns>
-             true if valid identifier, false if not.
-             </returns>
         </member>
         <member name="T:CsQuery.StringScanner.Patterns.Number">
             <summary>
@@ -20161,6 +20408,11 @@
             Default constuctor for a Deferred object.
             </summary>
         </member>
+        <member name="F:CsQuery.Promises.Deferred.Locker">
+            <summary>
+            The thread locker object
+            </summary>
+        </member>
         <member name="F:CsQuery.Promises.Deferred.NextDeferred">
             <summary>
             The next deferred objected in the chain; resolved or rejected when any bound delegate is
@@ -20699,6 +20951,11 @@
             asynchronous requests.
             </summary>
         </member>
+        <member name="P:CsQuery.Web.ICsqWebRequest.Options">
+            <summary>
+            Gets or sets options for controlling the operation.
+            </summary>
+        </member>
         <member name="P:CsQuery.Web.ICsqWebResponse.Html">
             <summary>
             The HTML returned by the response
@@ -20739,19 +20996,24 @@
             If the request resulted in an exception, the exception.
             </summary>
         </member>
-        <member name="T:CsQuery.Implementation.IRangeSortedDictionary`1">
+        <member name="P:CsQuery.Web.ICsqWebResponse.ResponseEncoding">
+            <summary>
+            Gets the response character set encoding identified by the response header
+            </summary>
+        </member>
+        <member name="T:CsQuery.Implementation.IRangeSortedDictionary`2">
             <summary>
             A sorted dictionary that allows lookup by range.
             </summary>
         </member>
-        <member name="M:CsQuery.Implementation.IRangeSortedDictionary`1.GetRangeKeys(System.String)">
+        <member name="M:CsQuery.Implementation.IRangeSortedDictionary`2.GetRangeKeys(`0[])">
             <summary>
             Return all keys starting with subKey
             </summary>
             <param name="subKey">The substring to match</param>
             <returns></returns>
         </member>
-        <member name="M:CsQuery.Implementation.IRangeSortedDictionary`1.GetRange(System.String)">
+        <member name="M:CsQuery.Implementation.IRangeSortedDictionary`2.GetRange(`0[])">
             <summary>
             Return all values having keys beginning with subKey
             </summary>
@@ -21677,7 +21939,7 @@
             </summary>
             <param name="element"></param>
         </member>
-        <member name="M:CsQuery.Implementation.DomDocument.AddToIndex(System.String,CsQuery.IDomIndexedNode)">
+        <member name="M:CsQuery.Implementation.DomDocument.AddToIndex(System.UInt16[],CsQuery.IDomIndexedNode)">
             <summary>
             Add an element to the index using a specified index key
             </summary>
@@ -21690,13 +21952,13 @@
             </summary>
             <param name="element"></param>
         </member>
-        <member name="M:CsQuery.Implementation.DomDocument.RemoveFromIndex(System.String)">
+        <member name="M:CsQuery.Implementation.DomDocument.RemoveFromIndex(System.UInt16[])">
             <summary>
             Remove an element from the index using its key
             </summary>
             <param name="key"></param>
         </member>
-        <member name="M:CsQuery.Implementation.DomDocument.QueryIndex(System.String,System.Int32,System.Boolean)">
+        <member name="M:CsQuery.Implementation.DomDocument.QueryIndex(System.UInt16[],System.Int32,System.Boolean)">
             <summary>
             Query the document's index for a subkey up to a specific depth, optionally including descendants that match the selector
             </summary>
@@ -21705,7 +21967,7 @@
             <param name="includeDescendants"></param>
             <returns></returns>
         </member>
-        <member name="M:CsQuery.Implementation.DomDocument.QueryIndex(System.String)">
+        <member name="M:CsQuery.Implementation.DomDocument.QueryIndex(System.UInt16[])">
             <summary>
             Query the document's index for a subkey
             </summary>
@@ -22004,9 +22266,15 @@
             The direct parent of this node.
             </summary>
         </member>
-        <member name="P:CsQuery.Implementation.DomDocument.Path">
+        <member name="P:CsQuery.Implementation.DomDocument.NodePath">
             <summary>
             The full path to this node. For Document nodes, this is always empty.
+            </summary>
+        </member>
+        <member name="P:CsQuery.Implementation.DomDocument.Path">
+            <summary>
+            Gets the unique path to this element as a string. THIS METHOD IS OBSOLETE. It has been
+            replaced by NodePath.
             </summary>
         </member>
         <member name="P:CsQuery.Implementation.DomDocument.Depth">
@@ -24668,11 +24936,13 @@
         </member>
         <member name="M:CsQuery.Web.CsqWebRequest.Get">
              <summary>
-             Initiate a synchronous GET request.
+             Get the HTML using a synchronous HTTP request. This will return a string using the encoding
+             specified by the MIME type. If the document uses an encoding specified in a content-type
+             header, it will NOT be reflected by the results of this method.
              </summary>
             
              <returns>
-             The HTML returned by a successful request
+             The HTML returned by a successful request.
              </returns>
         </member>
         <member name="M:CsQuery.Web.CsqWebRequest.Get(HttpWebAdapters.IHttpWebRequest)">
@@ -24737,7 +25007,8 @@
         </member>
         <member name="M:CsQuery.Web.CsqWebRequest.GetResponseStreamReader(HttpWebAdapters.IHttpWebRequest)">
              <summary>
-             Gets response stream from a webrequest using the correct encoding.
+             Gets response stream from a webrequest using the correct encoding. If the encoding is not
+             specified, then the encoding will be detected from the BOM.
              </summary>
             
              <param name="request">
@@ -24747,6 +25018,26 @@
              <returns>
              The response stream.
              </returns>
+        </member>
+        <member name="M:CsQuery.Web.CsqWebRequest.GetEncoding(HttpWebAdapters.IHttpWebResponse)">
+             <summary>
+             Return the character set encoding for an IHttpWebResponse, or null if no encoding is
+             specified.
+             </summary>
+            
+             <param name="response">
+             The response.
+             </param>
+            
+             <returns>
+             The encoding, or null if no encoding was specified on the response, or the specified encoding
+             was not recognized.
+             </returns>
+        </member>
+        <member name="P:CsQuery.Web.CsqWebRequest.Options">
+            <summary>
+            Gets options for controlling the operation.
+            </summary>
         </member>
         <member name="P:CsQuery.Web.CsqWebRequest.Url">
             <summary>
@@ -24835,14 +25126,14 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="P:CsQuery.Web.AsyncWebRequest.HtmlStringbuilder">
-            <summary>
-            Accumulator for the HTML response
-            </summary>
-        </member>
         <member name="P:CsQuery.Web.AsyncWebRequest.ResponseStream">
             <summary>
-            Stream of the HTM Lresponse
+            Stream of the HTML response
+            </summary>
+        </member>
+        <member name="P:CsQuery.Web.AsyncWebRequest.ResponseEncoding">
+            <summary>
+            Gets or sets the encoding of the response stream
             </summary>
         </member>
         <member name="P:CsQuery.Web.AsyncWebRequest.CallbackSuccess">
@@ -24863,16 +25154,6 @@
         <member name="P:CsQuery.Web.AsyncWebRequest.Url">
             <summary>
             The URL of the request
-            </summary>
-        </member>
-        <member name="P:CsQuery.Web.AsyncWebRequest.Timeout">
-            <summary>
-            Time, in milliseconds, after which a web request will be aborted.
-            </summary>
-        </member>
-        <member name="P:CsQuery.Web.AsyncWebRequest.UserAgent">
-            <summary>
-            Get or set the user agent string used when the request is made
             </summary>
         </member>
         <member name="P:CsQuery.Web.AsyncWebRequest.Started">
@@ -24925,14 +25206,24 @@
             The async HttpWebResponse
             </summary>
         </member>
-        <member name="P:CsQuery.Web.AsyncWebRequest.Html">
-            <summary>
-            Return the Html response from the request
-            </summary>
-        </member>
         <member name="P:CsQuery.Web.AsyncWebRequest.Dom">
             <summary>
-            Return a document from the HTML web request result. DEPRECATED. use GetDocument() instead.
+            Return a document from the HTML web request result.
+            </summary>
+        </member>
+        <member name="P:CsQuery.Web.AsyncWebRequest.Html">
+            <summary>
+            The HTML returned by the response.
+            </summary>
+        </member>
+        <member name="P:CsQuery.Web.AsyncWebRequest.Timeout">
+            <summary>
+            Gets or sets the timeout, in milliseconds, for this AsyncWebRequest
+            </summary>
+        </member>
+        <member name="P:CsQuery.Web.AsyncWebRequest.UserAgent">
+            <summary>
+            Gets or sets the user agent.
             </summary>
         </member>
         <member name="T:CsQuery.Web.ServerConfig">
@@ -24995,11 +25286,6 @@
             Web request state: a class encapsulating information about an async web request
             </summary>
         </member>
-        <member name="F:CsQuery.Web.WebRequestState.RequestData">
-            <summary>
-            The request
-            </summary>
-        </member>
         <member name="F:CsQuery.Web.WebRequestState.BufferRead">
             <summary>
             A buffer
@@ -25010,14 +25296,9 @@
             The WebRequest
             </summary>
         </member>
-        <member name="F:CsQuery.Web.WebRequestState.ResponseStream">
+        <member name="F:CsQuery.Web.WebRequestState.ResponseStreamAsync">
             <summary>
             The response stream.
-            </summary>
-        </member>
-        <member name="F:CsQuery.Web.WebRequestState.StreamDecode">
-            <summary>
-            The stream decoder.
             </summary>
         </member>
         <member name="F:CsQuery.Web.WebRequestState.RequestInfo">
@@ -25886,30 +26167,47 @@
             is always false.
             </summary>
         </member>
-        <member name="T:CsQuery.Implementation.RangeSortedDictionary`1">
-            <summary>
-            A dictionary that is substring-lookup capable. This is the data structure used to index HTML documents for selectors.
-            A SortedSet of keys is used for the index because it allows fast access by substring. A list of keys obtained from the
-            SortedSet for a selector is used to obtain the target references from a regular dictionary.
-            </summary>
-            <typeparam name="TValue"></typeparam>
+        <member name="T:CsQuery.Implementation.RangeSortedDictionary`2">
+             <summary>
+             A dictionary that is substring-lookup capable. This is the data structure used to index HTML
+             documents for selectors. A SortedSet of keys is used for the index because it allows fast
+             access by substring. A list of keys obtained from the SortedSet for a selector is used to
+             obtain the target references from a regular dictionary.
+             </summary>
+            
+             <typeparam name="TKey">
+             Type of the key.
+             </typeparam>
+             <typeparam name="TValue">
+             Type of the value
+             </typeparam>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.#ctor(System.Collections.Generic.IComparer{`0[]},System.Collections.Generic.IEqualityComparer{`0[]},`0)">
+             <summary>
+             Default constructor.
+             </summary>
+            
+             <param name="setComparer">
+             The comparer.
+             </param>
+             <param name="equalityComparer">
+             The equality comparer.
+             </param>
+             <param name="indexSeparator">
+             The index separator.
+             </param>
         </member>
-        <member name="F:CsQuery.Implementation.RangeSortedDictionary`1.Keys">
+        <member name="F:CsQuery.Implementation.RangeSortedDictionary`2.Keys">
             <summary>
             An ordered set of all the keys in this dictionary.
             </summary>
         </member>
-        <member name="F:CsQuery.Implementation.RangeSortedDictionary`1.Index">
+        <member name="F:CsQuery.Implementation.RangeSortedDictionary`2.Index">
             <summary>
             The inner index.
             </summary>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.GetRangeKeys(System.String)">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.GetRangeKeys(`0[])">
              <summary>
              Retrieve all the keys that match the subkey provided; that is, all keys that start with the
              value of 'subkey'.
@@ -25923,7 +26221,7 @@
              A sequence of keys found in the dictionary.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.GetRange(System.String,System.Int32,System.Boolean)">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.GetRange(`0[],System.Int32,System.Boolean)">
              <summary>
              Return all matching keys at the specified depth relative to the subkey, e.g. 0 will return
              only the element that exactly matches the subkey.
@@ -25943,7 +26241,7 @@
              A sequence of TValue elements.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.GetRange(System.String)">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.GetRange(`0[])">
              <summary>
              Return a sequence of values for each key that starts with the value of 'subkey'.
              </summary>
@@ -25956,7 +26254,7 @@
              A sequence of values from the dictionary.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.Add(System.String,`0)">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.Add(`0[],`1)">
              <summary>
              Adds a key/value pair to the dictionary
              </summary>
@@ -25968,7 +26266,7 @@
              [out] The value.
              </param>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.ContainsKey(System.String)">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.ContainsKey(`0[])">
              <summary>
              Test whether the dictionary contains a value for 'key'
              </summary>
@@ -25981,7 +26279,7 @@
              true if it succeeds, false if it fails.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.Remove(System.String)">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.Remove(`0[])">
              <summary>
              Removes the given key
              </summary>
@@ -25994,7 +26292,7 @@
              true if it succeeds, false if it fails.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.TryGetValue(System.String,`0@)">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.TryGetValue(`0[],`1@)">
              <summary>
              Try to get a value by name
              </summary>
@@ -26010,7 +26308,7 @@
              true if it succeeds, false if it fails.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.Add(System.Collections.Generic.KeyValuePair{System.String,`0})">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0[],`1})">
              <summary>
              Adds a key/value pair to the dictionary.
              </summary>
@@ -26019,12 +26317,12 @@
              The item to test for.
              </param>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.Clear">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.Clear">
             <summary>
             Clears this object to its blank/initial state.
             </summary>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.Contains(System.Collections.Generic.KeyValuePair{System.String,`0})">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0[],`1})">
              <summary>
              Test whether the KeyValuePair object exists in this dictionary.
              </summary>
@@ -26037,7 +26335,7 @@
              true if the object is in this collection, false if not.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.CopyTo(System.Collections.Generic.KeyValuePair{System.String,`0}[],System.Int32)">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0[],`1}[],System.Int32)">
              <summary>
              Copies the contents of the dictionary to an array of KeyValuePair objects.
              </summary>
@@ -26049,7 +26347,7 @@
              Zero-based index of the array at which to start copying.
              </param>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.Remove(System.Collections.Generic.KeyValuePair{System.String,`0})">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0[],`1})">
              <summary>
              Removes the given KeyValuePair from the dictionary if it exists
              </summary>
@@ -26062,7 +26360,7 @@
              true if it succeeds, false if it fails.
              </returns>
         </member>
-        <member name="M:CsQuery.Implementation.RangeSortedDictionary`1.GetEnumerator">
+        <member name="M:CsQuery.Implementation.RangeSortedDictionary`2.GetEnumerator">
              <summary>
              Gets the enumerator.
              </summary>
@@ -26071,17 +26369,17 @@
              The enumerator.
              </returns>
         </member>
-        <member name="P:CsQuery.Implementation.RangeSortedDictionary`1.KeysAudit">
+        <member name="P:CsQuery.Implementation.RangeSortedDictionary`2.KeysAudit">
             <summary>
             Returns the keys in human-readable format.
             </summary>
         </member>
-        <member name="P:CsQuery.Implementation.RangeSortedDictionary`1.Values">
+        <member name="P:CsQuery.Implementation.RangeSortedDictionary`2.Values">
             <summary>
             Gets the values.
             </summary>
         </member>
-        <member name="P:CsQuery.Implementation.RangeSortedDictionary`1.Item(System.String)">
+        <member name="P:CsQuery.Implementation.RangeSortedDictionary`2.Item(`0[])">
              <summary>
              Return the value for 'key'
              </summary>
@@ -26094,12 +26392,12 @@
              The indexed item.
              </returns>
         </member>
-        <member name="P:CsQuery.Implementation.RangeSortedDictionary`1.Count">
+        <member name="P:CsQuery.Implementation.RangeSortedDictionary`2.Count">
             <summary>
             Gets the number of items in this dictionary.
             </summary>
         </member>
-        <member name="P:CsQuery.Implementation.RangeSortedDictionary`1.IsReadOnly">
+        <member name="P:CsQuery.Implementation.RangeSortedDictionary`2.IsReadOnly">
             <summary>
             Gets a value indicating whether this object is read only. This is always false.
             </summary>
