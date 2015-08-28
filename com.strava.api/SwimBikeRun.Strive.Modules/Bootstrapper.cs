@@ -5,6 +5,7 @@ using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 
 using com.Strava.Api.Repositories;
+using SwimBikeRun.Strive.Modules.Security;
 using SwimBikeRun.Strive.Repositories;
 using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Workflows;

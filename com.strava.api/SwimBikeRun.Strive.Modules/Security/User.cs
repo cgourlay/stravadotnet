@@ -3,7 +3,7 @@ using System.Security.Principal;
 
 using Nancy.Security;
 
-namespace SwimBikeRun.Strive.Modules
+namespace SwimBikeRun.Strive.Modules.Security
 {
     public class User : IUserIdentity, IPrincipal
     {
