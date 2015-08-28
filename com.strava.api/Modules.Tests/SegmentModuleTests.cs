@@ -97,6 +97,94 @@ namespace SwimBikeRun.Strive.Modules.Tests
             }
         }
 
+        public class ContentNegotiation : SegmentModuleTests
+        {
+            [Test]
+            [Ignore("TODO: CG to complete... Refer to issue #31 for further information.")]
+            public static void ReturnsEtag()
+            {
+            }
+
+            [Test]
+            public static void ReturnsLocation()
+            {
+                var workflowMock = new Mock<ISegmentWorkflow>();
+                var responseMock = new Mock<IOperationResponse<ISegment>>();
+
+                responseMock.SetupProperty(s => s.OperationSucceeded, true);
+                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
+                responseMock.SetupProperty(s => s.Data.Id, 229781);
+                workflowMock.Setup(m => m.GetById(229781)).Returns(responseMock.Object);
+
+                var browser = new Browser(with =>
+                {
+                    with.Module<SegmentModule>();
+                    with.Dependency(workflowMock.Object);
+                });
+
+                var response = browser.Get("/Segments/229781", with =>
+                {
+                    with.HttpRequest();
+                    with.Header("Accept", "application/json");
+                });
+
+                Assert.That(response.Headers["Location"], Is.EqualTo(string.Format(@"/Segments/{0}", 229781)));
+            }
+
+            [Test]
+            public static void ReturnsStatusCode()
+            {
+                var workflowMock = new Mock<ISegmentWorkflow>();
+                var responseMock = new Mock<IOperationResponse<ISegment>>();
+
+                responseMock.SetupProperty(s => s.OperationSucceeded, true);
+                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
+                responseMock.SetupProperty(s => s.Data.Id, 229781);
+                workflowMock.Setup(m => m.GetById(229781)).Returns(responseMock.Object);
+
+                var browser = new Browser(with =>
+                {
+                    with.Module<SegmentModule>();
+                    with.Dependency(workflowMock.Object);
+                });
+
+                var response = browser.Get("/Segments/229781", with =>
+                {
+                    with.HttpRequest();
+                    with.Header("Accept", "application/json");
+                });
+
+                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+            }
+
+            [Test]
+            public static void ReturnsModelAsJson()
+            {
+                var workflowMock = new Mock<ISegmentWorkflow>();
+                var responseMock = new Mock<IOperationResponse<ISegment>>();
+
+                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
+                responseMock.SetupProperty(s => s.OperationSucceeded, true);
+                responseMock.SetupProperty(s => s.Data.Id, 229781);
+                responseMock.SetupProperty(s => s.Data.Name, "Hawk Hill");
+                responseMock.Setup(s => s.DataAsJson()).Returns("{ \"name\": \"Hawk Hill\" }");
+                workflowMock.Setup(m => m.GetById(229781)).Returns(responseMock.Object);
+
+                var browser = new Browser(with =>
+                {
+                    with.Module<SegmentModule>();
+                    with.Dependency(workflowMock.Object);
+                });
+
+                var response = browser.Get("/Segments/229781", with =>
+                {
+                    with.HttpRequest();
+                    with.Header("Accept", "application/json");
+                });
+
+                Assert.That(response.Body.AsString(), Is.StringContaining("Hawk Hill"));
+            }
+        }
 
 
 
@@ -206,111 +294,5 @@ namespace SwimBikeRun.Strive.Modules.Tests
         //        Assert.That(Thread.CurrentPrincipal.Identity.Name, Is.EqualTo(expectedUser.UserName));
         //    }
         //}
-
-        public class ContentNegotiation : SegmentModuleTests
-        {
-            [Test]
-            [Ignore("TODO: CG to complete... Refer to issue #31 for further information.")]
-            public static void ReturnsEtag()
-            {
-            }
-
-            [Test]
-            public static void ReturnsLocation()
-            {
-                var workflowMock = new Mock<ISegmentWorkflow>();
-                var responseMock = new Mock<IOperationResponse<ISegment>>();
-
-                responseMock.SetupProperty(s => s.OperationSucceeded, true);
-                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
-                responseMock.SetupProperty(s => s.Data.Id, 229781);
-                workflowMock.Setup(m => m.GetById(229781)).Returns(responseMock.Object);
-
-                var browser = new Browser(with =>
-                {
-                    with.Module<SegmentModule>();
-                    with.Dependency(workflowMock.Object);
-                });
-
-                var response = browser.Get("/Segments/229781", with =>
-                {
-                    with.HttpRequest();
-                    with.Header("Accept", "application/json");
-                });
-
-                Assert.That(response.Headers["Location"], Is.EqualTo(string.Format(@"/Segments/{0}", 229781)));
-            }
-
-            [Test]
-            public static void ReturnsStatusCode()
-            {
-                var workflowMock = new Mock<ISegmentWorkflow>();
-                var responseMock = new Mock<IOperationResponse<ISegment>>();
-
-                responseMock.SetupProperty(s => s.OperationSucceeded, true);
-                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
-                responseMock.SetupProperty(s => s.Data.Id, 229781);
-                workflowMock.Setup(m => m.GetById(229781)).Returns(responseMock.Object);
-
-                var browser = new Browser(with =>
-                {
-                    with.Module<SegmentModule>();
-                    with.Dependency(workflowMock.Object);
-                });
-
-                var response = browser.Get("/Segments/229781", with =>
-                {
-                    with.HttpRequest();
-                    with.Header("Accept", "application/json");
-                });
-
-                Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
-            }
-
-            [Test]
-            public static void ReturnsModelAsJson()
-            {
-                var workflowMock = new Mock<ISegmentWorkflow>();
-                var responseMock = new Mock<IOperationResponse<ISegment>>();
-
-                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
-                responseMock.SetupProperty(s => s.OperationSucceeded, true);
-                responseMock.SetupProperty(s => s.Data.Id, 229781);
-                responseMock.SetupProperty(s => s.Data.Name, "Hawk Hill");
-                responseMock.Setup(s => s.DataAsJson()).Returns("{ \"name\": \"Hawk Hill\" }");
-                workflowMock.Setup(m => m.GetById(229781)).Returns(responseMock.Object);
-
-                var browser = new Browser(with =>
-                {
-                    with.Module<SegmentModule>();
-                    with.Dependency(workflowMock.Object);
-                });
-
-                var response = browser.Get("/Segments/229781", with =>
-                {
-                    with.HttpRequest();
-                    with.Header("Accept", "application/json");
-                });
-
-                Assert.That(response.Body.AsString(), Is.StringContaining("Hawk Hill"));
-            }
-        }
-
-        
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-        
     }
 }
