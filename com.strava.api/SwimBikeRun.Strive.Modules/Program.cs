@@ -9,9 +9,7 @@ namespace SwimBikeRun.Strive.Modules
     {
         static void Main()
         {
-            var uri = ConfigurationManager.AppSettings["HostUri"];
-
-            using (var host = new NancyHost(new Uri(uri)))
+            using (var host = new NancyHost(new Uri(ConfigurationManager.AppSettings["HostUri"])))
             {
                 host.Start();
                 Console.ReadLine();
