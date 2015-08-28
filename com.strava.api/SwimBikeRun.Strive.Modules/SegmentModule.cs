@@ -11,28 +11,17 @@ namespace SwimBikeRun.Strive.Modules
     {
         private readonly ISegmentWorkflow _segmentWorkflow;
 
-
-
-
-
-
-
-
-
-
-
-
-        public SegmentModule(ISegmentWorkflow segmentWorkflow) : base(@"/Segments")
+        public SegmentModule(ISegmentWorkflow segmentWorkflow)
+            : base(@"/Segments")
         {
             _segmentWorkflow = segmentWorkflow;
-
             Get["/{id:int}"] = GetSegment;
         }
 
         private dynamic GetSegment(dynamic parameters)
         {
             IOperationResponse<ISegment> response = _segmentWorkflow.GetById(parameters.Id);
-            return response.OperationSucceeded ? Negotiate.Content(response) : (dynamic) (HttpStatusCode) response.Status;
+            return response.OperationSucceeded ? Negotiate.Content(response) : (dynamic)(HttpStatusCode)response.Status;
         }
     }
 }
