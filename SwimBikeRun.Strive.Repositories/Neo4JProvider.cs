@@ -7,7 +7,7 @@ using SwimBikeRun.Strive.Model.Interfaces.Segments;
 using SwimBikeRun.Strive.Model.Segments;
 using SwimBikeRun.Strive.Repositories;
 
-namespace com.Strava.Api.Repositories
+namespace SwimBikeRun.Strive.Repositories
 {
     public class Neo4JProvider : IRepository
     {
