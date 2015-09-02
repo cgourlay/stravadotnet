@@ -14,6 +14,8 @@ namespace SwimBikeRun.Strive.Modules
 {
     public class Bootstrapper : DefaultNancyBootstrapper
     {
+        public Bootstrapper() { } // Must be public so it can be used with the Nancy.Testing.Browser class.
+
         protected override void ConfigureApplicationContainer(TinyIoCContainer container)
         {
             base.ConfigureApplicationContainer(container);
