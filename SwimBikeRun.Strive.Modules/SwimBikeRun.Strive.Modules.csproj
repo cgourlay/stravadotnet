@@ -85,7 +85,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -124,31 +124,31 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SwimBikeRun.Strive.Model.Interfaces\SwimBikeRun.Strive.Model.Interfaces.csproj">
+    <ProjectReference Include="..\SwimBikeRun.Strive.Model.Interfaces\SwimBikeRun.Strive.Model.Interfaces.csproj">
       <Project>{20400ff7-8e2e-4066-a5a3-24e955929a7e}</Project>
       <Name>SwimBikeRun.Strive.Model.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SwimBikeRun.Strive.Repositories\SwimBikeRun.Strive.Repositories.csproj">
+    <ProjectReference Include="..\SwimBikeRun.Strive.Repositories\SwimBikeRun.Strive.Repositories.csproj">
       <Project>{30237B2F-6421-4171-85BA-75E990C49B2A}</Project>
       <Name>SwimBikeRun.Strive.Repositories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SwimBikeRun.Strive.Representations.Enums\SwimBikeRun.Strive.Representations.Enums.csproj">
+    <ProjectReference Include="..\SwimBikeRun.Strive.Representations.Enums\SwimBikeRun.Strive.Representations.Enums.csproj">
       <Project>{E28C7FF1-1C39-46B1-BDD2-333FD5766DC7}</Project>
       <Name>SwimBikeRun.Strive.Representations.Enums</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SwimBikeRun.Strive.Representations.Interfaces\SwimBikeRun.Strive.Representations.Interfaces.csproj">
+    <ProjectReference Include="..\SwimBikeRun.Strive.Representations.Interfaces\SwimBikeRun.Strive.Representations.Interfaces.csproj">
       <Project>{3F7A9C79-DCDC-442D-B8E2-2B2216849F0B}</Project>
       <Name>SwimBikeRun.Strive.Representations.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SwimBikeRun.Strive.Representations\SwimBikeRun.Strive.Representations.csproj">
+    <ProjectReference Include="..\SwimBikeRun.Strive.Representations\SwimBikeRun.Strive.Representations.csproj">
       <Project>{88db79f3-dbab-477e-9450-8a60792a168c}</Project>
       <Name>SwimBikeRun.Strive.Representations</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SwimBikeRun.Strive.Workflows.Interfaces\SwimBikeRun.Strive.Workflows.Interfaces.csproj">
+    <ProjectReference Include="..\SwimBikeRun.Strive.Workflows.Interfaces\SwimBikeRun.Strive.Workflows.Interfaces.csproj">
       <Project>{43CFCB33-5830-4F80-BC57-3980B85B0CB0}</Project>
       <Name>SwimBikeRun.Strive.Workflows.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SwimBikeRun.Strive.Workflows\SwimBikeRun.Strive.Workflows.csproj">
+    <ProjectReference Include="..\SwimBikeRun.Strive.Workflows\SwimBikeRun.Strive.Workflows.csproj">
       <Project>{7263ae19-7b31-41a7-9d4e-535d87c67139}</Project>
       <Name>SwimBikeRun.Strive.Workflows</Name>
     </ProjectReference>

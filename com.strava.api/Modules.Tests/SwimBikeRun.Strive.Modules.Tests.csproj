@@ -86,6 +86,10 @@
       <Project>{20400FF7-8E2E-4066-A5A3-24E955929A7E}</Project>
       <Name>SwimBikeRun.Strive.Model.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\SwimBikeRun.Strive.Modules\SwimBikeRun.Strive.Modules.csproj">
+      <Project>{68f5f5f3-b8bb-4911-875f-6f00aae04ea6}</Project>
+      <Name>SwimBikeRun.Strive.Modules</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SwimBikeRun.Strive.Representations.Enums\SwimBikeRun.Strive.Representations.Enums.csproj">
       <Project>{E28C7FF1-1C39-46B1-BDD2-333FD5766DC7}</Project>
       <Name>SwimBikeRun.Strive.Representations.Enums</Name>
@@ -97,10 +101,6 @@
     <ProjectReference Include="..\..\SwimBikeRun.Strive.Workflows.Interfaces\SwimBikeRun.Strive.Workflows.Interfaces.csproj">
       <Project>{43CFCB33-5830-4F80-BC57-3980B85B0CB0}</Project>
       <Name>SwimBikeRun.Strive.Workflows.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SwimBikeRun.Strive.Modules\SwimBikeRun.Strive.Modules.csproj">
-      <Project>{68f5f5f3-b8bb-4911-875f-6f00aae04ea6}</Project>
-      <Name>SwimBikeRun.Strive.Modules</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
