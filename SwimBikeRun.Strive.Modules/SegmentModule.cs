@@ -7,15 +7,14 @@ using SwimBikeRun.Strive.Workflows.Interfaces;
 
 namespace SwimBikeRun.Strive.Modules
 {
-    public class SegmentModule : NancyModule
+    public class SegmentModule : SecureModule
     {
         private readonly ISegmentWorkflow _segmentWorkflow;
 
         public SegmentModule(ISegmentWorkflow segmentWorkflow)
-            : base(@"/Segments")
         {
             _segmentWorkflow = segmentWorkflow;
-            Get["/{id:int}"] = GetSegment;
+            Get["/Segments/{id:int}"] = GetSegment;
         }
 
         private dynamic GetSegment(dynamic parameters)

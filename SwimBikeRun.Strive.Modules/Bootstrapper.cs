@@ -23,23 +23,5 @@ namespace SwimBikeRun.Strive.Modules
             container.Register(typeof(IEndpoints), typeof(Endpoints));
             container.Register(typeof(IRepository), typeof(Neo4JProvider));
         }
-
-        protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)
-        {
-            pipelines.BeforeRequest += ctx =>
-            {
-                var authorizationHeader = ctx.Request.Headers["Authorization"];
-                if (authorizationHeader == null) { return new Response { StatusCode = HttpStatusCode.Unauthorized }; }
-
-                var accessToken = ctx.Request.Headers.Authorization;
-                if (string.IsNullOrEmpty(accessToken)) { return new Response { StatusCode = HttpStatusCode.Unauthorized }; }
-
-                Thread.CurrentPrincipal = new User { UserName = accessToken };
-
-                return null;
-            };
-
-            base.RequestStartup(container, pipelines, context);
-        }
     }
 }

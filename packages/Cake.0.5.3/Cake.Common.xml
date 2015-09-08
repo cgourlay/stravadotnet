@@ -973,6 +973,12 @@
             representing data used for interaction with AppVeyor.
             </summary>
         </member>
+        <member name="T:Cake.Common.Build.TeamCity.NamespaceDoc">
+            <summary>
+            This namespace contain types used
+            to interact with TeamCity.
+            </summary>
+        </member>
         <member name="T:Cake.Common.Diagnostics.NamespaceDoc">
             <summary>
             This namespace contain types that 
@@ -984,6 +990,24 @@
             This namespace contain types that support input and output, 
             including the ability to read and write data to streams and to
             interact with the file system.
+            </summary>
+        </member>
+        <member name="T:Cake.Common.IO.Paths.NamespaceDoc">
+            <summary>
+            This namespace contain types related 
+            to file system paths.
+            </summary>
+        </member>
+        <member name="T:Cake.Common.IO.Net.NamespaceDoc">
+            <summary>
+            This namespace contain types related 
+            to network operations.
+            </summary>
+        </member>
+        <member name="T:Cake.Common.Net.NamespaceDoc">
+            <summary>
+            This namespace contain types related 
+            to security aspects such as hashing.
             </summary>
         </member>
         <member name="T:Cake.Common.Solution.NamespaceDoc">
@@ -1071,15 +1095,45 @@
             restore NuGet packages.
             </summary>
         </member>
+        <member name="T:Cake.Common.Tools.NuGet.SetApiKey.NamespaceDoc">
+            <summary>
+            This namespace contain types used to 
+            set NuGet API keys.
+            </summary>
+        </member>
+        <member name="T:Cake.Common.Tools.NuGet.SetProxy.NamespaceDoc">
+            <summary>
+            This namespace contain types used to 
+            set proxy settings.
+            </summary>
+        </member>
         <member name="T:Cake.Common.Tools.NuGet.Sources.NamespaceDoc">
             <summary>
             This namespace contain types used to 
             interact with NuGet sources.
             </summary>
         </member>
+        <member name="T:Cake.Common.Tools.NuGet.Update.NamespaceDoc">
+            <summary>
+            This namespace contain types used to 
+            update NuGet packages.
+            </summary>
+        </member>
         <member name="T:Cake.Common.Tools.NUnit.NamespaceDoc">
             <summary>
             This namespace contain types used to interact with NUnit.
+            </summary>
+        </member>
+        <member name="T:Cake.Common.Tools.OctopusDeploy.NamespaceDoc">
+            <summary>
+            This namespace contain types used 
+            to interact with Octopus Deploy.
+            </summary>
+        </member>
+        <member name="T:Cake.Common.Tools.Roundhouse.NamespaceDoc">
+            <summary>
+            This namespace contain types used 
+            to interact with Roundhouse.
             </summary>
         </member>
         <member name="T:Cake.Common.Tools.SignTool.NamespaceDoc">
@@ -1093,9 +1147,21 @@
             This namespace contain types used to interact with WiX.
             </summary>
         </member>
+        <member name="T:Cake.Common.Tools.XBuild.NamespaceDoc">
+            <summary>
+            This namespace contain types used 
+            to interact with XBuild.
+            </summary>
+        </member>
         <member name="T:Cake.Common.Tools.XUnit.NamespaceDoc">
             <summary>
             This namespace contain types used to interact with XUnit.
+            </summary>
+        </member>
+        <member name="T:Cake.Common.Tools.Xml.NamespaceDoc">
+            <summary>
+            This namespace contain types used to 
+            interact with XML documents.
             </summary>
         </member>
         <member name="T:Cake.Common.Security.HashAlgorithm">
@@ -2465,6 +2531,195 @@
             </summary>
             <value>The properties.</value>
         </member>
+        <member name="T:Cake.Common.Tools.DupFinder.DupFinderAliases">
+            <summary>
+             Contains functionality related to ReSharper's duplication finder
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderAliases.DupFinder(Cake.Core.ICakeContext,Cake.Core.IO.FilePath)">
+            <summary>
+            Analyses the specified file with ReSharper's DupFinder.
+            The file can either be a solution/project or a source file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="file">The file to analyze.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderAliases.DupFinder(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Common.Tools.DupFinder.DupFinderSettings)">
+            <summary>
+            Analyses the specified file with ReSharper's DupFinder using the specified settings.
+            The file can either be a solution/project or a source file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="file">The file to analyze.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderAliases.DupFinder(Cake.Core.ICakeContext,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath})">
+            <summary>
+            Analyses the specified projects with ReSharper's DupFinder.
+            The files can either be solutions and projects or a source files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="files">The files to analyze.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderAliases.DupFinder(Cake.Core.ICakeContext,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Common.Tools.DupFinder.DupFinderSettings)">
+            <summary>
+            Analyses the specified projects with ReSharper's DupFinder using the specified settings.
+            The files can either be solutions and projects or a source files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="files">The files to analyze.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderAliases.DupFinder(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Analyses all files matching the specified pattern with ReSharper's DupFinder.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderAliases.DupFinder(Cake.Core.ICakeContext,System.String,Cake.Common.Tools.DupFinder.DupFinderSettings)">
+            <summary>
+            Analyses all files matching the specified pattern with ReSharper's DupFinder,
+            using the specified settings.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="pattern">The pattern.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderAliases.DupFinderFromConfig(Cake.Core.ICakeContext,Cake.Core.IO.FilePath)">
+            <summary>
+            Runs ReSharper's DupFinder using the provided config file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="configFile">The config file.</param>
+        </member>
+        <member name="T:Cake.Common.Tools.DupFinder.DupFinderRunner">
+            <summary>
+            DupFinder runner
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderRunner.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.IO.IGlobber)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Common.Tools.DupFinder.DupFinderRunner"/> class.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="processRunner">The process runner.</param>
+            <param name="globber">The globber</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderRunner.Run(System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Common.Tools.DupFinder.DupFinderSettings)">
+            <summary>
+            Analyses the specified files using the specified settings.
+            </summary>
+            <param name="files">The files.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderRunner.RunFromConfig(Cake.Core.IO.FilePath)">
+            <summary>
+            Runs ReSharper's DupFinder using the provided config file.
+            </summary>
+            <param name="configFile">The config file.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderRunner.GetToolName">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+            <returns>The name of the tool.</returns>
+        </member>
+        <member name="M:Cake.Common.Tools.DupFinder.DupFinderRunner.GetToolExecutableNames">
+            <summary>
+            Gets the possible names of the tool executable.
+            </summary>
+            <returns>The tool executable name.</returns>
+        </member>
+        <member name="T:Cake.Common.Tools.DupFinder.DupFinderSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.Common.Tools.DupFinder.DupFinderRunner"/> .
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.Debug">
+            <summary>
+            Gets or sets a value indicating whether the debug output should be enabled.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.DiscardCost">
+            <summary>
+            Gets or sets the complexity threshold for duplicate fragments.
+            Code fragment with lower complexity are discarded.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.DiscardFieldsName">
+            <summary>
+            Gets or sets a value indicating whether to discard similar fields with different names.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.DiscardLiterals">
+            <summary>
+            Gets or sets a value indicating whether to discard similar lines of code with different literals.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.DiscardLocalVariablesName">
+            <summary>
+            Gets or sets a value indicating whether to discard similar local variables with different names.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.DiscardTypes">
+            <summary>
+            Gets or sets a value indicating whether to discard similar types with different names.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.IdlePriority">
+            <summary>
+            Gets or sets a value indicating whether the process priority should be set to idle.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.ExcludeFilesByStartingCommentSubstring">
+            <summary>
+            Gets or sets a list of keywords to exclude files that contain one of the keywords in their opening comments.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.ExcludeCodeRegionsByNameSubstring">
+            <summary>
+            Gets or sets a list of keywords to exclude regions that contain one of the keywords in their message.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.ExcludePattern">
+            <summary>
+            Gets or sets a lift of patterns which will be excluded from the analysis.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.MsBuildProperties">
+            <summary>
+            Gets or sets MsBuild properties.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.NormalizeTypes">
+            <summary>
+            Gets or sets a value indicating whether to normalize type names to the last subtype.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.CachesHome">
+            <summary>
+            Gets or sets the directory where caches will be stored.
+            The default is %TEMP%.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.OutputFile">
+            <summary>
+            Gets or sets the location DupFinder should write its output.
+            </summary>
+            <value>The location DupFinder should write its output</value>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.ShowStats">
+            <summary>
+            Gets or sets a value indicating whether to show CPU and memory usage statistics.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.DupFinder.DupFinderSettings.ShowText">
+            <summary>
+            Gets or sets a value indicating whether to show duplactes text in the report.
+            </summary>
+        </member>
         <member name="T:Cake.Common.Tools.Fixie.FixieAliases">
             <summary>
             Contains functionality related to running Fixie tests.
@@ -2616,21 +2871,6 @@
             <param name="name">The option name.</param>
             <param name="values">The option values.</param>
             <returns>The same <see cref="T:Cake.Common.Tools.Fixie.FixieSettings"/> instance so that multiple calls can be chained.</returns>
-        </member>
-        <member name="T:Cake.Common.Tools.Fixie.TeamCityOutput">
-            <summary>
-            Options to enable TeamCity-formatted output.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.Fixie.TeamCityOutput.On">
-            <summary>
-            Explicitly enables TeamCity-formatted output.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.Fixie.TeamCityOutput.Off">
-            <summary>
-            Explicitly disables TeamCity-formatted output.
-            </summary>
         </member>
         <member name="T:Cake.Common.Tools.ILMerge.ILMergeAliases">
             <summary>
@@ -3506,6 +3746,186 @@
         <member name="F:Cake.Common.Tools.ILMerge.TargetPlatformVersion.v4">
             <summary>
             NET Framework v4
+            </summary>
+        </member>
+        <member name="T:Cake.Common.Tools.InspectCode.InspectCodeAliases">
+            <summary>
+            Contains functionality related to Resharper's code inspection.
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Tools.InspectCode.InspectCodeAliases.InspectCode(Cake.Core.ICakeContext,Cake.Core.IO.FilePath)">
+            <summary>
+            Analyses the specified solution with Resharper's InspectCode.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="solution">The solution.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.InspectCode.InspectCodeAliases.InspectCode(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Common.Tools.InspectCode.InspectCodeSettings)">
+            <summary>
+            Analyses the specified solution with Resharper's InspectCode,
+            using the specified settings.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="solution">The solution.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.InspectCode.InspectCodeAliases.InspectCodeFromConfig(Cake.Core.ICakeContext,Cake.Core.IO.FilePath)">
+            <summary>
+            Runs ReSharper's InspectCode using the specified config file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="configFile">The config file.</param>
+        </member>
+        <member name="T:Cake.Common.Tools.InspectCode.InspectCodeRunner">
+            <summary>
+            InspectCode runner
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Tools.InspectCode.InspectCodeRunner.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.IO.IGlobber)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Common.Tools.InspectCode.InspectCodeRunner"/> class.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="processRunner">The process runner.</param>
+            <param name="globber">The globber.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.InspectCode.InspectCodeRunner.Run(Cake.Core.IO.FilePath,Cake.Common.Tools.InspectCode.InspectCodeSettings)">
+            <summary>
+            Analyses the specified solution, using the specified settings.
+            </summary>
+            <param name="solution">The solution.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.InspectCode.InspectCodeRunner.RunFromConfig(Cake.Core.IO.FilePath)">
+            <summary>
+            Runs ReSharper's InspectCode using the provided config file.
+            </summary>
+            <param name="configFile">The config file.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.InspectCode.InspectCodeRunner.GetToolName">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+            <returns>The name of the tool.</returns>
+        </member>
+        <member name="M:Cake.Common.Tools.InspectCode.InspectCodeRunner.GetToolExecutableNames">
+            <summary>
+            Gets the possible names of the tool executable.
+            </summary>
+            <returns>The tool executable name.</returns>
+        </member>
+        <member name="T:Cake.Common.Tools.InspectCode.InspectCodeSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.Common.Tools.InspectCode.InspectCodeRunner"/>.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.OutputFile">
+            <summary>
+            Gets or sets the location InspectCode should write its output.
+            </summary>
+            <value>The location that InspectCode should write its output</value>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.SolutionWideAnalysis">
+            <summary>
+            Gets or sets a value indicating whether enable solution-wide analysis should be forced.
+            Default value is <c>false</c>.
+            </summary>
+            <value>
+                <c>true</c> if solution-wide analysis should be enabled by force; otherwise, <c>fault</c>.
+            </value>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.NoSolutionWideAnalysis">
+            <summary>
+            Gets or sets a value indicating whether disable solution-wide analysis should be forced.
+            Default value is <c>false</c>
+            </summary>
+            <value>
+                <c>true</c> if solution-wide analysis should be disabled by force; otherwise, <c>fault</c>.
+            </value>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.ProjectFilter">
+            <summary>
+            Gets or sets a filter to analyze only particular project(s) instead of the whole solution.
+            Supports wildcards.
+            </summary>
+            <value>The filter to analyze only particular projects(s).</value>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.MsBuildProperties">
+            <summary>
+            Gets or sets MSBuild properties.
+            </summary>
+            <value>The MSBuild properties to override</value>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.Extensions">
+            <summary>
+            Gets or sets a list of Resharper extensions which will be used.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.CachesHome">
+            <summary>
+            Gets or sets the directory where caches will be stored.
+            The default is %TEMP%.
+            </summary>
+            <value>The directory where caches will be stored.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.Debug">
+            <summary>
+            Gets or sets a value indicating whether the debug output should be enabled.
+            </summary>
+            <value>
+                <c>true</c> if the debug output should be enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.NoBuildinSettings">
+            <summary>
+            Gets or sets a value indicating whether all global, solution and project settings should be ignored.
+            Alias for disabling the settings layers GlobalAll, GlobalPerProduct, SolutionShared, SolutionPersonal, ProjectShared and ProjectPersonal.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.DisabledSettingsLayers">
+            <summary>
+            Gets or sets a list of <c>InspectCodeSettings</c> which will be disabled.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.InspectCode.InspectCodeSettings.Profile">
+            <summary>
+            Gets or sets the path to the file to use custom settings from.
+            </summary>
+        </member>
+        <member name="T:Cake.Common.Tools.InspectCode.SettingsLayer">
+            <summary>
+            Represents Resharper's settings layers.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.InspectCode.SettingsLayer.GlobalAll">
+            <summary>
+            SettingsLayer: <c>GlobalAll</c>.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.InspectCode.SettingsLayer.GlobalPerProduct">
+            <summary>
+            SettingsLayer: <c>GlobalPerProduct</c>.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.InspectCode.SettingsLayer.SolutionShared">
+            <summary>
+            SettingsLayer: <c>SolutionShared</c>. This layer is saved in <c>%SolutionName%.sln.DotSettings</c>
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.InspectCode.SettingsLayer.SolutionPersonal">
+            <summary>
+            SettingsLayer: <c>SolutionPersonal</c>. This layer is saved in <c>%SolutionName%.sln.DotSettings.user</c>.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.InspectCode.SettingsLayer.ProjectShared">
+            <summary>
+            SettingsLayer: <c>ProjectShared</c>. This layer is saved in <c>%ProjectName%.csproj.DotSettings</c>.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.InspectCode.SettingsLayer.ProjectPersonal">
+            <summary>
+            SettingsLayer: <c>ProjectPersonal</c>. This layer is saved in <c>%ProjectName%.csproj.DotSettings.user</c>.
             </summary>
         </member>
         <member name="T:Cake.Common.Tools.MSBuild.MSBuildAliases">
@@ -4948,6 +5368,12 @@
             </summary>
             <value>The package files.</value>
         </member>
+        <member name="P:Cake.Common.Tools.NuGet.Pack.NuGetPackSettings.Verbosity">
+            <summary>
+            Gets or sets the verbosity.
+            </summary>
+            <value>The verbosity.</value>
+        </member>
         <member name="T:Cake.Common.Tools.NuGet.Push.NuGetPusher">
             <summary>
             The NuGet package pusher.
@@ -5288,6 +5714,47 @@
             <param name="assemblies">The assemblies.</param>
             <param name="settings">The settings.</param>
         </member>
+        <member name="T:Cake.Common.Tools.NUnit.NUnitAppDomainUsage">
+            <summary>
+                The /domain option controls of the creation of AppDomains for running tests.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.NUnit.NUnitAppDomainUsage.Default">
+            <summary>
+                Create a separate AppDomain for each assembly listed on the command line.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.NUnit.NUnitAppDomainUsage.None">
+            <summary>
+                No domain is created - the tests are run in the primary domain. 
+                This normally requires copying the NUnit assemblies into the same directory as your tests.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.NUnit.NUnitAppDomainUsage.Single">
+            <summary>
+                A test domain is created - this is how NUnit worked prior to version 2.4
+            </summary>
+        </member>
+        <member name="T:Cake.Common.Tools.NUnit.NUnitProcessOption">
+            <summary>
+                Represents the various ways NUnit loads tests in processes.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.NUnit.NUnitProcessOption.Single">
+            <summary>
+                All the tests are run in the nunit-console process. This is the default.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.NUnit.NUnitProcessOption.Separate">
+            <summary>
+                A separate process is created to run the tests.
+            </summary>
+        </member>
+        <member name="F:Cake.Common.Tools.NUnit.NUnitProcessOption.Multiple">
+            <summary>
+                A separate process is created for each test assembly.
+            </summary>
+        </member>
         <member name="T:Cake.Common.Tools.NUnit.NUnitRunner">
             <summary>
             The NUnit unit test runner.
@@ -5330,118 +5797,139 @@
         </member>
         <member name="T:Cake.Common.Tools.NUnit.NUnitSettings">
             <summary>
-            Contains settings used by <see cref="T:Cake.Common.Tools.NUnit.NUnitRunner"/>.
+                Contains settings used by <see cref="T:Cake.Common.Tools.NUnit.NUnitRunner"/>.
             </summary>
         </member>
         <member name="M:Cake.Common.Tools.NUnit.NUnitSettings.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:Cake.Common.Tools.NUnit.NUnitSettings"/> class.
+                Initializes a new instance of the <see cref="T:Cake.Common.Tools.NUnit.NUnitSettings"/> class.
             </summary>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.ToolPath">
             <summary>
-            Gets or sets the tool path.
+                Gets or sets the tool path.
             </summary>
             <value>
-            The tool path. Defaults to <c>./tools/**/nunit-console.exe</c>.
+                The tool path. Defaults to <c>./tools/**/nunit-console.exe</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.ResultsFile">
             <summary>
-            Gets or sets the name of the XML result file.
+                Gets or sets the name of the XML result file.
             </summary>
             <value>
-            The name of the XML result file. Defaults to <c>TestResult.xml</c>.
+                The name of the XML result file. Defaults to <c>TestResult.xml</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.NoResults">
             <summary>
-            Gets or sets a value indicating whether to generate the XML result file.
+                Gets or sets a value indicating whether to generate the XML result file.
             </summary>
             <value>
-              <c>true</c> if the XML result file should be generated; otherwise, <c>false</c>.
+                <c>true</c> if the XML result file should be generated; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.Framework">
             <summary>
-            Gets or sets the version of the runtime to be used when executing tests.
+                Gets or sets the version of the runtime to be used when executing tests.
             </summary>
             <value>
-            The version of the runtime to be used when executing tests.
+                The version of the runtime to be used when executing tests.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.Include">
             <summary>
-            Gets or sets the categories to include in a run.
+                Gets or sets the categories to include in a run.
             </summary>
             <value>The categories to include in a run.</value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.Exclude">
             <summary>
-            Gets or sets the categories to exclude from a run.
+                Gets or sets the categories to exclude from a run.
             </summary>
             <value>
-            The categories to exclude from a run.
+                The categories to exclude from a run.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.Timeout">
             <summary>
-            Gets or sets the default timeout to be used for test cases in this run.
-            If any test exceeds the timeout value, it is cancelled and reported as an error.
+                Gets or sets the default timeout to be used for test cases in this run.
+                If any test exceeds the timeout value, it is cancelled and reported as an error.
             </summary>
             <value>The default timeout to be used for test cases in this run.</value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.ShadowCopy">
             <summary>
-            Gets or sets a value indicating whether tests should be run as a shadow copy.
-            Default value is <c>true</c>.
+                Gets or sets a value indicating whether tests should be run as a shadow copy.
+                Default value is <c>true</c>.
             </summary>
             <value>
-              <c>true</c> if tests should be run as a shadow copy; otherwise, <c>false</c>.
+                <c>true</c> if tests should be run as a shadow copy; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.NoThread">
             <summary>
-            Gets or sets a value indicating whether the main thread should be used for running tests.
+                Gets or sets a value indicating whether the main thread should be used for running tests.
             </summary>
             <value>
-              <c>true</c> if the main thread should be used for running tests; otherwise, <c>false</c>.
+                <c>true</c> if the main thread should be used for running tests; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.NoLogo">
             <summary>
-            Gets or sets a value indicating whether to show copyright information at the start of the program.
+                Gets or sets a value indicating whether to show copyright information at the start of the program.
             </summary>
             <value>
-              <c>true</c> if to show copyright information at the start of the program; otherwise, <c>false</c>.
+                <c>true</c> if to show copyright information at the start of the program; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.StopOnError">
             <summary>
-            Gets or sets a value indicating whether execution of the test run should terminate 
-            immediately on the first test failure or error.
+                Gets or sets a value indicating whether execution of the test run should terminate
+                immediately on the first test failure or error.
             </summary>
             <value>
-              <c>true</c> if execution of the test run should terminate immediately on the first test failure or error; otherwise, <c>false</c>.
+                <c>true</c> if execution of the test run should terminate immediately on the first test failure or error;
+                otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.Trace">
             <summary>
-            Gets or sets the amount of information that NUnit should write to its internal trace log.
+                Gets or sets the amount of information that NUnit should write to its internal trace log.
             </summary>
             <value>The amount of information that NUnit should write to its internal trace log.</value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.OutputFile">
             <summary>
-            Gets or sets the location that NUnit should write test output.
+                Gets or sets the location that NUnit should write test output.
             </summary>
             <value>The location that NUnit should write test output.</value>
         </member>
         <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.ErrorOutputFile">
             <summary>
-            Gets or sets the location that NUnit should write test error output.
+                Gets or sets the location that NUnit should write test error output.
             </summary>
             <value>The location that NUnit should write test error output.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.Process">
+            <summary>
+                Gets or sets a value indicating how NUnit should load tests in processes.  
+                The Default value is <see cref="F:Cake.Common.Tools.NUnit.NUnitProcessOption.Single"/>
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.UseSingleThreadedApartment">
+            <summary>
+                Gets or sets a value indicating whether Single Threaded Apartment state (STA) will be used.
+                Corresponds to the /apartment command line option 
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.NUnit.NUnitSettings.AppDomainUsage">
+            <summary>
+                Gets or sets a value to control creation of AppDomains for running tests.
+                Corresponds to the /domain command line switch.
+                The default is to use multiple domains if multiple assemblies are listed on the command line. 
+                Otherwise a single domain is used.
+            </summary>
         </member>
         <member name="T:Cake.Common.Tools.OctopusDeploy.OctopusDeployAliases">
             <summary>
@@ -6681,11 +7169,445 @@
               <c>true</c> if an HTML report should be generated; otherwise, <c>false</c>.
             </value>
         </member>
+        <member name="P:Cake.Common.Tools.XUnit.XUnit2Settings.NoAppDomain">
+            <summary>
+            Gets or sets a value indicating whether to not use app domains to run test code.
+            </summary>
+            <value>
+              <c>true</c> to not use app domains to run test code; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="P:Cake.Common.Tools.XUnit.XUnit2Settings.ToolPath">
             <summary>
             Gets or sets the tool path.
             </summary>
             <value>The tool path.</value>
+        </member>
+        <member name="T:Cake.Common.Xml.XmlPokeAliases">
+            <summary>
+            Contains functionality related to XML XSL transformation.
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Xml.XmlPokeAliases.XmlPoke(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,System.String,System.String)">
+            <summary>
+            Set the value of, or remove, target nodes.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="filePath">The target file.</param>
+            <param name="xpath">The xpath of the nodes to set.</param>
+            <param name="value">The value to set too. Leave blank to remove the selected nodes.</param>
+            <example>
+              <para>
+              Change the <c>server</c> setting in the configuration from <c>testhost.somecompany.com</c> 
+              to <c>productionhost.somecompany.com</c>.
+              </para>
+              <para>XML file:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="server" value="testhost.somecompany.com" />
+                </appSettings>
+            </configuration>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var file = File("test.xml");
+                XmlPoke(file, "/configuration/appSettings/add[@key = 'server']/@value", "productionhost.somecompany.com");
+            });
+                ]]>
+              </code>
+            </example>
+            <example>
+              <para>
+              Modify the <c>noNamespaceSchemaLocation</c> in an XML file.
+              </para>
+              <para>XML file:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <Commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Path Value">
+            </Commands>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var file = File("test.xml");
+                XmlPoke(file, "/Commands/@xsi:noNamespaceSchemaLocation", "d:\Commands.xsd", new XmlPokeSettings {
+                    Namespaces = new Dictionary<string, string> {
+                        { /* Prefix */ "xsi", /* URI */ "http://www.w3.org/2001/XMLSchema-instance" }
+                    }
+                });
+            });
+                ]]>
+              </code>        
+            <example>
+              <para>
+              Remove an app setting from a config file.
+              </para>
+              <para>XML file:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="server" value="testhost.somecompany.com" />
+                    <add key="testing" value="true" />
+                </appSettings>
+            </configuration>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var file = File("test.xml");
+                XmlPoke(file, "/configuration/appSettings/add[@testing]", null);
+            });
+                ]]>
+              </code>
+            </example>
+            <para>
+            Credit to NAnt for the original example.
+            http://nant.sourceforge.net/release/latest/help/tasks/xmlpoke.html
+            </para>
+            </example>
+        </member>
+        <member name="M:Cake.Common.Xml.XmlPokeAliases.XmlPoke(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,System.String,System.String,Cake.Common.Xml.XmlPokeSettings)">
+            <summary>
+            Set the value of, or remove, target nodes.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="filePath">The target file.</param>
+            <param name="xpath">The xpath of the nodes to set.</param>
+            <param name="value">The value to set too. Leave blank to remove the selected nodes.</param>
+            <param name="settings">Additional settings to tweak Xml Poke behavior.</param>
+            <example>
+              <para>
+              Change the <c>server</c> setting in the configuration from <c>testhost.somecompany.com</c> 
+              to <c>productionhost.somecompany.com</c>.
+              </para>
+              <para>XML file:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="server" value="testhost.somecompany.com" />
+                </appSettings>
+            </configuration>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var file = File("test.xml");
+                XmlPoke(file, "/configuration/appSettings/add[@key = 'server']/@value", "productionhost.somecompany.com");
+            });
+                ]]>
+              </code>
+            </example>
+            <example>
+              <para>
+              Modify the <c>noNamespaceSchemaLocation</c> in an XML file.
+              </para>
+              <para>XML file:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <Commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Path Value">
+            </Commands>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var file = File("test.xml");
+                XmlPoke(file, "/Commands/@xsi:noNamespaceSchemaLocation", "d:\Commands.xsd", new XmlPokeSettings {
+                    Namespaces = new Dictionary<string, string> {
+                        { /* Prefix */ "xsi", /* URI */ "http://www.w3.org/2001/XMLSchema-instance" }
+                    }
+                });
+            });
+                ]]>
+              </code>        
+            <example>
+              <para>
+              Remove an app setting from a config file.
+              </para>
+              <para>XML file:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="server" value="testhost.somecompany.com" />
+                    <add key="testing" value="true" />
+                </appSettings>
+            </configuration>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var file = File("test.xml");
+                XmlPoke(file, "/configuration/appSettings/add[@testing]", null);
+            });
+                ]]>
+              </code>
+            </example>
+            <para>
+            Credit to NAnt for the original example.
+            http://nant.sourceforge.net/release/latest/help/tasks/xmlpoke.html
+            </para>
+            </example>
+        </member>
+        <member name="M:Cake.Common.Xml.XmlPokeAliases.XmlPoke(Cake.Core.ICakeContext,System.String,System.String,System.String)">
+            <summary>
+            Set the value of, or remove, target nodes.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceXml">The source xml to transform.</param>
+            <param name="xpath">The xpath of the nodes to set.</param>
+            <param name="value">The value to set too. Leave blank to remove the selected nodes.</param>
+            <returns>Resulting XML.</returns>
+            <example>
+              <para>
+              Change the <c>server</c> setting in the configuration from <c>testhost.somecompany.com</c> 
+              to <c>productionhost.somecompany.com</c>.
+              </para>
+              <para>XML string:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="server" value="testhost.somecompany.com" />
+                </appSettings>
+            </configuration>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var result = XmlPoke(xmlString, "/configuration/appSettings/add[@key = 'server']/@value", "productionhost.somecompany.com");
+            });
+                ]]>
+              </code>
+            </example>
+            <example>
+              <para>
+              Modify the <c>noNamespaceSchemaLocation</c> in an XML file.
+              </para>
+              <para>XML string:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <Commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Path Value">
+            </Commands>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var result = XmlPoke(xmlString, "/Commands/@xsi:noNamespaceSchemaLocation", "d:\Commands.xsd", new XmlPokeSettings {
+                    Namespaces = new Dictionary<string, string> {
+                        { /* Prefix */ "xsi", /* URI */ "http://www.w3.org/2001/XMLSchema-instance" }
+                    }
+                });
+            });
+                ]]>
+              </code>        
+            <example>
+              <para>
+              Remove an app setting from a config file.
+              </para>
+              <para>XML string:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="server" value="testhost.somecompany.com" />
+                    <add key="testing" value="true" />
+                </appSettings>
+            </configuration>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var result = XmlPoke(xmlString, "/configuration/appSettings/add[@testing]", null);
+            });
+                ]]>
+              </code>
+            </example>
+            <para>
+            Credit to NAnt for the original example.
+            http://nant.sourceforge.net/release/latest/help/tasks/xmlpoke.html
+            </para>
+            </example>
+        </member>
+        <member name="M:Cake.Common.Xml.XmlPokeAliases.XmlPoke(Cake.Core.ICakeContext,System.String,System.String,System.String,Cake.Common.Xml.XmlPokeSettings)">
+            <summary>
+            Set the value of, or remove, target nodes.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceXml">The source xml to transform.</param>
+            <param name="xpath">The xpath of the nodes to set.</param>
+            <param name="value">The value to set too. Leave blank to remove the selected nodes.</param>
+            <param name="settings">Additional settings to tweak Xml Poke behavior.</param>
+            <returns>Resulting XML.</returns>
+            <example>
+              <para>
+              Change the <c>server</c> setting in the configuration from <c>testhost.somecompany.com</c> 
+              to <c>productionhost.somecompany.com</c>.
+              </para>
+              <para>XML string:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="server" value="testhost.somecompany.com" />
+                </appSettings>
+            </configuration>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var result = XmlPoke(xmlString, "/configuration/appSettings/add[@key = 'server']/@value", "productionhost.somecompany.com");
+            });
+                ]]>
+              </code>
+            </example>
+            <example>
+              <para>
+              Modify the <c>noNamespaceSchemaLocation</c> in an XML file.
+              </para>
+              <para>XML string:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <Commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Path Value">
+            </Commands>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var result = XmlPoke(xmlString, "/Commands/@xsi:noNamespaceSchemaLocation", "d:\Commands.xsd", new XmlPokeSettings {
+                    Namespaces = new Dictionary<string, string> {
+                        { /* Prefix */ "xsi", /* URI */ "http://www.w3.org/2001/XMLSchema-instance" }
+                    }
+                });
+            });
+                ]]>
+              </code>        
+            <example>
+              <para>
+              Remove an app setting from a config file.
+              </para>
+              <para>XML string:</para>
+              <code>
+                <![CDATA[
+            <?xml version="1.0" encoding="utf-8" ?>
+            <configuration>
+                <appSettings>
+                    <add key="server" value="testhost.somecompany.com" />
+                    <add key="testing" value="true" />
+                </appSettings>
+            </configuration>
+                ]]>
+              </code>
+              <para>Cake Task:</para>
+              <code>
+                <![CDATA[
+            Task("Transform")
+                .Does(() =>
+            {
+                var result = XmlPoke(xmlString, "/configuration/appSettings/add[@testing]", null);
+            });
+                ]]>
+              </code>
+            </example>
+            <para>
+            Credit to NAnt for the original example.
+            http://nant.sourceforge.net/release/latest/help/tasks/xmlpoke.html
+            </para>
+            </example>
+        </member>
+        <member name="M:Cake.Common.Xml.XmlPokeAliases.XmlPoke(System.Xml.XmlReader,System.Xml.XmlWriter,System.String,System.String,Cake.Common.Xml.XmlPokeSettings)">
+            <summary>
+            Set the value of, or remove, target nodes.
+            </summary>
+            <param name="source">The source xml to transform.</param>
+            <param name="destination">The destination to write too.</param>
+            <param name="xpath">The xpath of the nodes to set.</param>
+            <param name="value">The value to set too. Leave blank to remove the selected nodes.</param>
+            <param name="settings">Additional settings to tweak Xml Poke behavior.</param>
+        </member>
+        <member name="T:Cake.Common.Xml.XmlPokeSettings">
+            <summary>
+            Contains settings for <see cref="T:Cake.Common.Xml.XmlPokeAliases"/>
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Xml.XmlPokeSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Common.Xml.XmlPokeSettings"/> class.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Xml.XmlPokeSettings.PreserveWhitespace">
+            <summary>
+            Gets or sets a value indicating whether to preserve white space.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Xml.XmlPokeSettings.Namespaces">
+            <summary>
+            Gets or sets namespaces to include for xpath recognition.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Xml.XmlPokeSettings.Encoding">
+            <summary>
+            Gets or sets the type of text encoding to use.
+            </summary>
         </member>
         <member name="T:Cake.Common.Xml.XmlTransformation">
             <summary>
@@ -7100,6 +8022,226 @@
             <param name="context">The context.</param>
             <param name="solution">The solution.</param>
             <param name="configurator">The configurator.</param>
+        </member>
+        <member name="T:Cake.Common.Tools.ILRepack.ILRepackSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.Common.Tools.ILRepack.ILRepackRunner"/>.
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Tools.ILRepack.ILRepackSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Common.Tools.ILRepack.ILRepackSettings"/> class.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.ToolPath">
+            <summary>
+            Gets or sets the tool path.
+            </summary>
+            <value>The tool path.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Keyfile">
+            <summary>
+            Gets or sets a keyfile to sign the output assembly
+            </summary>
+            <value>The keyfile.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Log">
+            <summary>
+            Gets or sets a file to enable logging to (no logging if null or empty)
+            </summary>
+            <value>The log file.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Version">
+            <summary>
+            Gets or sets the target assembly version.
+            </summary>
+            <value>The version.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Union">
+            <summary>
+            Gets or sets a value indicating whether to merge types with identical names into one
+            </summary>
+            <value><c>true</c> if types with identical names should be merged into one; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.NDebug">
+            <summary>
+            Gets or sets a value indicating whether to disable symbol file generation
+            </summary>
+            <value><c>true</c> if debug symbols should be disabled; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.CopyAttrs">
+            <summary>
+            Gets or sets a value indicating whether to copy assembly attributes (by default only the primary assembly attributes are copied)
+            </summary>
+            <value><c>true</c> if assembly attributes should be copied; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Attr">
+            <summary>
+            Gets or sets the assembly file to take attributes from
+            </summary>
+            <value>The assembly file to take attributes from.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.AllowMultiple">
+            <summary>
+            Gets or sets a value indicating whether to allow multiple attributes (if type allows)
+            </summary>
+            <value><c>true</c> if multiple attributes should be allowed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.TargetKind">
+            <summary>
+            Gets or sets the specify target assembly kind (library, exe, winexe supported, default is same as first assembly)
+            </summary>
+            <value>The kind of the target assembly to create.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.TargetPlatform">
+            <summary>
+            Gets or sets the target platform (v1, v1.1, v2, v4 supported)
+            </summary>
+            <value>The target platform.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.XmlDocs">
+            <summary>
+            Gets or sets a value indicating whether to merge XML documentation as well
+            </summary>
+            <value><c>true</c> if xml documents should be merged; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Libs">
+            <summary>
+            Gets or sets the paths to search directories for referenced assemblies (can be specified multiple times)
+            </summary>
+            <value>The libs.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Internalize">
+            <summary>
+            Gets or sets a value indicating whether to set all types but the ones from the first assembly 'internal'
+            </summary>
+            <value>
+            <c>true</c> if types in assemblies other than the primary assembly should 
+            have their visibility modified to internal; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.DelaySign">
+            <summary>
+            Gets or sets a value indicating whether to set the key, but don't sign the assembly
+            </summary>
+            <value><c>true</c> if assembly should be delay signed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.AllowDup">
+            <summary>
+            Gets or sets the specified type for being duplicated in input assemblies
+            </summary>
+            <value>The type to allow duplication of.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.AllowDuplicateResources">
+            <summary>
+            Gets or sets a value indicating whether to duplicate resources in output assembly (by default they're ignored)
+            </summary>
+            <value><c>true</c> if duplicate resources should be allowed in the output assembly; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.ZeroPeKind">
+            <summary>
+            Gets or sets a value indicating whether to allow assemblies with Zero PeKind (but obviously only IL will get merged)
+            </summary>
+            <value><c>true</c> if assemblies with Zero PeKind should be allowed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Wildcards">
+            <summary>
+            Gets or sets a value indicating whether to allow (and resolve) file wildcards (e.g. `*`.dll) in input assemblies
+            </summary>
+            <value><c>true</c> if file wildcards should be allowed in input assembly paths; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Parallel">
+            <summary>
+            Gets or sets a value indicating whether to use as many CPUs as possible to merge the assemblies
+            </summary>
+            <value><c>true</c> if merging should use as many CPUs as possible in parallel; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Pause">
+            <summary>
+            Gets or sets a value indicating whether to pause execution once completed (good for debugging)
+            </summary>
+            <value><c>true</c> if execution should pause once completed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.Common.Tools.ILRepack.ILRepackSettings.Verbose">
+            <summary>
+            Gets or sets a value indicating whether to show more logs
+            </summary>
+            <value><c>true</c> if more logs should be output during execution; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Cake.Common.Tools.ILRepack.ILRepackRunner">
+            <summary>
+            The ILMerge runner.
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Tools.ILRepack.ILRepackRunner.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IGlobber,Cake.Core.IO.IProcessRunner)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Common.Tools.ILRepack.ILRepackRunner"/> class.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="globber">The globber.</param>
+            <param name="processRunner">The process runner.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.ILRepack.ILRepackRunner.Merge(Cake.Core.IO.FilePath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Common.Tools.ILRepack.ILRepackSettings)">
+            <summary>
+            Merges the specified assemblies.
+            </summary>
+            <param name="outputAssemblyPath">The output assembly path.</param>
+            <param name="primaryAssemblyPath">The primary assembly path.</param>
+            <param name="assemblyPaths">The assembly paths.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.Common.Tools.ILRepack.ILRepackRunner.GetToolName">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+            <returns>The name of the tool.</returns>
+        </member>
+        <member name="M:Cake.Common.Tools.ILRepack.ILRepackRunner.GetToolExecutableNames">
+            <summary>
+            Gets the name of the tool executable.
+            </summary>
+            <returns>The tool executable name.</returns>
+        </member>
+        <member name="T:Cake.Common.Tools.ILRepack.ILRepackAliases">
+            <summary>
+            Contains functionality related to ILRepack.
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Tools.ILRepack.ILRepackAliases.ILRepack(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath})">
+            <summary>
+            Merges the specified assemblies.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="outputFile">The output file.</param>
+            <param name="primaryAssembly">The primary assembly.</param>
+            <param name="assemblyPaths">The assembly paths.</param>
+            <example>
+            <code>
+            var assemblyPaths = GetFiles("./**/Cake.*.dll");
+            ILRepack("./MergedCake.exe", "./Cake.exe", assemblyPaths);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Common.Tools.ILRepack.ILRepackAliases.ILRepack(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Common.Tools.ILRepack.ILRepackSettings)">
+            <summary>
+            Merges the specified assemblies.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="outputFile">The output file.</param>
+            <param name="primaryAssembly">The primary assembly.</param>
+            <param name="assemblyPaths">The assembly paths.</param>
+            <param name="settings">The settings.</param>
+            <example>
+            <code>
+            var assemblyPaths = GetFiles("./**/Cake.*.dll");
+            ILRepack(
+                "./MergedCake.exe",
+                "./Cake.exe",
+                assemblyPaths,
+                new ILRepackSettings { Internalize = true });
+            </code>
+            </example>
         </member>
     </members>
 </doc>

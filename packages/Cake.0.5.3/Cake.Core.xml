@@ -1897,7 +1897,7 @@
         </member>
         <member name="T:Cake.Core.IO.Globber">
             <summary>
-            Responsible for file system globbing.
+            The file system globber.
             </summary>
         </member>
         <member name="T:Cake.Core.IO.IGlobber">
@@ -1960,6 +1960,11 @@
             Get the standard output of process
             </summary>
             <returns>Returns process output <see cref="P:Cake.Core.IO.ProcessSettings.RedirectStandardOutput">RedirectStandardOutput</see> is true</returns>
+        </member>
+        <member name="M:Cake.Core.IO.IProcess.Kill">
+            <summary>
+            Immediately stops the associated process.
+            </summary>
         </member>
         <member name="T:Cake.Core.IO.IProcessRunner">
             <summary>
@@ -2995,13 +3000,14 @@
             Represents a script.
             </summary>
         </member>
-        <member name="M:Cake.Core.Scripting.Script.#ctor(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{Cake.Core.Scripting.ScriptAlias})">
+        <member name="M:Cake.Core.Scripting.Script.#ctor(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{Cake.Core.Scripting.ScriptAlias},System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Core.Scripting.Script"/> class.
             </summary>
             <param name="namespaces">The namespaces.</param>
             <param name="lines">The scrip lines.</param>
             <param name="aliases">The script aliases.</param>
+            <param name="usingAliasDirectives">The using alias directives.</param>
         </member>
         <member name="P:Cake.Core.Scripting.Script.Namespaces">
             <summary>
@@ -3022,6 +3028,12 @@
             Gets the aliases.
             </summary>
             <value>The aliases.</value>
+        </member>
+        <member name="P:Cake.Core.Scripting.Script.UsingAliasDirectives">
+            <summary>
+            Gets the using alias directives.
+            </summary>
+            <value>The using alias directives.</value>
         </member>
         <member name="T:Cake.Core.Scripting.ScriptAlias">
             <summary>
@@ -3227,6 +3239,12 @@
             </summary>
             <param name="line">The line to add.</param>
         </member>
+        <member name="M:Cake.Core.Scripting.ScriptProcessorContext.AddUsingAliasDirective(System.String)">
+            <summary>
+            Adds a using alias directive.
+            </summary>
+            <param name="line">The using alias directive.</param>
+        </member>
         <member name="P:Cake.Core.Scripting.ScriptProcessorContext.References">
             <summary>
             Gets the script's assembly references 
@@ -3260,6 +3278,12 @@
             Gets the aliases.
             </summary>
             <value>The aliases.</value>
+        </member>
+        <member name="P:Cake.Core.Scripting.ScriptProcessorContext.UsingAliasDirectives">
+            <summary>
+            Gets the using alias directives.
+            </summary>
+            <value>The using alias directives.</value>
         </member>
         <member name="T:Cake.Core.Scripting.ScriptRunner">
             <summary>
@@ -3359,7 +3383,7 @@
             </summary>
             <param name="settings">The settings.</param>
             <param name="arguments">The arguments.</param>
-            <param name="toolPath">The tool path to use.</param> 
+            <param name="toolPath">The tool path to use.</param>
         </member>
         <member name="M:Cake.Core.Utilities.Tool`1.Run(`0,Cake.Core.IO.ProcessArgumentBuilder,Cake.Core.IO.FilePath,Cake.Core.IO.ProcessSettings,System.Action{Cake.Core.IO.IProcess})">
             <summary>
@@ -3369,7 +3393,34 @@
             <param name="arguments">The arguments.</param>
             <param name="toolPath">The tool path to use.</param>
             <param name="processSettings">The process settings</param>
-            <param name="postAction">If specified called after process exit</param> 
+            <param name="postAction">If specified called after process exit</param>
+        </member>
+        <member name="M:Cake.Core.Utilities.Tool`1.RunProcess(`0,Cake.Core.IO.ProcessArgumentBuilder)">
+            <summary>
+            Runs the tool using a custom tool path and the specified settings.
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="arguments">The arguments.</param>
+            <returns>The process that the tool is running under.</returns>
+        </member>
+        <member name="M:Cake.Core.Utilities.Tool`1.RunProcess(`0,Cake.Core.IO.ProcessArgumentBuilder,Cake.Core.IO.FilePath)">
+            <summary>
+            Runs the tool using a custom tool path and the specified settings.
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="toolPath">The tool path to use.</param>
+            <returns>The process that the tool is running under.</returns>
+        </member>
+        <member name="M:Cake.Core.Utilities.Tool`1.RunProcess(`0,Cake.Core.IO.ProcessArgumentBuilder,Cake.Core.IO.FilePath,Cake.Core.IO.ProcessSettings)">
+            <summary>
+            Runs the tool using a custom tool path and the specified settings.
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="toolPath">The tool path to use.</param>
+            <param name="processSettings">The process settings</param>
+            <returns>The process that the tool is running under.</returns>
         </member>
         <member name="M:Cake.Core.Utilities.Tool`1.GetToolPath(`0,Cake.Core.IO.FilePath)">
             <summary>

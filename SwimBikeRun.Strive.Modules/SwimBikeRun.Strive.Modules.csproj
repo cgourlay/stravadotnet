@@ -92,6 +92,8 @@
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PublicModule.cs" />
+    <Compile Include="SecureModule.cs" />
     <Compile Include="Helpers\JsonNetSerializer.cs" />
     <Compile Include="Helpers\NegotiatorExtensions.cs" />
     <Compile Include="Bootstrapper.cs" />
