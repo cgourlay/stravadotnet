@@ -1,10 +1,6 @@
-﻿using System.Threading;
-
-using Nancy;
-using Nancy.Bootstrapper;
+﻿using Nancy;
 using Nancy.TinyIoc;
 
-using SwimBikeRun.Strive.Modules.Security;
 using SwimBikeRun.Strive.Repositories;
 using SwimBikeRun.Strive.Representations;
 using SwimBikeRun.Strive.Workflows;
