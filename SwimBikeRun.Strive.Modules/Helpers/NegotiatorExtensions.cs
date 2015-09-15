@@ -20,7 +20,7 @@ namespace SwimBikeRun.Strive.Modules.Helpers
 
         private static Negotiator ForJson(this Negotiator negotiator, IOperationResponse<ISegment> model)
         {
-            return negotiator.WithMediaRangeModel(new MediaRange("application/json"), model.DataAsJson());
+            return negotiator.WithMediaRangeModel(new MediaRange("application/json"), (Response)model.DataAsJson());
         }
 
         private static Negotiator WithEtagHeader(this Negotiator negotiator, IOperationResponse<ISegment> operationResponse)
