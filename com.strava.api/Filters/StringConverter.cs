@@ -102,21 +102,21 @@ namespace com.Strava.Api.Filters
         /// </summary>
         /// <param name="weight">The weight class.</param>
         /// <returns>The appropriate string for the specified weight class.</returns>
-        public static String WeightFilterToString(WeightFilter weight)
+        public static String WeightFilterToString(WeightGroup weight)
         {
             switch (weight)
             {
-                case WeightFilter.One:
+                case WeightGroup.One:
                     return "0-54";
-                case WeightFilter.Two:
+                case WeightGroup.Two:
                     return "55-64";
-                case WeightFilter.Three:
+                case WeightGroup.Three:
                     return "65-74";
-                case WeightFilter.Four:
+                case WeightGroup.Four:
                     return "75-84";
-                case WeightFilter.Five:
+                case WeightGroup.Five:
                     return "85-94";
-                case WeightFilter.Six:
+                case WeightGroup.Six:
                     return "95_plus";
 
                 default:

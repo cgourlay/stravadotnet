@@ -108,7 +108,6 @@
     <Compile Include="Activities\ResourceState.cs" />
     <Compile Include="Filters\StringConverter.cs" />
     <Compile Include="Filters\TimeFilter.cs" />
-    <Compile Include="Filters\WeightFilter.cs" />
     <Compile Include="Activities\Summary.cs" />
     <Compile Include="Api\Limit.cs" />
     <Compile Include="Api\Limits.cs" />

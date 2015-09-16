@@ -77,28 +77,28 @@ namespace com.Strava.Api.Common
         /// </summary>
         /// <param name="weight"></param>
         /// <returns></returns>
-        public static string WeightClassToString(WeightFilter weight)
+        public static string WeightClassToString(WeightGroup weight)
         {
             String weightClass = String.Empty;
 
             switch (weight)
             {
-                case WeightFilter.One:
+                case WeightGroup.One:
                     weightClass = "0_54";
                     break;
-                case WeightFilter.Two:
+                case WeightGroup.Two:
                     weightClass = "55_64";
                     break;
-                case WeightFilter.Three:
+                case WeightGroup.Three:
                     weightClass = "65_74";
                     break;
-                case WeightFilter.Four:
+                case WeightGroup.Four:
                     weightClass = "75_84";
                     break;
-                case WeightFilter.Five:
+                case WeightGroup.Five:
                     weightClass = "85_94";
                     break;
-                case WeightFilter.Six:
+                case WeightGroup.Six:
                     weightClass = "95_plus";
                     break;
             }
