@@ -2,6 +2,7 @@
 using System.Globalization;
 using com.Strava.Api.Activities;
 using com.Strava.Api.Filters;
+using SwimBikeRun.Strive.Model.Enums.Classifications;
 
 namespace com.Strava.Api.Common
 {
@@ -42,28 +43,28 @@ namespace com.Strava.Api.Common
         /// </summary>
         /// <param name="age"></param>
         /// <returns></returns>
-        public static string AgeGroupToString(AgeFilter age)
+        public static string AgeGroupToString(AgeGroup age)
         {
             String ageFilter = String.Empty;
 
             switch (age)
             {
-                case AgeFilter.One:
+                case AgeGroup.ZeroToTwentyFour:
                     ageFilter = "0_24";
                     break;
-                case AgeFilter.Two:
+                case AgeGroup.TwentyFiveToThirtyFour:
                     ageFilter = "25_34";
                     break;
-                case AgeFilter.Three:
+                case AgeGroup.ThirtyFiveToFortyFour:
                     ageFilter = "35_44";
                     break;
-                case AgeFilter.Four:
+                case AgeGroup.FortyFiveToFiftyFour:
                     ageFilter = "45_54";
                     break;
-                case AgeFilter.Five:
+                case AgeGroup.FiftyFiveToSixtyFour:
                     ageFilter = "55_64";
                     break;
-                case AgeFilter.Six:
+                case AgeGroup.SixtyFivePlus:
                     ageFilter = "65_plus";
                     break;
             }

@@ -14,7 +14,7 @@ namespace SwimBikeRun.Strive.Modules
         public SegmentModule(ISegmentWorkflow segmentWorkflow)
         {
             _segmentWorkflow = segmentWorkflow;
-            Get["/Segments/{id:int}"] = GetSegment;
+            Get["/segments/{id:int}"] = GetSegment;
         }
 
         private dynamic GetSegment(dynamic parameters)

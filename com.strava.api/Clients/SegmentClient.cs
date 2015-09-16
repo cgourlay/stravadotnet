@@ -29,6 +29,7 @@ using com.Strava.Api.Filters;
 using com.Strava.Api.Http;
 using SwimBikeRun.Model.Segments;
 using com.Strava.Api.Segments;
+using SwimBikeRun.Strive.Model.Enums.Classifications;
 using SwimBikeRun.Strive.Model.Segments;
 using SwimBikeRun.Strive.Representations;
 
@@ -59,7 +60,7 @@ namespace com.Strava.Api.Clients
         /// <param name="time">The time used to filter the leaderboard.</param> 
         /// <param name="gender">The gender used to filter the leaderboard.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender)
+        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender)
         {
             int page = 1;
 
@@ -98,7 +99,7 @@ namespace com.Strava.Api.Clients
         /// <param name="page">The result page.</param>
         /// <param name="perPage">Efforts shown per page.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender, int page, int perPage)
+        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender, int page, int perPage)
         {
             bool useGender = false;
             bool useTime = false;
@@ -158,7 +159,7 @@ namespace com.Strava.Api.Clients
         /// <param name="time">The time used to filter the leaderboard.</param> 
         /// <param name="gender">The gender used to filter the leaderboard.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, int clubId, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender)
+        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, int clubId, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender)
         {
             int page = 1;
 
@@ -198,7 +199,7 @@ namespace com.Strava.Api.Clients
         /// <param name="page">The result page.</param>
         /// <param name="perPage">Efforts shown per page.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, int clubId, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender, int page, int perPage)
+        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, int clubId, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender, int page, int perPage)
         {
             bool useGender = false;
             bool useTime = false;
@@ -259,7 +260,7 @@ namespace com.Strava.Api.Clients
         /// <param name="time">The time used to filter the leaderboard.</param> 
         /// <param name="gender">The gender used to filter the leaderboard.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, bool following, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender)
+        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, bool following, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender)
         {
             int page = 1;
 
@@ -299,7 +300,7 @@ namespace com.Strava.Api.Clients
         /// <param name="page">The result page.</param>
         /// <param name="perPage">Efforts shown per page.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, bool following, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender, int page, int perPage)
+        public async Task<Leaderboard> GetSegmentLeaderboardAsync(String segmentId, bool following, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender, int page, int perPage)
         {
             bool useGender = false;
             bool useTime = false;
@@ -553,7 +554,7 @@ namespace com.Strava.Api.Clients
         /// <param name="time">The time used to filter the leaderboard.</param> 
         /// <param name="gender">The gender used to filter the leaderboard.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public Leaderboard GetSegmentLeaderboard(String segmentId, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender)
+        public Leaderboard GetSegmentLeaderboard(String segmentId, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender)
         {
             int page = 1;
 
@@ -592,7 +593,7 @@ namespace com.Strava.Api.Clients
         /// <param name="page">The result page.</param>
         /// <param name="perPage">Efforts shown per page.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public Leaderboard GetSegmentLeaderboard(String segmentId, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender, int page, int perPage)
+        public Leaderboard GetSegmentLeaderboard(String segmentId, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender, int page, int perPage)
         {
             bool useGender = false;
             bool useTime = false;
@@ -652,7 +653,7 @@ namespace com.Strava.Api.Clients
         /// <param name="time">The time used to filter the leaderboard.</param> 
         /// <param name="gender">The gender used to filter the leaderboard.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public Leaderboard GetSegmentLeaderboard(String segmentId, int clubId, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender)
+        public Leaderboard GetSegmentLeaderboard(String segmentId, int clubId, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender)
         {
             int page = 1;
 
@@ -692,7 +693,7 @@ namespace com.Strava.Api.Clients
         /// <param name="page">The result page.</param>
         /// <param name="perPage">Efforts shown per page.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public Leaderboard GetSegmentLeaderboard(String segmentId, int clubId, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender, int page, int perPage)
+        public Leaderboard GetSegmentLeaderboard(String segmentId, int clubId, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender, int page, int perPage)
         {
             bool useGender = false;
             bool useTime = false;
@@ -753,7 +754,7 @@ namespace com.Strava.Api.Clients
         /// <param name="time">The time used to filter the leaderboard.</param> 
         /// <param name="gender">The gender used to filter the leaderboard.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public Leaderboard GetSegmentLeaderboard(String segmentId, bool following, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender)
+        public Leaderboard GetSegmentLeaderboard(String segmentId, bool following, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender)
         {
             int page = 1;
 
@@ -793,7 +794,7 @@ namespace com.Strava.Api.Clients
         /// <param name="page">The result page.</param>
         /// <param name="perPage">Efforts shown per page.</param>
         /// <returns>The leaderboard filtered by gender.</returns>
-        public Leaderboard GetSegmentLeaderboard(String segmentId, bool following, WeightFilter weight, AgeFilter age, TimeFilter time, GenderFilter gender, int page, int perPage)
+        public Leaderboard GetSegmentLeaderboard(String segmentId, bool following, WeightFilter weight, AgeGroup age, TimeFilter time, GenderFilter gender, int page, int perPage)
         {
             bool useGender = false;
             bool useTime = false;

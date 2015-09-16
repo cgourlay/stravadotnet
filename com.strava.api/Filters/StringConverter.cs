@@ -18,6 +18,7 @@
 #endregion
 
 using System;
+using SwimBikeRun.Strive.Model.Enums.Classifications;
 
 namespace com.Strava.Api.Filters
 {
@@ -74,21 +75,21 @@ namespace com.Strava.Api.Filters
         /// </summary>
         /// <param name="age">The age filter.</param>
         /// <returns>The appropriate string for the specified filter.</returns>
-        public static String AgeFilterToString(AgeFilter age)
+        public static String AgeFilterToString(AgeGroup age)
         {
             switch (age)
             {
-                case AgeFilter.One:
+                case AgeGroup.ZeroToTwentyFour:
                     return "0-24";
-                case AgeFilter.Two:
+                case AgeGroup.TwentyFiveToThirtyFour:
                     return "age=25-34";
-                case AgeFilter.Three:
+                case AgeGroup.ThirtyFiveToFortyFour:
                     return "35-44";
-                case AgeFilter.Four:
+                case AgeGroup.FortyFiveToFiftyFour:
                     return "45-54";
-                case AgeFilter.Five:
+                case AgeGroup.FiftyFiveToSixtyFour:
                     return "55-64";
-                case AgeFilter.Six:
+                case AgeGroup.SixtyFivePlus:
                     return "65_plus";
 
                 default:
