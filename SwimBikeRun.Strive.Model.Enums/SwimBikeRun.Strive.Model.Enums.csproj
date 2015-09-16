@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Activities\ActivityType.cs" />
     <Compile Include="Classifications\AgeGroup.cs" />
+    <Compile Include="Classifications\Gender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Segments\ClimbType.cs" />
   </ItemGroup>

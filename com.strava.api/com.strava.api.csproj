@@ -107,7 +107,6 @@
     <Compile Include="Activities\Photo.cs" />
     <Compile Include="Activities\ResourceState.cs" />
     <Compile Include="Filters\StringConverter.cs" />
-    <Compile Include="Filters\GenderFilter.cs" />
     <Compile Include="Filters\TimeFilter.cs" />
     <Compile Include="Filters\WeightFilter.cs" />
     <Compile Include="Activities\Summary.cs" />

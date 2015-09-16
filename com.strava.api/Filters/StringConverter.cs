@@ -56,13 +56,13 @@ namespace com.Strava.Api.Filters
         /// </summary>
         /// <param name="gender">The gender filter.</param>
         /// <returns>The appropriate string for the specified filter.</returns>
-        public static String GenderFilterToString(GenderFilter gender)
+        public static String GenderFilterToString(Gender gender)
         {
             switch (gender)
             {
-                case GenderFilter.Male:
+                case Gender.Male:
                     return "M";
-                case GenderFilter.Female:
+                case Gender.Female:
                     return "F";
 
                 default:
