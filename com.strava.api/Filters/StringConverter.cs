@@ -106,17 +106,17 @@ namespace com.Strava.Api.Filters
         {
             switch (weight)
             {
-                case WeightGroup.One:
+                case WeightGroup.ZeroToOneHundredAndTwentyFourPounds:
                     return "0-54";
-                case WeightGroup.Two:
+                case WeightGroup.HundredAndTwentyFivePoundsToHundredAndFortyNinePounds:
                     return "55-64";
-                case WeightGroup.Three:
+                case WeightGroup.HundredAndFiftyPoundsToHundredAndSixtyFourPounds:
                     return "65-74";
-                case WeightGroup.Four:
+                case WeightGroup.HundredAndSixtyFivePoundsToHundredAndSeventyNinePounds:
                     return "75-84";
-                case WeightGroup.Five:
+                case WeightGroup.HundredAndEightyPoundsToHundredAndNinetyNinePounds:
                     return "85-94";
-                case WeightGroup.Six:
+                case WeightGroup.TwoHundredPlusPounds:
                     return "95_plus";
 
                 default:

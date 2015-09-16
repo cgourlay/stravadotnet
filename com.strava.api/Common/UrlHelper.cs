@@ -83,22 +83,22 @@ namespace com.Strava.Api.Common
 
             switch (weight)
             {
-                case WeightGroup.One:
+                case WeightGroup.ZeroToOneHundredAndTwentyFourPounds:
                     weightClass = "0_54";
                     break;
-                case WeightGroup.Two:
+                case WeightGroup.HundredAndTwentyFivePoundsToHundredAndFortyNinePounds:
                     weightClass = "55_64";
                     break;
-                case WeightGroup.Three:
+                case WeightGroup.HundredAndFiftyPoundsToHundredAndSixtyFourPounds:
                     weightClass = "65_74";
                     break;
-                case WeightGroup.Four:
+                case WeightGroup.HundredAndSixtyFivePoundsToHundredAndSeventyNinePounds:
                     weightClass = "75_84";
                     break;
-                case WeightGroup.Five:
+                case WeightGroup.HundredAndEightyPoundsToHundredAndNinetyNinePounds:
                     weightClass = "85_94";
                     break;
-                case WeightGroup.Six:
+                case WeightGroup.TwoHundredPlusPounds:
                     weightClass = "95_plus";
                     break;
             }

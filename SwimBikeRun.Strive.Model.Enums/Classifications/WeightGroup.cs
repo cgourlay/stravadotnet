@@ -3,11 +3,17 @@
     public enum WeightGroup
     {
         Unknown,
-        One,
-        Two,
-        Three,
-        Four,
-        Five,
-        Six
+        ZeroToOneHundredAndTwentyFourPounds,
+        HundredAndTwentyFivePoundsToHundredAndFortyNinePounds,
+        HundredAndFiftyPoundsToHundredAndSixtyFourPounds,
+        HundredAndSixtyFivePoundsToHundredAndSeventyNinePounds,
+        HundredAndEightyPoundsToHundredAndNinetyNinePounds,
+        TwoHundredPlusPounds,
+        ZeroToFiftyFourKilograms,
+        FiftyFiveToSixtyFourKilograms,
+        SixtyFiveToSeventyFourKilograms,
+        SeventyFiveToEightyFourKilograms,
+        EightyFiveToNinetyFourKilograms,
+        NinetyFivePlusKilograms
     }
 }
