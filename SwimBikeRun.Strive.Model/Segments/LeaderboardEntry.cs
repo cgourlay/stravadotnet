@@ -1,5 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+
+using SwimBikeRun.Strive.Model.Converters;
+using SwimBikeRun.Strive.Model.Enums.Classifications;
 
 namespace SwimBikeRun.Strive.Model.Segments
 {
@@ -10,7 +15,7 @@ namespace SwimBikeRun.Strive.Model.Segments
 
         [JsonProperty("athlete_gender")]
         [JsonConverter(typeof(StringEnumConverter))]
-        public string AthleteGender { get; set; }
+        public Gender AthleteGender { get; set; }
 
         [JsonProperty("athlete_id")]
         public long AthleteId { get; set; }
@@ -19,10 +24,11 @@ namespace SwimBikeRun.Strive.Model.Segments
         public string AthleteName { get; set; }
 
         [JsonProperty("athlete_profile")]
-        public string AthleteProfile { get; set; }
+        [JsonConverter(typeof(UriConverter))]
+        public Uri AthleteProfile { get; set; }
 
         [JsonProperty("average_hr")]
-        public float? AverageHeartrate { get; set; }
+        public float? AverageHeartRate { get; set; }
 
         [JsonProperty("average_watts")]
         public float? AveragePower { get; set; }
@@ -43,9 +49,11 @@ namespace SwimBikeRun.Strive.Model.Segments
         public int Rank { get; set; }
 
         [JsonProperty("start_date")]
-        public string StartDate { get; set; }
-
+        [JsonConverter(typeof(IsoDateTimeConverter))]
+        public DateTime StartDate { get; set; }
+        
         [JsonProperty("start_date_local")]
-        public string StartDateLocal { get; set; }
+        [JsonConverter(typeof(IsoDateTimeConverter))]
+        public DateTime StartDateLocal { get; set; }
     }
 }
