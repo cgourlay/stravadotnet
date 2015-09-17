@@ -4,6 +4,7 @@
     {
         Unknown,
         Male,
-        Female
+        Female,
+        Both = Male & Female
     }
 }

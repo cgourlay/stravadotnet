@@ -913,25 +913,25 @@ namespace com.Strava.Api.Clients
             return leaderboard;
         }
 
-        /// <summary>
-        /// Gets the leaderboard of a Strava segment.
-        /// </summary>
-        /// <param name="segmentId">The Strava segment id.</param>
-        /// <param name="page">The page.</param>
-        /// <param name="perPage">Defines how many entries will be loaded per page.</param>
-        /// <returns>The segment leaderboard</returns>
-        public Leaderboard GetSegmentLeaderboard(String segmentId, int page, int perPage)
-        {
-            String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&page={2}&per_page={3}&access_token={4}",
-                new Endpoints().Leaderboard,
-                segmentId,
-                page,
-                perPage,
-                Authentication.AccessToken);
-            String json = WebRequest.SendGet(new Uri(getUrl));
+        ///// <summary>
+        ///// Gets the leaderboard of a Strava segment.
+        ///// </summary>
+        ///// <param name="segmentId">The Strava segment id.</param>
+        ///// <param name="page">The page.</param>
+        ///// <param name="perPage">Defines how many entries will be loaded per page.</param>
+        ///// <returns>The segment leaderboard</returns>
+        //public Leaderboard GetSegmentLeaderboard(String segmentId, int page, int perPage)
+        //{
+        //    String getUrl = String.Format("{0}/{1}/leaderboard?filter=overall&page={2}&per_page={3}&access_token={4}",
+        //        new Endpoints().Leaderboard,
+        //        segmentId,
+        //        page,
+        //        perPage,
+        //        Authentication.AccessToken);
+        //    String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller.Unmarshal<Leaderboard>(json);
-        }
+        //    return Unmarshaller.Unmarshal<Leaderboard>(json);
+        //}
 
         /// <summary>
         /// Gets the number of entries of a segment.
