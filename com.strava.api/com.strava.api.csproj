@@ -101,8 +101,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Activities\Comment.cs" />
     <Compile Include="Activities\DistributionBucket.cs" />
-    <Compile Include="Segments\Leaderboard.cs" />
-    <Compile Include="Segments\LeaderboardEntry.cs" />
     <Compile Include="Activities\LeaderboardParameter.cs" />
     <Compile Include="Activities\Photo.cs" />
     <Compile Include="Activities\ResourceState.cs" />
