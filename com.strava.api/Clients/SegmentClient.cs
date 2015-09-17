@@ -70,7 +70,6 @@ namespace com.Strava.Api.Clients
 
             Leaderboard leaderboard = new Leaderboard
             {
-                EffortCount = request.EffortCount,
                 EntryCount = request.EntryCount
             };
 
@@ -169,7 +168,6 @@ namespace com.Strava.Api.Clients
 
             Leaderboard leaderboard = new Leaderboard
             {
-                EffortCount = request.EffortCount,
                 EntryCount = request.EntryCount
             };
 
@@ -270,7 +268,6 @@ namespace com.Strava.Api.Clients
 
             Leaderboard leaderboard = new Leaderboard
             {
-                EffortCount = request.EffortCount,
                 EntryCount = request.EntryCount
             };
 
@@ -402,7 +399,6 @@ namespace com.Strava.Api.Clients
 
             Leaderboard leaderboard = new Leaderboard
             {
-                EffortCount = request.EffortCount,
                 EntryCount = request.EntryCount
             };
 
@@ -464,7 +460,8 @@ namespace com.Strava.Api.Clients
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
             Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
-            return leaderboard.EffortCount;
+            //return leaderboard.EffortCount;
+            return 0;
         }
 
         /// <summary>
@@ -564,7 +561,6 @@ namespace com.Strava.Api.Clients
 
             Leaderboard leaderboard = new Leaderboard
             {
-                EffortCount = request.EffortCount,
                 EntryCount = request.EntryCount
             };
 
@@ -663,7 +659,6 @@ namespace com.Strava.Api.Clients
 
             Leaderboard leaderboard = new Leaderboard
             {
-                EffortCount = request.EffortCount,
                 EntryCount = request.EntryCount
             };
 
@@ -764,7 +759,6 @@ namespace com.Strava.Api.Clients
 
             Leaderboard leaderboard = new Leaderboard
             {
-                EffortCount = request.EffortCount,
                 EntryCount = request.EntryCount
             };
 
@@ -888,29 +882,29 @@ namespace com.Strava.Api.Clients
         /// <returns>The full and unfiltered leaderboard.</returns>
         public Leaderboard GetFullSegmentLeaderboard(String segmentId)
         {
-            int page = 1;
+            //int page = 1;
 
-            //Create one dummy request to get the number of entries.
-            Leaderboard request = GetSegmentLeaderboard(segmentId, 1, 1);
-            int totalAthletes = request.EntryCount;
+            ////Create one dummy request to get the number of entries.
+            //Leaderboard request = GetSegmentLeaderboard(segmentId, 1, 1);
+            //int totalAthletes = request.EntryCount;
 
-            Leaderboard leaderboard = new Leaderboard
-            {
-                EffortCount = request.EffortCount,
-                EntryCount = request.EntryCount
-            };
+            //Leaderboard leaderboard = new Leaderboard
+            //{
+            //    EntryCount = request.EntryCount
+            //};
 
-            while ((page - 1) * 200 < totalAthletes)
-            {
-                Leaderboard l = GetSegmentLeaderboard(segmentId, page++, 200);
+            //while ((page - 1) * 200 < totalAthletes)
+            //{
+            //    Leaderboard l = GetSegmentLeaderboard(segmentId, page++, 200);
 
-                foreach (LeaderboardEntry entry in l.Entries)
-                {
-                    leaderboard.Entries.Add(entry);
-                }
-            }
+            //    foreach (LeaderboardEntry entry in l.Entries)
+            //    {
+            //        leaderboard.Entries.Add(entry);
+            //    }
+            //}
 
-            return leaderboard;
+            //return leaderboard;
+            return null;
         }
 
         ///// <summary>
@@ -958,7 +952,8 @@ namespace com.Strava.Api.Clients
             String json = WebRequest.SendGet(new Uri(getUrl));
             Leaderboard leaderboard = Unmarshaller.Unmarshal<Leaderboard>(json);
 
-            return leaderboard.EffortCount;
+            //return leaderboard.EffortCount;
+            return 0;
         }
 
         /// <summary>

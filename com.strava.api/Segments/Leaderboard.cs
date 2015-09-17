@@ -28,12 +28,6 @@ namespace com.Strava.Api.Activities
     public class Leaderboard
     {
         /// <summary>
-        /// The number of efforts.
-        /// </summary>
-        [JsonProperty("effort_count")]
-        public int EffortCount { get; set; }
-
-        /// <summary>
         /// The number of entries in the leaderboard.
         /// </summary>
         [JsonProperty("entry_count")]
