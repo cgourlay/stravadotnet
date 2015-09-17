@@ -1,4 +1,5 @@
 using System;
+
 using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Strive.Model.Interfaces.Activities;
 

@@ -8,7 +8,7 @@ using SwimBikeRun.Strive.Model.Enums.Classifications;
 
 namespace SwimBikeRun.Strive.Model.Segments
 {
-    public sealed class LeaderboardEntry
+    public sealed class LeaderboardEntry : ILeaderboardEntry
     {
         [JsonProperty("activity_id")]
         public long ActivityId { get; set; }
