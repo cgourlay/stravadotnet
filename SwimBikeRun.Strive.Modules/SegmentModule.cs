@@ -1,7 +1,9 @@
-﻿using Nancy;
+﻿using System.Globalization;
+
+using Nancy;
+using Nancy.Responses.Negotiation;
 
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
-using SwimBikeRun.Strive.Modules.Helpers;
 using SwimBikeRun.Strive.Representations.Interfaces;
 using SwimBikeRun.Strive.Workflows.Interfaces;
 
@@ -21,13 +23,28 @@ namespace SwimBikeRun.Strive.Modules
         private dynamic GetLeaderboard(dynamic parameters)
         {
             IOperationResponse<ILeaderboard> response = _segmentWorkflow.GetSegmentLeaderboard(parameters.Id);
-            return response.OperationSucceeded ? Negotiate.Content(response) : (dynamic)(HttpStatusCode)response.Status;
+            if (response.OperationSucceeded)
+            {
+                return Negotiate.WithMediaRangeModel(new MediaRange("application/json"), (Response)response.DataAsJson())
+                                .WithStatusCode((HttpStatusCode)response.Status)
+                                .WithHeader("ETag", string.Format("\"{0}\"", response.Data.GetHashCode().ToString(CultureInfo.InvariantCulture)));
+            }
+            
+            return (dynamic)(HttpStatusCode)response.Status;
         }
 
         private dynamic GetSegment(dynamic parameters)
         {
             IOperationResponse<ISegment> response = _segmentWorkflow.GetById(parameters.Id);
-            return response.OperationSucceeded ? Negotiate.Content(response) : (dynamic)(HttpStatusCode)response.Status;
+            if (response.OperationSucceeded)
+            {
+                return Negotiate.WithMediaRangeModel(new MediaRange("application/json"), (Response)response.DataAsJson())
+                                .WithStatusCode((HttpStatusCode)response.Status)
+                                .WithHeader("Location", string.Format(@"{0}/{1}", Negotiate.NegotiationContext.ModulePath, response.Data.Id))
+                                .WithHeader("ETag", string.Format("\"{0}\"", response.Data.GetHashCode().ToString(CultureInfo.InvariantCulture)));
+            }
+            
+            return (dynamic)(HttpStatusCode)response.Status;
         }
     }
 }
