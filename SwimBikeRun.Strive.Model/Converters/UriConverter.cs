@@ -13,7 +13,14 @@ namespace SwimBikeRun.Strive.Model.Converters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return reader.TokenType == JsonToken.String ? new Uri((string)reader.Value) : null;
+            try
+            {
+                return reader.TokenType == JsonToken.String ? new Uri((string)reader.Value) : null;
+            }
+            catch (UriFormatException)
+            {
+                return null;
+            }
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

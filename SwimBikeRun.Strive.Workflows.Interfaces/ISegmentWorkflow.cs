@@ -6,5 +6,6 @@ namespace SwimBikeRun.Strive.Workflows.Interfaces
     public interface ISegmentWorkflow
     {
         IOperationResponse<ISegment> GetById(int segmentId);
+        IOperationResponse<ILeaderboard> GetSegmentLeaderboard(int segmentId);   
     }
 }

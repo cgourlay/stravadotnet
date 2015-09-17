@@ -1,11 +1,10 @@
 ﻿using System.Device.Location;
-
 using SwimBikeRun.Strive.Model.Enums.Activities;
 using SwimBikeRun.Strive.Model.Enums.Segments;
 
-namespace SwimBikeRun.Model.Segments
+namespace SwimBikeRun.Strive.Model.Interfaces.Segments
 {
-    public interface IBaseSegment
+    public interface ISegmentBase
     {
          int Id { get; set; }
          ActivityType ActivityType { get; set; }

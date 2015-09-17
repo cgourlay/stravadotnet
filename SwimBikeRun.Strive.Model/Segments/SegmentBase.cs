@@ -1,14 +1,14 @@
 ﻿using System.Device.Location;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Strive.Model.Converters;
 using SwimBikeRun.Strive.Model.Enums.Activities;
 using SwimBikeRun.Strive.Model.Enums.Segments;
+using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
 namespace SwimBikeRun.Strive.Model.Segments
 {
-    public class BaseSegment : IBaseSegment
+    public class SegmentBase : ISegmentBase
     {
         [JsonProperty("id")]
         public int Id { get; set; }

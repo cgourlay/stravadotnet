@@ -7,7 +7,7 @@ using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
 namespace SwimBikeRun.Strive.Model.Segments
 {
-    public sealed class Segment : BaseSegment, ISegment
+    public sealed class Segment : SegmentBase, ISegment
     {
         [JsonProperty("created_at")]
         [JsonConverter(typeof(IsoDateTimeConverter))]

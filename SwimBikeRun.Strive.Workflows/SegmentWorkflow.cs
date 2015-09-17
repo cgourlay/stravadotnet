@@ -63,5 +63,32 @@ namespace SwimBikeRun.Strive.Workflows
             if (!response.IsSuccessStatusCode) { return null; }
             return JsonConvert.DeserializeObject<Segment>(response.Content.ReadAsStringAsync().Result);
         }
+
+
+        private async Task<Leaderboard> GetLeaderBoardFromStrava(int segmentId)
+        {
+            var uri = new Uri(string.Format("{0}/{1}/leaderboard?access_token={2}",
+                                            _endpoints.Leaderboard,
+                                            segmentId,
+                                            Thread.CurrentPrincipal.Identity.Name));
+
+            var httpClient = new HttpClient();
+            var response = await httpClient.GetAsync(uri);
+            if (!response.IsSuccessStatusCode) { return null; }
+            var json = response.Content.ReadAsStringAsync().Result;
+            return JsonConvert.DeserializeObject<Leaderboard>(json);
+        }
+
+
+        public IOperationResponse<ILeaderboard> GetSegmentLeaderboard(int segmentId)
+        {
+            var leaderboard = GetLeaderBoardFromStrava(segmentId);
+
+            var x = leaderboard.Result;
+
+            return new OperationResponse<ILeaderboard>() { Data = x, Status = OperationStatus.Ok };
+            
+
+        }
     }
 }

@@ -20,7 +20,6 @@
 using System;
 using com.Strava.Api.Activities;
 using com.Strava.Api.Athletes;
-using SwimBikeRun.Model.Segments;
 using Newtonsoft.Json;
 using SwimBikeRun.Strive.Model.Segments;
 

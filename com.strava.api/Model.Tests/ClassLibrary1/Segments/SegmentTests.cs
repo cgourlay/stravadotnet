@@ -5,7 +5,6 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 
 using com.Strava.Api.Activities;
-using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Strive.Model.Interfaces.Activities;
 using SwimBikeRun.Strive.Model.Segments;
 

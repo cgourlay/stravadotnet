@@ -27,7 +27,6 @@ using com.Strava.Api.Authentication;
 using com.Strava.Api.Common;
 using com.Strava.Api.Filters;
 using com.Strava.Api.Http;
-using SwimBikeRun.Model.Segments;
 using com.Strava.Api.Segments;
 using SwimBikeRun.Strive.Model.Enums.Classifications;
 using SwimBikeRun.Strive.Model.Segments;
@@ -364,24 +363,24 @@ namespace com.Strava.Api.Clients
         /// Gets all the starred segments of the currently authenticated athlete asynchronously.
         /// </summary>
         /// <returns>A list of segments that are starred by the currently authenticated athlete.</returns>
-        public async Task<List<BaseSegment>> GetStarredSegmentsAsync()
+        public async Task<List<SegmentBase>> GetStarredSegmentsAsync()
         {
             String getUrl = String.Format("{0}/?access_token={1}", new Endpoints().Starred, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
+            return Unmarshaller.Unmarshal<List<SegmentBase>>(json);
         }
 
         /// <summary>
         /// Gets all the starred segments of an Athlete.
         /// </summary>
         /// <returns>A list of segments that are starred by the athlete.</returns>
-        public async Task<List<BaseSegment>> GetStarredSegmentsAsync(String athleteId)
+        public async Task<List<SegmentBase>> GetStarredSegmentsAsync(String athleteId)
         {
             String getUrl = String.Format("https://www.strava.com/api/v3/athletes/{0}/segments/starred/?access_token={1}", athleteId, Authentication.AccessToken);
             String json = await WebRequest.SendGetAsync(new Uri(getUrl));
 
-            return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
+            return Unmarshaller.Unmarshal<List<SegmentBase>>(json);
         }
 
         /// <summary>
@@ -855,24 +854,24 @@ namespace com.Strava.Api.Clients
         /// Gets all the starred segments of an Athlete.
         /// </summary>
         /// <returns>A list of segments that are starred by the athlete.</returns>
-        public List<BaseSegment> GetStarredSegments(String athleteId)
+        public List<SegmentBase> GetStarredSegments(String athleteId)
         {
             String getUrl = String.Format("https://www.strava.com/api/v3/athletes/{0}/segments/starred?access_token={1}", athleteId, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
+            return Unmarshaller.Unmarshal<List<SegmentBase>>(json);
         }
 
         /// <summary>
         /// Gets all the starred segments of the currently authenticated athlete.
         /// </summary>
         /// <returns>A list of segments that are starred by the currently authenticated athlete.</returns>
-        public List<BaseSegment> GetStarredSegments()
+        public List<SegmentBase> GetStarredSegments()
         {
             String getUrl = String.Format("{0}?access_token={1}", new Endpoints().Starred, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
 
-            return Unmarshaller.Unmarshal<List<BaseSegment>>(json);
+            return Unmarshaller.Unmarshal<List<SegmentBase>>(json);
         }
 
         /// <summary>

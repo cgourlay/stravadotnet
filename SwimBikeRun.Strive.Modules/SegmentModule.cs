@@ -15,6 +15,13 @@ namespace SwimBikeRun.Strive.Modules
         {
             _segmentWorkflow = segmentWorkflow;
             Get["/segments/{id:int}"] = GetSegment;
+            Get["/segments/{id:int}/leaderboard"] = GetLeaderboard;
+        }
+
+        private dynamic GetLeaderboard(dynamic parameters)
+        {
+            IOperationResponse<ILeaderboard> response = _segmentWorkflow.GetSegmentLeaderboard(parameters.Id);
+            return response.OperationSucceeded ? Negotiate.Content(response) : (dynamic)(HttpStatusCode)response.Status;
         }
 
         private dynamic GetSegment(dynamic parameters)

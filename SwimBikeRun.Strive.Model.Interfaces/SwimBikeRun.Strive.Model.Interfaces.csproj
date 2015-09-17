@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\IMap.cs" />
-    <Compile Include="Segments\IBaseSegment.cs" />
+    <Compile Include="Segments\ISegmentBase.cs" />
     <Compile Include="Segments\ILeaderboard.cs" />
     <Compile Include="Segments\ILeaderboardEntry.cs" />
     <Compile Include="Segments\ISegment.cs" />

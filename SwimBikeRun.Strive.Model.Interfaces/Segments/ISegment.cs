@@ -1,11 +1,9 @@
 using System;
-
-using SwimBikeRun.Model.Segments;
 using SwimBikeRun.Strive.Model.Interfaces.Activities;
 
 namespace SwimBikeRun.Strive.Model.Interfaces.Segments
 {
-    public interface ISegment : IBaseSegment
+    public interface ISegment : ISegmentBase
     {
         DateTime Created { get; set; }
         bool IsHazardous { get; set; }
