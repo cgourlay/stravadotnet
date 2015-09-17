@@ -5,6 +5,7 @@ using Newtonsoft.Json.Converters;
 
 using SwimBikeRun.Strive.Model.Converters;
 using SwimBikeRun.Strive.Model.Enums.Classifications;
+using SwimBikeRun.Strive.Model.Interfaces.Segments;
 
 namespace SwimBikeRun.Strive.Model.Segments
 {

@@ -2,7 +2,7 @@ using System;
 
 using SwimBikeRun.Strive.Model.Enums.Classifications;
 
-namespace SwimBikeRun.Strive.Model.Segments
+namespace SwimBikeRun.Strive.Model.Interfaces.Segments
 {
     public interface ILeaderboardEntry
     {
