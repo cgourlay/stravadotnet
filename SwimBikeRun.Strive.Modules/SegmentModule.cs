@@ -36,7 +36,11 @@ namespace SwimBikeRun.Strive.Modules
 
         private IDictionary<string, string> GetQueryStringParameters()
         {
-            return new Dictionary<string, string> {{"gender", Request.Query.gender}};
+            return new Dictionary<string, string> 
+            {
+                { "gender", Request.Query.gender },
+                { "age_group", Request.Query.age_group }
+            };
         }
 
         private dynamic GetSegment(dynamic parameters)
