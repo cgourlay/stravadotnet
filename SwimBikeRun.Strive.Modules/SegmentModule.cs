@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 
 using Nancy;
 using Nancy.Responses.Negotiation;
@@ -22,7 +23,7 @@ namespace SwimBikeRun.Strive.Modules
 
         private dynamic GetLeaderboard(dynamic parameters)
         {
-            IOperationResponse<ILeaderboard> response = _segmentWorkflow.GetSegmentLeaderboard(parameters.Id);
+            IOperationResponse<ILeaderboard> response = _segmentWorkflow.GetSegmentLeaderboard(parameters.Id, GetQueryStringParameters());
             if (response.OperationSucceeded)
             {
                 return Negotiate.WithMediaRangeModel(new MediaRange("application/json"), (Response)response.DataAsJson())
@@ -30,7 +31,12 @@ namespace SwimBikeRun.Strive.Modules
                                 .WithHeader("ETag", string.Format("\"{0}\"", response.Data.GetHashCode().ToString(CultureInfo.InvariantCulture)));
             }
             
-            return (dynamic)(HttpStatusCode)response.Status;
+            return (HttpStatusCode)response.Status;
+        }
+
+        private IDictionary<string, string> GetQueryStringParameters()
+        {
+            return new Dictionary<string, string> {{"gender", Request.Query.gender}};
         }
 
         private dynamic GetSegment(dynamic parameters)
@@ -44,7 +50,7 @@ namespace SwimBikeRun.Strive.Modules
                                 .WithHeader("ETag", string.Format("\"{0}\"", response.Data.GetHashCode().ToString(CultureInfo.InvariantCulture)));
             }
             
-            return (dynamic)(HttpStatusCode)response.Status;
+            return (HttpStatusCode)response.Status;
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -65,12 +67,13 @@ namespace SwimBikeRun.Strive.Workflows
         }
 
 
-        private async Task<Leaderboard> GetLeaderBoardFromStrava(int segmentId)
+        private async Task<Leaderboard> GetLeaderBoardFromStrava(int segmentId, IDictionary<string, string> queryParameters)
         {
-            var uri = new Uri(string.Format("{0}/{1}/leaderboard?access_token={2}",
+            var uri = new Uri(string.Format("{0}/{1}/leaderboard?access_token={2}{3}",
                                             _endpoints.Leaderboard,
                                             segmentId,
-                                            Thread.CurrentPrincipal.Identity.Name));
+                                            Thread.CurrentPrincipal.Identity.Name,
+                                            QueryParameterBuilder(queryParameters)));
 
             var httpClient = new HttpClient();
             var response = await httpClient.GetAsync(uri);
@@ -79,10 +82,20 @@ namespace SwimBikeRun.Strive.Workflows
             return JsonConvert.DeserializeObject<Leaderboard>(json);
         }
 
-
-        public IOperationResponse<ILeaderboard> GetSegmentLeaderboard(int segmentId)
+        private static string QueryParameterBuilder(IDictionary<string, string> queryParameters)
         {
-            var leaderboard = GetLeaderBoardFromStrava(segmentId);
+            var args = string.Empty;
+            foreach (var queryParameter in queryParameters ?? new Dictionary<string, string>())
+            {
+                args += @"&" + queryParameter.Key + "=" + queryParameter.Value;
+            }
+            return args;
+        }
+
+
+        public IOperationResponse<ILeaderboard> GetSegmentLeaderboard(int segmentId, IDictionary<string, string> queryParameters)
+        {
+            var leaderboard = GetLeaderBoardFromStrava(segmentId, queryParameters);
 
             var x = leaderboard.Result;
 
