@@ -39,7 +39,9 @@ namespace SwimBikeRun.Strive.Modules
             return new Dictionary<string, string> 
             {
                 { "gender", Request.Query.gender },
-                { "age_group", Request.Query.age_group }
+                { "age_group", Request.Query.age_group },
+                { "weight_class", Request.Query.weight_class },
+                { "following", Request.Query.following }
             };
         }
 
