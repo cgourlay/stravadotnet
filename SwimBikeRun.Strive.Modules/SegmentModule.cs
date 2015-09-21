@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 
-
 using Nancy;
+
 using Nancy.Responses.Negotiation;
 
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
@@ -44,7 +44,8 @@ namespace SwimBikeRun.Strive.Modules
                 { "weight_class", Request.Query.weight_class },
                 { "following", Request.Query.following },
                 { "club_id", Request.Query.club_id},
-                { "date_range", Request.Query.date_range }
+                { "date_range", Request.Query.date_range },
+                { "context_entries", Request.Query.context_entries}
             };
         }
 
