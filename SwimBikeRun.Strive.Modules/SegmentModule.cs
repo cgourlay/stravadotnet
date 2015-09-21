@@ -45,7 +45,8 @@ namespace SwimBikeRun.Strive.Modules
                 { "following", Request.Query.following },
                 { "club_id", Request.Query.club_id},
                 { "date_range", Request.Query.date_range },
-                { "context_entries", Request.Query.context_entries}
+                { "context_entries", Request.Query.context_entries},
+                { "page", Request.Query.page}
             };
         }
 
