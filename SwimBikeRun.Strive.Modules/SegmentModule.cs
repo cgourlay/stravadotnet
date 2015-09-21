@@ -2,8 +2,8 @@
 using System.Globalization;
 
 using Nancy;
-
 using Nancy.Responses.Negotiation;
+
 
 using SwimBikeRun.Strive.Model.Interfaces.Segments;
 using SwimBikeRun.Strive.Representations.Interfaces;
@@ -46,7 +46,8 @@ namespace SwimBikeRun.Strive.Modules
                 { "club_id", Request.Query.club_id},
                 { "date_range", Request.Query.date_range },
                 { "context_entries", Request.Query.context_entries},
-                { "page", Request.Query.page}
+                { "page", Request.Query.page},
+                { "per_page", Request.Query.per_page}
             };
         }
 
