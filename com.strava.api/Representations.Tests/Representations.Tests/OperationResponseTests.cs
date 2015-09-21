@@ -86,9 +86,12 @@ namespace SwimBikeRun.Strive.Representations.Tests
         public class DataAsJson : OperationResponseTests
         {
             [Test]
-            [Ignore("TODO: CG to complete... This test is a marker - refer to issue #32")]
             public void CanSerialiseTheData()
             {
+                var operationResponse = new OperationResponse<string>();
+                Assert.That(operationResponse.Data, Is.Null);
+                operationResponse.Data = "some-string";
+                Assert.That(operationResponse.DataAsJson(), Is.EqualTo("\"some-string\""));
             }
         }
     }

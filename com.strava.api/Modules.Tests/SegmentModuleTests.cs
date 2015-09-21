@@ -131,9 +131,10 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
+                    with.Header("Authorization", "[token-goes-here]");
                 });
 
-                Assert.That(response.Headers["Location"], Is.EqualTo(string.Format(@"/Segments/{0}", 229781)));
+                Assert.That(response.Headers["Location"], Is.EqualTo(string.Format(@"/segments/{0}", 229781)));
             }
 
             [Test]
@@ -157,6 +158,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
+                    with.Header("Authorization", "[token-goes-here]");
                 });
 
                 Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
@@ -185,9 +187,10 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
+                    with.Header("Authorization", "[token-goes-here]");
                 });
 
-                Assert.That(response.Body.AsString(), Is.StringContaining("Hawk Hill"));
+                Assert.That(response.Body.AsString(), Is.EqualTo("{ \"name\": \"Hawk Hill\" }"));
             }
         }
 
