@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿
+
+
+
+using System.Collections.Generic;
 using System.Globalization;
 
 using Nancy;
@@ -41,7 +45,8 @@ namespace SwimBikeRun.Strive.Modules
                 { "gender", Request.Query.gender },
                 { "age_group", Request.Query.age_group },
                 { "weight_class", Request.Query.weight_class },
-                { "following", Request.Query.following }
+                { "following", Request.Query.following },
+                { "club_id", Request.Query.club_id}
             };
         }
 
