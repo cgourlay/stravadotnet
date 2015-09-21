@@ -62,6 +62,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
+                    with.Header("Authorization", "[token-goes-here]");
                 });
 
                 Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.InternalServerError));
@@ -92,7 +93,7 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
-                    with.Header("Authorization", "[token-goes-here]" );
+                    with.Header("Authorization", "[token-goes-here]");
                 });
 
                 Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));

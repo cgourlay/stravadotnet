@@ -9,6 +9,14 @@ using SwimBikeRun.Strive.Representations.Interfaces;
 using SwimBikeRun.Strive.Workflows.Interfaces;
 
 
+
+
+
+
+
+
+
+
 namespace SwimBikeRun.Strive.Modules
 {
     public class SegmentModule : SecureModule
