@@ -8,7 +8,7 @@ namespace SwimBikeRun.Strive.Modules
 {
     public abstract class SecureModule : NancyModule
     {
-        protected SecureModule()
+        protected SecureModule(string modulePath) : base(modulePath)
         {
             Before += context =>
             {

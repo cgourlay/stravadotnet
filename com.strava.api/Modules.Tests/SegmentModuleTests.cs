@@ -75,8 +75,8 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 var workflowMock = new Mock<ISegmentWorkflow>();
                 var responseMock = new Mock<IOperationResponse<ISegment>>();
 
-                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
                 responseMock.SetupProperty(s => s.OperationSucceeded, true);
+                responseMock.SetupProperty(s => s.Status, OperationStatus.Ok);
                 responseMock.SetupProperty(s => s.Data.Id, 1234567890);
                 responseMock.SetupProperty(s => s.Data.Name, "Foo Bar");
                 responseMock.Setup(s => s.DataAsJson()).Returns("{ \"name\": \"Foo Bar\" }");
@@ -92,11 +92,12 @@ namespace SwimBikeRun.Strive.Modules.Tests
                 {
                     with.HttpRequest();
                     with.Header("Accept", "application/json");
+                    with.Header("Authorization", "[token-goes-here]" );
                 });
 
                 Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
-                Assert.That(response.Headers["Location"], Is.EqualTo("/Segments/1234567890"));
-                Assert.That(response.Body.AsString(), Is.StringContaining("Foo Bar"));
+                Assert.That(response.Headers["Location"], Is.EqualTo("/segments/1234567890"));
+                Assert.That(response.Body.AsString(), Is.EqualTo("{ \"name\": \"Foo Bar\" }"));
             }
         }
 
